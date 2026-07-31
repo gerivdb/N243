@@ -2,8 +2,6 @@
 
 > Conventions Git pour N243.
 
-## 1. Merge-base
-
 Trouver l'ancêtre commun entre deux branches :
 
 ```bash
