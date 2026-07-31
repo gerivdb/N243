@@ -1,14 +1,15 @@
 # Git Engineering — N243
 
 > Conventions Git minimales pour N243.
+> Références : ADR-007, INTENT-077.
 
 Utiliser `git -C` pour toute opération sur ce repo depuis un autre chemin :
 
 ```bash
-git -C "D:/DO/WEB/TOOLS/L4-TOOLS/N243" status
-git -C "D:/DO/WEB/TOOLS/L4-TOOLS/N243" add <fichier>
-git -C "D:/DO/WEB/TOOLS/L4-TOOLS/N243" commit -m "message"
-git -C "D:/DO/WEB/TOOLS/L4-TOOLS/N243" push origin main
+git -C "<repo_path>" status
+git -C "<repo_path>" add <fichier>
+git -C "<repo_path>" commit -m "message"
+git -C "<repo_path>" push origin main
 ```
 
 Ne jamais utiliser `cd` / `Set-Location` entre appels shell.

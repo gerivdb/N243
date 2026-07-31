@@ -1,6 +1,9 @@
 # Hooks Catalog — N243
 
 > Catalogue des hooks Git pour N243.
+> Références : ADR-007, INTENT-077.
+
+## 1. Hooks existants
 
 ### pre-commit
 - Vérification d'encodage UTF-8 sans BOM.

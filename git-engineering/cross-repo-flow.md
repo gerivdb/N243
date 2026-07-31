@@ -1,14 +1,17 @@
 # Cross-Repo Flow — N243
 
 > Conventions Git inter-répos pour N243.
+> Références : ADR-007, INTENT-077.
+
+## 1. Règle fondamentale : `git -C <path>`
 
 Ne jamais utiliser `cd` / `Set-Location` pour changer de repo. Chaque appel shell démarre dans le workspace root.
 
 ```bash
 # OBLIGATOIRE
-git -C "D:/DO/WEB/TOOLS/L4-TOOLS/N243" add "fichier"
-git -C "D:/DO/WEB/TOOLS/L4-TOOLS/N243" commit -m "message"
-git -C "D:/DO/WEB/TOOLS/L4-TOOLS/N243" push origin main
+git -C "<repo_path>" add "fichier"
+git -C "<repo_path>" commit -m "message"
+git -C "<repo_path>" push origin main
 ```
 
 ## 2. Cherry-pick inter-strates

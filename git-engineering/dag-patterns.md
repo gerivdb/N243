@@ -1,6 +1,9 @@
 # DAG Patterns — N243
 
 > Conventions Git pour N243.
+> Références : ADR-007, INTENT-077.
+
+## 1. Merge-base
 
 Trouver l'ancêtre commun entre deux branches :
 

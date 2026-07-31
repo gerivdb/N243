@@ -1,6 +1,9 @@
 # MetaGit Conventions — N243
 
 > Conventions de méta-orchestration Git pour N243.
+> Références : ADR-007, INTENT-077.
+
+## 1. Pas de submodules
 
 L'écosystème gerivdb n'utilise PAS de submodules Git. Utiliser `git subtree` si nécessaire, avec ADR.
 
