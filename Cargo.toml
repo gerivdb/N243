@@ -4,15 +4,11 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-# Dépendance locale vers Buzz@block (fork upstream)
-buzz-core = { path = "../../BUZZ-X/Buzz@block/crates/buzz-core" }
-buzz-relay = { path = "../../BUZZ-X/Buzz@block/crates/buzz-relay" }
-buzz-auth = { path = "../../BUZZ-X/Buzz@block/crates/buzz-auth" }
-buzz-workflow = { path = "../../BUZZ-X/Buzz@block/crates/buzz-workflow" }
-buzz-acp = { path = "../../BUZZ-X/Buzz@block/crates/buzz-acp" }
-buzz-audit = { path = "../../BUZZ-X/Buzz@block/crates/buzz-audit" }
-buzz-search = { path = "../../BUZZ-X/Buzz@block/crates/buzz-search" }
-buzz-cli = { path = "../../BUZZ-X/Buzz@block/crates/buzz-cli" }
+# Core minimal pour N243
+buzz-core = { path = "../BUZZ-X/Buzz@block/crates/buzz-core" }
+buzz-acp = { path = "../BUZZ-X/Buzz@block/crates/buzz-acp" }
+buzz-workflow = { path = "../BUZZ-X/Buzz@block/crates/buzz-workflow" }
+buzz-auth = { path = "../BUZZ-X/Buzz@block/crates/buzz-auth" }
 
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"

@@ -1,0 +1,31 @@
+---
+name: N243
+description: "Meta-orchestrateur cognitif L* — orcHESTRATION BUZZ-X via API Nostr/NIP-34 et runners Zig."
+version: "0.1.0"
+parent: unified-design
+inherits:
+  - psy-citizen-governance
+  - citizen-registry
+  - stratum-relay
+capabilities:
+  - name: psy-citizen-governance
+    parameters:
+      psy_patterns: [dual_symmetric, progressive_cascade, oscillating_equilibrium, resilient_baseline, multi_attractor_chaos, trauma_chaos_redemption]
+      states: [NOMINAL, DEGRADED, CHAOS, SYNTHESIS, SURVIVAL]
+      relapse_rule: Tout citoyen avec relapse_risk > 0 doit être surveillé par Alfred
+      disambiguation: required
+      conformity: CONFORME_NEXUS
+  - name: citizen-registry
+    parameters:
+      schema_version: "2.1"
+      total_repos: 47
+      priorities: [P0, P1, P2, P3]
+  - name: stratum-relay
+    parameters:
+      stratum_relay: STRATUM_RELAY.md
+      lifecycle: PROPOSED
+strate: L4_TOOLS
+status: proposed
+generated_by: unified-design/create_design.py
+generated_at: "2026-07-31T06:26:00"
+intent_hash: 0xN243_20260801

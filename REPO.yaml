@@ -1,0 +1,31 @@
+---
+# REPO.yaml — N243
+# Généré automatiquement — RSS-v2.3 conformité CITIZEN
+# 2026-07-31 — session N243 Phase 1
+name: N243
+type: citizen
+strate: L4
+lifecycle: PROPOSED
+rss_depth: 2
+profile: CITIZEN
+archived: false
+description: >
+  Meta-orchestrateur cognitif L* — orchestration BUZZ-X via API Nostr/NIP-34,
+  runners Zig/ACP, WAL ternaire et enforcement BDCP.
+remote: gerivdb/N243
+local_path: D:/DO/WEB/TOOLS/L4-TOOLS/N243
+packages:
+  - id: n243-orchestrator
+    status: PROPOSED
+    tag: CONFORME_NEXUS
+hub: gerivdb/GOVERNANCE-HUB
+stratum_relay: STRATUM_RELAY.md
+intent_primary: INTENT-260 (buzz-workflow-binder)
+dependencies_upstream:
+  - gerivdb/BUZZ-X
+  - gerivdb/BRAIN-DOCS
+  - gerivdb/SKILLS
+dependencies_downstream: []
+rss_version: v2.3
+rss_compliance: PARTIAL  # docs/, config/, tests/ présents mais vides — à compléter via INTENT-260
+last_audit: '2026-07-31'
