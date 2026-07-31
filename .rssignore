@@ -1,0 +1,4 @@
+# RSS ignore pour N243
+# Exclure les build artifacts et git internes
+target/
+.git/
