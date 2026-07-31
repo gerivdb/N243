@@ -1,0 +1,26 @@
+# N243 — citizens.yaml
+# Profil: CITIZEN / L4
+version: "1.0"
+intent_hash: "0xN243_CITIZENS_20260801"
+
+repo:
+  name: "N243"
+  stratum: "L4-TOOLS"
+  status: "active"
+  description: "Meta-orchestrateur cognitif L*"
+
+citizens:
+  - name: "Orchestrator"
+    role: "orchestrator"
+    description: "Orchestre les runners L* via Buzz@block"
+    phase: "orchestration"
+  
+  - name: "TernaryGuardian"
+    role: "validator"
+    description: "Valide les décisions ternaires (Approve/Suspend/Reject)"
+    phase: "validation"
+  
+  - name: "BDCPEnforcer"
+    role: "enforcer"
+    description: "Applique BDCP sur les clones et forks"
+    phase: "governance"
