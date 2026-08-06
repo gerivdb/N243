@@ -1,0 +1,87 @@
+---
+name: n243-rai
+description: >
+  Workflow RAI (Recursive Auto-Improvement) pour N243.
+  Execute les probes, mine les logs, edite le PRD, et itere jusqu'a convergence.
+version: "1.0.0"
+status: active
+intent_hash: 0xN243_RAI_WORKFLOW_20260806
+author: gerivdb
+source_repo: gerivdb/N243
+source_path: workflows/rai/n243-rai.yaml
+triggers:
+  - "probe fail"
+  - "daily"
+  - "manual"
+steps:
+  - name: run-probes
+    action: n243-query-engine
+    input:
+      probes: act-protocol/probes/n243/probe-suite.yaml
+  - name: mine-logs
+    action: auto-dev
+    input:
+      source: WAL/
+      target: act-protocol/reports/rai/
+  - name: edit-prd
+    action: auto-dev
+    input:
+      prd: act-protocol/PRD/PRD-MOC-ACTPROTOCOL/fractal/architecture/PRD-MOC-ACTPROTOCOL-SOVEREIGN-CROSS-REPO-GRAPH-2026-08-04.md
+  - name: validate-mox
+    action: mox-validator
+    input:
+      document: act-protocol/PRD/PRD-MOC-ACTPROTOCOL/fractal/architecture/PRD-MOC-ACTPROTOCOL-SOVEREIGN-CROSS-REPO-GRAPH-2026-08-04.md
+  - name: flux-d4-gate
+    action: flux-d4
+    input:
+      type: rai-cycle
+      changes: <list>
+  - name: log-wal
+    action: nexus-wal
+    input:
+      event: rai-cycle
+      intent_hash: 0xN243_RAI_20260806
+---
+
+# Workflow — N243 RAI
+
+## Objectif
+
+Executer les cycles RAI (Recursive Auto-Improvement) jusqu'a convergence.
+
+## Declencheurs
+
+- **probe fail** : une probe echoue
+- **daily** : cycle quotidien
+- **manual** : declenchement manuel
+
+## Etapes
+
+| Etape | Action | Input | Output |
+|-------|--------|-------|--------|
+| 1 | run-probes | Probe suite | Resultats probes |
+| 2 | mine-logs | WAL/ | Patterns d'usage |
+| 3 | edit-prd | PRD + patterns | PRD mis a jour |
+| 4 | validate-mox | PRD | Validation MOX |
+| 5 | flux-d4-gate | Changes | Approval |
+| 6 | log-wal | Event RAI | WAL entry |
+
+## Criteres de convergence
+
+- Tous les probes passent
+- Aucun nouveau probe derive sur 24h
+- phi-CPS stable sur 3 mesures
+- Aucune contradiction MOX
+
+## Rollback
+
+1. Revenir au PRD precedent.
+2. Logger le revert dans WAL.
+3. Corriger via PR review FLUX-D4.
+
+## References
+
+- `act-protocol/probes/n243/probe-suite.yaml`
+- `act-protocol/reports/rai/`
+- `act-protocol/docs/convergence.md`
+- `auto-dev/` : orchestrateur RAI

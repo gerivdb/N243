@@ -1,0 +1,84 @@
+---
+name: n243-query
+description: >
+  Workflow de requête N243.
+  Reçoit une requête, la valide, l'exécute via CTULU, et retourne le résultat.
+version: "1.0.0"
+status: active
+intent_hash: 0xN243_QUERY_WORKFLOW_20260806
+author: gerivdb
+source_repo: gerivdb/N243
+source_path: workflows/query/n243-query.yaml
+triggers:
+  - "user query"
+  - "auto-dev probe"
+  - "MOX validation"
+steps:
+  - name: validate-query
+    action: n243-query-engine
+    input:
+      schema: schemas/n243-query.schema.yaml
+  - name: check-cache
+    action: korx
+    input:
+      query: <validated_query>
+  - name: execute-tql
+    action: ctulu-orch
+    input:
+      query: <validated_query>
+      engine: tql
+  - name: format-result
+    action: n243-query-engine
+    input:
+      format: markdown
+      trace_sources: true
+  - name: log-wal
+    action: nexus-wal
+    input:
+      event: query
+      intent_hash: 0xN243_QUERY_20260806
+---
+
+# Workflow — N243 Query
+
+## Objectif
+
+Repondre aux requêtes cross-repo, temporelles et de contradiction.
+
+## Declencheurs
+
+- **user query** : question utilisateur
+- **auto-dev probe** : verification automatique
+- **MOX validation** : validation coherence
+
+## Etapes
+
+| Etape | Action | Input | Output |
+|-------|--------|-------|--------|
+| 1 | validate-query | Requête brute | Requête validée |
+| 2 | check-cache | Requête validée | Cache hit/miss |
+| 3 | execute-tql | Requête validée | Résultat brut |
+| 4 | format-result | Résultat brut | Résultat formaté |
+| 5 | log-wal | Event query | WAL entry |
+
+## Criteres
+
+| CRITERE | SEUIL | METHODE |
+|---------|-------|---------|
+| Reponse < 2s | 95% requêtes | Benchmark |
+| Cache hit | > 50% | KORX metrics |
+| Sources tracees | 100% | IntentHash par affirmation |
+| WAL log | 100% | WAL entry |
+
+## Rollback
+
+1. Revenir au cache precedent.
+2. Logger le revert dans WAL.
+3. Corriger via PR review N243-QUERY.
+
+## References
+
+- `TQL/` : operateurs de requête
+- `CTULU/` : orchestrateur TQL
+- `KORX/` : cache contexte
+- `KRONOS/` : time-series

@@ -1,0 +1,85 @@
+---
+name: n243-ingestion
+description: >
+  Workflow d'ingestion N243.
+  Scan les repos, extrait les metadonnees, construit le graphe, et met a jour l'index.
+version: "1.0.0"
+status: active
+intent_hash: 0xN243_INGESTION_WORKFLOW_20260806
+author: gerivdb
+source_repo: gerivdb/N243
+source_path: workflows/ingestion/n243-ingestion.yaml
+triggers:
+  - "git commit"
+  - "nightly"
+  - "manual"
+steps:
+  - name: scan-repos
+    action: n243-graph-builder
+    input:
+      source: TOPOS/repo-manifest.yaml
+      target: data/graph.yaml
+  - name: extract-metadata
+    action: n243-graph-builder
+    input:
+      source: data/graph.yaml
+      target: data/metadata.json
+  - name: build-graph
+    action: n243-graph-builder
+    input:
+      source: data/metadata.json
+      target: data/graph.yaml
+  - name: update-embeddings
+    action: llux
+    input:
+      source: data/graph.yaml
+      target: data/embeddings.json
+  - name: log-wal
+    action: nexus-wal
+    input:
+      event: ingestion
+      intent_hash: 0xN243_INGESTION_20260806
+---
+
+# Workflow — N243 Ingestion
+
+## Objectif
+
+Scanne les repos, extrait les metadonnees, construit le graphe, et met a jour l'index N243.
+
+## Declencheurs
+
+- **git commit** : a chaque commit sur les repos actifs
+- **nightly** : scan complet quotidien
+- **manual** : declenchement manuel
+
+## Etapes
+
+| Etape | Action | Input | Output |
+|-------|--------|-------|--------|
+| 1 | scan-repos | TOPOS/repo-manifest.yaml | Liste repos actifs |
+| 2 | extract-metadata | Liste repos | Metadonnees (ADR, PRD, INTENT, etc.) |
+| 3 | build-graph | Metadonnees | Graphe N243 |
+| 4 | update-embeddings | Graphe | Embeddings LLUX |
+| 5 | log-wal | Event ingestion | WAL entry |
+
+## Criteres
+
+| CRITERE | SEUIL | METHODE |
+|---------|-------|---------|
+| Scan complet | 100% repos actifs | Comparaison known_repositories.yaml |
+| Graphe a jour | < 5 min | Timestamp |
+| Embeddings a jour | < 10 min | Timestamp |
+| WAL log | 100% | WAL entry |
+
+## Rollback
+
+1. Restaurer le graphe precedent.
+2. Logger le revert dans WAL.
+3. Corriger via PR review N243-BUILDER.
+
+## References
+
+- `TOPOS/repo-manifest.yaml`
+- `GOVERNANCE-HUB/known_repositories.yaml`
+- `D:\DO\WEB\TOOLS\L4-TOOLS\N243\data\`
