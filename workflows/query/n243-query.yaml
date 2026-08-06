@@ -32,6 +32,11 @@ steps:
     input:
       format: markdown
       trace_sources: true
+  - name: validate-mox
+    action: mox-validator
+    input:
+      documents: <result>
+      mode: query-result
   - name: log-wal
     action: nexus-wal
     input:

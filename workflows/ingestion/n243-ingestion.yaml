@@ -34,6 +34,11 @@ steps:
     input:
       source: data/graph.yaml
       target: data/embeddings.json
+  - name: validate-mox
+    action: mox-validator
+    input:
+      documents: data/metadata.json
+      mode: artifacts
   - name: log-wal
     action: nexus-wal
     input:
