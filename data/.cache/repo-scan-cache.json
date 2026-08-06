@@ -1,0 +1,1641 @@
+{
+  "a48e992c5bc03784": {
+    "name": "BLO",
+    "layer": "L0-CANON",
+    "status": "active",
+    "role": "Repo BLO",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785018079.824941,
+    "size": 4096
+  },
+  "b647f5a033acb55d": {
+    "name": "FERMI-EVER",
+    "layer": "L0-CANON",
+    "status": "active",
+    "role": "Fermi",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785388223.8143322,
+    "size": 8192
+  },
+  "d766713c94901eb8": {
+    "name": "KIVA",
+    "layer": "L1_CAUSALITY",
+    "status": "active",
+    "role": "Infrastructure runtime, agents, scheduler, WAL",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785130033.7893991,
+    "size": 8192
+  },
+  "35241e200af1aaae": {
+    "name": "GOST",
+    "layer": "L0-CANON",
+    "status": "active",
+    "role": "Gost",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785818409.3666592,
+    "size": 4096
+  },
+  "4a4f6a61650cee01": {
+    "name": "GATEWAY-MANAGER",
+    "layer": "L1_CAUSALITY",
+    "status": "active",
+    "role": "Proxy/reverse proxy, BDCP, Clapet",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785821602.1183624,
+    "size": 8192
+  },
+  "7af9efc18107ac46": {
+    "name": "ONTOLOGY",
+    "layer": "L1_CAUSALITY",
+    "status": "active",
+    "role": "SOT semantique, dictionnaire canonique, ontologies",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785796931.639303,
+    "size": 28672
+  },
+  "a86470635b560d4a": {
+    "name": "morphohdl-anamorphic-growth",
+    "layer": "L0-CANON",
+    "status": "active",
+    "role": "Optimisation matérielle -- croissance anamorphique Base 243",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785018082.7815125,
+    "size": 4096
+  },
+  "dc901ecd6989acc6": {
+    "name": "sonar-driven-design",
+    "layer": "L0-CANON",
+    "status": "active",
+    "role": "Observabilité -- Ping/Echo, Sonar Map, PRF",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785018084.1165922,
+    "size": 4096
+  },
+  "a75c40eeb888d749": {
+    "name": "triadic-compound-eye",
+    "layer": "L0-CANON",
+    "status": "active",
+    "role": "Orchestration agents -- Triade C-E-Obs",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785294177.0277562,
+    "size": 4096
+  },
+  "b39d3590079c66ce": {
+    "name": "personae",
+    "layer": "L0-CANON",
+    "status": "active",
+    "role": "Meta-Design (MDU) -- Atlas global des invariants architecturaux",
+    "bridges": [
+      "crosslink:talex-unified-graph.md"
+    ],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785889996.4741614,
+    "size": 12288
+  },
+  "b66fa92c999650c5": {
+    "name": "KIVA-CLI",
+    "layer": "L2_COMPOSITION",
+    "status": "active",
+    "role": "CLI orchestrateur projets/apps, scaffolding",
+    "bridges": [
+      "crosslink:repo-standards.md"
+    ],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785708630.6637104,
+    "size": 20480
+  },
+  "7e95ca7f5226240e": {
+    "name": "HERMES",
+    "layer": "L0_CONSTITUTIONAL",
+    "status": "active",
+    "role": "SOT mémoire hiérarchique -- MEMORY.md, USER.md, Skills, Facts DB",
+    "bridges": [
+      "crosslink:README.md"
+    ],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1784944582.8475215,
+    "size": 4096
+  },
+  "4aac4f42c3c0fb04": {
+    "name": "LLM-REPO",
+    "layer": "L1b",
+    "status": "active",
+    "role": "Hub cognitif LLM -- navigation, comportement, profils agents (L1b). Boot protocol GATE-0->4.",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785455382.84016,
+    "size": 8192
+  },
+  "f8b427f178c1c897": {
+    "name": "CANDIDATOR",
+    "layer": "L3_EMERGENCE",
+    "status": "active",
+    "role": "Gestion candidatures, CV, lettres",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1784150966.4387121,
+    "size": 8192
+  },
+  "8bcc4ade63557584": {
+    "name": "TQL",
+    "layer": "L4_TOOLS",
+    "status": "active",
+    "role": "Ternary Query Language -- grammaire, spec, fixtures de test du langage de requete ternaire. Source de verite pour la syntaxe TQL (operateurs, types, semantique). Interpretation par BRAIN, donnees par NEXUS.\n",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785820417.0941517,
+    "size": 4096
+  },
+  "cd90cffdedd531cf": {
+    "name": "connard-design",
+    "layer": "L0-CANON",
+    "status": "active",
+    "role": "Validateur design MDU -- dissipateur d'entropie",
+    "bridges": [
+      "crosslink:ARGUS.md",
+      "crosslink:BRAIN.md",
+      "crosslink:CORTEX.md",
+      "crosslink:DevTools.md",
+      "crosslink:ECOS-CLI.md",
+      "crosslink:FLUENCE.md",
+      "crosslink:GOVERNANCE-HUB.md",
+      "crosslink:IRIS.md",
+      "crosslink:KRONOS.md",
+      "crosslink:NEXUS.md",
+      "crosslink:ONTOLOGY.md",
+      "crosslink:photon.yaml",
+      "crosslink:repo-standards.md",
+      "crosslink:TINA.md",
+      "crosslink:VERSES.md"
+    ],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785018082.2265356,
+    "size": 20480
+  },
+  "0f3bad9a80b8fbba": {
+    "name": "KORX",
+    "layer": "L4_TOOLS",
+    "status": "active",
+    "role": "State Machine Compiler -- compilateur de machines a etat ecrit en Zig. DSL de definition de state machines, compilation vers Zig. Consumers: SPIDX, TALEX, N243.",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785817601.2918074,
+    "size": 4096
+  },
+  "c77b88296669d63e": {
+    "name": "TEAMLORE",
+    "layer": "L4_TOOLS",
+    "status": "active",
+    "role": "Lore-as-Code Memory Layer -- couche mémoire versionnee de l ecosysteme. Skills: lore_validator.py, scarmap_generator.py. Integration CTULU via path-scoped recall.",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785716989.0394685,
+    "size": 0
+  },
+  "872bdc1bd50b4aee": {
+    "name": "TOPOS",
+    "layer": "L1b",
+    "status": "active",
+    "role": "Registre canonique des lieux d'execution (ENV0-5+) -- territoire, souverainete, stack, capacites",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785796931.612919,
+    "size": 8192
+  },
+  "dfd4c4c1e3a74165": {
+    "name": "KEEL",
+    "layer": "L1b",
+    "status": "active",
+    "role": "Knowledge Encoding & Execution Language -- langue de representation de flux, raisonnement versionne (Thought-Commits), substrat ternaire base-243, profondeur PLIX x5 (T1->T5), requetes TQL (Ternary Query Language). DSL textuel -> IR executable par BRAIN.\n",
+    "bridges": [
+      "crosslink:argus.md",
+      "crosslink:brain.md",
+      "crosslink:CROSSLINK-2026-07-01-piano-base243.md",
+      "crosslink:governance-hub.md",
+      "crosslink:repo-standards.md",
+      "crosslink:uae.md"
+    ],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785352395.8702176,
+    "size": 8192
+  },
+  "ad7e5a6bc6d11667": {
+    "name": "IRIS",
+    "layer": "L2b_SENSOR",
+    "status": "active",
+    "role": "Capteur externe Triade Cognitive IRIS/KRONOS/FLUX -- poll repos tiers publics (bun, claude-code, PowerShell...), extrait signaux bruts, emet vers KRONOS. Cron 6h. 100% HITL (D4 inviolable).\n",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1784231601.3082514,
+    "size": 4096
+  },
+  "558029f13b318168": {
+    "name": "FLUENCE",
+    "layer": "L3_EMERGENCE",
+    "status": "active",
+    "role": "Composant transverse, orchestration cognitive",
+    "bridges": [
+      "crosslink:repo-standards.md"
+    ],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785866524.6719024,
+    "size": 16384
+  },
+  "fe7f5e075f02ea28": {
+    "name": "STYX",
+    "layer": "L3_EMERGENCE",
+    "status": "active",
+    "role": "Pipeline d'expulsion terminal (Cycle Digestif MUD) -- reçoit signaux MUD depuis IRIS et WAL NEXUS, score chaque artefact, prononce verdict d'expulsion, achemine vers TRANSCENDANCE (HOLE) ou EMRG-ARCHIVE. Miroir sortant de KRONOS. Valve HITL obligatoire avant toute expulsion irréversible.\n",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785042892.2915106,
+    "size": 4096
+  },
+  "9359736992399ba6": {
+    "name": "NEXUS",
+    "layer": "L1_CAUSALITY",
+    "status": "active",
+    "role": "Mega-SOT -- registre des registres, gouvernance",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785796931.5974927,
+    "size": 299008
+  },
+  "ca6d5bd40b1cee40": {
+    "name": "KRONOS",
+    "layer": "L2b_QUALIFIER",
+    "status": "active",
+    "role": "Qualificateur Triade Cognitive -- consomme signaux bruts IRIS, applique heuristiques de qualification, produit fiches validees/archivees. 0 auto-promotion vers NEXUS sans review humaine via FLUX (D4).\n",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1784231603.6422794,
+    "size": 4096
+  },
+  "a41998dcdda35a59": {
+    "name": "BOINC-LLM-P2P",
+    "layer": "L1-INFRA",
+    "status": "active",
+    "role": "Repo BOINC-LLM-P2P",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785088182.0019946,
+    "size": 8192
+  },
+  "f0e3e42f2ac6ca30": {
+    "name": "GOVERNANCE-HUB",
+    "layer": "L0_CONSTITUTIONAL",
+    "status": "active",
+    "role": "SOT execution, regles de gouvernance executables, Trit*, registres",
+    "bridges": [
+      "bridges:yaml"
+    ],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785796931.6274529,
+    "size": 28672
+  },
+  "1149f722fdb4b575": {
+    "name": "UAE",
+    "layer": "L3_EMERGENCE",
+    "status": "active",
+    "role": "Moteur d'attention universelle 1/sqrt(d) -- fondation cognitive transverse. Contexte infini O(1), drop-in HuggingFace, CUDA natif. Base mathematique de tous les moteurs cognitifs de l'ecosysteme. Quantification Base 243 (3^5) native -- LADYBIRD-243 ATTENTION CORE.\n",
+    "bridges": [
+      "crosslink:repo-standards.md"
+    ],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785042892.3006742,
+    "size": 4096
+  },
+  "983e815143c44750": {
+    "name": "PHOTON",
+    "layer": "L4_TOOLS",
+    "status": "active",
+    "role": "Semantic chunking pipeline -- anamorphosis of TRIX",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785030328.1107504,
+    "size": 4096
+  },
+  "fe4428558bcacc3f": {
+    "name": "RLM-MDU",
+    "layer": "L2b_QUALIFIER",
+    "status": "active",
+    "role": "Runner MDU Friction Guard -- detection et correction automatisee des 14 frictions MDU (ERR-001 a ERR-014)",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785123083.5575447,
+    "size": 4096
+  },
+  "4f190c0c97b3ebd2": {
+    "name": "ECOS-CLI",
+    "layer": "L1_CAUSALITY",
+    "status": "active",
+    "role": "Orchestrateur local CLI, workflows EECS",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785822209.68248,
+    "size": 262144
+  },
+  "d0a334459afd54c9": {
+    "name": "DevTools",
+    "layer": "L2-PLATFORM",
+    "status": "active",
+    "role": "Outil",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1784231630.4316995,
+    "size": 65536
+  },
+  "07e3d525ad223a7d": {
+    "name": "SPIDX",
+    "layer": "L4_TOOLS",
+    "status": "active",
+    "role": "Spider Graph Rewriting Kernel -- noyau de reecriture de graphe deterministe, pur et rejouable. Implements SPARQL-like graph operations: canonization, rewriting, guards, proofs, WAL. Rust workspace with crates: core, canon, rewrite, guard, proof, wal, cli, fuzz, pdd. Consumers: KORX (state machines), TALEX (narrative), VERSES (lore graph).",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785820380.1703374,
+    "size": 4096
+  },
+  "4358a30a57bea21f": {
+    "name": "PULSE",
+    "layer": "L2-PLATFORM",
+    "status": "active",
+    "role": "Pulse",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785284354.936354,
+    "size": 4096
+  },
+  "8720997948a600c9": {
+    "name": "PIANO",
+    "layer": "L2-PLATFORM",
+    "status": "active",
+    "role": "Operateur T sur etats triadiques base 243, moteur de codage ternaire",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785296599.5317912,
+    "size": 4096
+  },
+  "feb5d87293ebac72": {
+    "name": "EMIT",
+    "layer": "L2_COMPOSITION",
+    "status": "active",
+    "role": "Bus d'événements centralisé -- WAL événementiel, ζ-DAG anchoring, φ-CPS logging, ACP adapter ingest. Strate L2b signaux entrants.\n",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785042892.321513,
+    "size": 4096
+  },
+  "0cbcffa61826675d": {
+    "name": "RLM-GRAPH",
+    "layer": "L2-PLATFORM",
+    "status": "active",
+    "role": "RLM-GRAPH - Cohérence topologie B243, UAE→TOPOS validation",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785184617.6830957,
+    "size": 4096
+  },
+  "d44921acd810afa6": {
+    "name": "RLM-CONFIG",
+    "layer": "L2-PLATFORM",
+    "status": "active",
+    "role": "RLM-CONFIG - Validation syntaxique, ARGUS→NEXUS endpoint",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785371255.5259354,
+    "size": 4096
+  },
+  "db719f4133690940": {
+    "name": "RLM-DEPLOY",
+    "layer": "L2-PLATFORM",
+    "status": "active",
+    "role": "RLM-DEPLOY - Résultat exécution, TRIX→UAE endpoint",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785371338.4980402,
+    "size": 4096
+  },
+  "93e4fd02548cbcff": {
+    "name": "RLM-SECURE",
+    "layer": "L2-PLATFORM",
+    "status": "active",
+    "role": "RLM-SECURE - Validation sécurité, pattern sécurité PES",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785216792.4214258,
+    "size": 4096
+  },
+  "48ed3012f90c1183": {
+    "name": "RLM-RELEASE",
+    "layer": "L2-PLATFORM",
+    "status": "active",
+    "role": "RLM-RELEASE - Auto-migration TOPOS→ARGUS, release management",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785371504.068323,
+    "size": 4096
+  },
+  "8ec27073f5f048ab": {
+    "name": "BRAIN",
+    "layer": "L3_EMERGENCE",
+    "status": "active",
+    "role": "Couche IA, agents cognitifs",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785018079.0767193,
+    "size": 28672
+  },
+  "32e908b704171684": {
+    "name": "RLM-INCIDENT",
+    "layer": "L2-PLATFORM",
+    "status": "active",
+    "role": "RLM-INCIDENT - Gestion incidents, détection anomalies PES",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785371625.262869,
+    "size": 4096
+  },
+  "d1e9d70ccba9574a": {
+    "name": "RLM-METRICS",
+    "layer": "L2-PLATFORM",
+    "status": "active",
+    "role": "RLM-METRICS - Metrics collector and aggregator for phi-CPS, benchmarks, health",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785371555.9916024,
+    "size": 4096
+  },
+  "0d922b0b0c1a9f50": {
+    "name": "KIX",
+    "layer": "L2-PLATFORM",
+    "status": "active",
+    "role": "KIX - Orchestrateur central du cycle de vie des runners RLM",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785864697.3837416,
+    "size": 4096
+  },
+  "7822b520b90178ed": {
+    "name": "CAPTA-4D",
+    "layer": "L4-TOOLS",
+    "status": "active",
+    "role": "Repo CAPTA-4D",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1784231696.0144477,
+    "size": 4096
+  },
+  "670b807c985c8df0": {
+    "name": "CodeDB-E5620",
+    "layer": "L4-TOOLS",
+    "status": "active",
+    "role": "Repo CodeDB-E5620",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785042892.2782445,
+    "size": 8192
+  },
+  "aedbe0d4446bbc91": {
+    "name": "LLUX",
+    "layer": "L3_EMERGENCE",
+    "status": "active",
+    "role": "Moteur d'inférence LLM natif TRIX (Base 243, RVBA, alpha, index)",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785805914.4761584,
+    "size": 12288
+  },
+  "5fc462313b88918d": {
+    "name": "DATA-MINER",
+    "layer": "L4-TOOLS",
+    "status": "active",
+    "role": "Data mining",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785042892.2909517,
+    "size": 4096
+  },
+  "52ce6b0b9eaa631c": {
+    "name": "ECOYSTEM",
+    "layer": "L1-INFRA",
+    "status": "active",
+    "role": "Repo ECOYSTEM",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785462480.8528607,
+    "size": 4096
+  },
+  "b912c8942f695548": {
+    "name": "PLIX",
+    "layer": "L2-PLATFORM",
+    "status": "active",
+    "role": "Repo PLIX",
+    "bridges": [
+      "bridges:yaml"
+    ],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785731814.1986918,
+    "size": 49152
+  },
+  "2162e3e63c6fe91f": {
+    "name": "GERI-VON-DER-BITSH",
+    "layer": "L4-TOOLS",
+    "status": "active",
+    "role": "Repo GERI-VON-DER-BITSH",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785042892.2884033,
+    "size": 4096
+  },
+  "16429e56084cf661": {
+    "name": "FLUENCE-CLI",
+    "layer": "L4-TOOLS",
+    "status": "active",
+    "role": "CLI",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785042892.2915106,
+    "size": 4096
+  },
+  "a46edd1b1607b819": {
+    "name": "llama.cpp",
+    "layer": "L4-TOOLS",
+    "status": "active",
+    "role": "Base ggml/LLM inference engine",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1784150967.0127785,
+    "size": 12288
+  },
+  "31d5b026c5fd5eb6": {
+    "name": "HOLMES",
+    "layer": "L4-TOOLS",
+    "status": "active",
+    "role": "Repo HOLMES",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1784857635.3938055,
+    "size": 8192
+  },
+  "34bdd03142a5b835": {
+    "name": "LYCOS",
+    "layer": "L4-TOOLS",
+    "status": "active",
+    "role": "Lycos",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785042892.2803154,
+    "size": 8192
+  },
+  "6dc7455334a30964": {
+    "name": "Mnemo",
+    "layer": "L4-TOOLS",
+    "status": "active",
+    "role": "Mnemo",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785042892.28135,
+    "size": 8192
+  },
+  "fb49d1f57a9053c3": {
+    "name": "Mnemo-SRC",
+    "layer": "L4-TOOLS",
+    "status": "active",
+    "role": "Mnemo",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1784231726.9946573,
+    "size": 8192
+  },
+  "2301365efc791c35": {
+    "name": "PRIMUS",
+    "layer": "L4-TOOLS",
+    "status": "active",
+    "role": "Repo PRIMUS",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785629127.840387,
+    "size": 12288
+  },
+  "58759bb4251235f9": {
+    "name": "Gitnote",
+    "layer": "L4-TOOLS",
+    "status": "active",
+    "role": "Git tool",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785390124.0368693,
+    "size": 8192
+  },
+  "75923ed929c7c083": {
+    "name": "diff0-fork",
+    "layer": "L4_TOOLS",
+    "status": "active",
+    "role": "Fork local de diff0 (eersnington/diff0) -- agent de review de code IA pour GitHub. Analyse automatique des PRs, detection de bugs/securite/performance, commentaires inline actionnables. Webhook-driven, sandbox Daytona, multi-provider LLM.\n",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1784231611.9146712,
+    "size": 8192
+  },
+  "9165e39c85cfe668": {
+    "name": "REPOMIX-FORK",
+    "layer": "L4-TOOLS",
+    "status": "active",
+    "role": "Repomix",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785130120.8585064,
+    "size": 16384
+  },
+  "41c047666e1c7bee": {
+    "name": "TOOL-FACTORY-1",
+    "layer": "L4-TOOLS",
+    "status": "active",
+    "role": "Outil",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785130110.8797507,
+    "size": 4096
+  },
+  "5fc73661efc66e0b": {
+    "name": "SKILLS",
+    "layer": "L4-TOOLS",
+    "status": "active",
+    "role": "Skills",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785808562.9651754,
+    "size": 16384
+  },
+  "b54c48591ea36413": {
+    "name": "VDB",
+    "layer": "L4-TOOLS",
+    "status": "active",
+    "role": "VDB",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785119803.8358488,
+    "size": 16384
+  },
+  "9958210ead186e9a": {
+    "name": "ecos-sync",
+    "layer": "L4-TOOLS",
+    "status": "active",
+    "role": "Synchronisation",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1784231766.0237014,
+    "size": 4096
+  },
+  "d71c43cb3d9c4383": {
+    "name": "opensrc",
+    "layer": "L4-TOOLS",
+    "status": "active",
+    "role": "Open Source",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1784231767.6542678,
+    "size": 4096
+  },
+  "efce6eb240f51403": {
+    "name": "vscode-lm-proxy",
+    "layer": "L4-TOOLS",
+    "status": "active",
+    "role": "VSCode LM Proxy",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785042892.3126273,
+    "size": 8192
+  },
+  "b64b54bec26dd43e": {
+    "name": "vsix-ai-orchestrator",
+    "layer": "L4-TOOLS",
+    "status": "active",
+    "role": "VSIX AI Orchestrator",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785042892.3169706,
+    "size": 4096
+  },
+  "e53ba49761f4b48e": {
+    "name": "REPO-STANDARDS",
+    "layer": "L4-TOOLS",
+    "status": "active",
+    "role": "Standards, conventions, templates, outils meta",
+    "bridges": [
+      "crosslink:bridges.yaml",
+      "crosslink:README.md",
+      "crosslink:talex-unified-graph.md"
+    ],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785804175.6922789,
+    "size": 16384
+  },
+  "b0b9a8322536f636": {
+    "name": "diffscope-fork",
+    "layer": "L4-TOOLS",
+    "status": "active",
+    "role": "Diff tool",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785130127.672835,
+    "size": 8192
+  },
+  "c953d55325fc85d6": {
+    "name": "2025-0902-optimiser-Perplexity",
+    "layer": "L5-ARCHIVE",
+    "status": "active",
+    "role": "Repo 2025-0902-optimiser-Perplexity",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1782432369.3303273,
+    "size": 4096
+  },
+  "55b05a52e2ea826a": {
+    "name": "2025-0909-DMR",
+    "layer": "L5-ARCHIVE",
+    "status": "active",
+    "role": "Repo 2025-0909-DMR",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1782432369.4811325,
+    "size": 8192
+  },
+  "9e44270cae21cdb2": {
+    "name": "2025-0920-BOOKING",
+    "layer": "L5-ARCHIVE",
+    "status": "active",
+    "role": "Repo 2025-0920-BOOKING",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785030341.8785956,
+    "size": 4096
+  },
+  "39315dcd151e08e7": {
+    "name": "HERMES-NousResearch",
+    "layer": "L4_TOOLS",
+    "status": "active",
+    "role": "HERMES Agent - AI agent auto-améliorant (NousResearch)",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1784855583.7456336,
+    "size": 16384
+  },
+  "c1a971b242ff1ceb": {
+    "name": "TRIX",
+    "layer": "L4_TOOLS",
+    "status": "active",
+    "role": "Minimal Linux syscall dispatch runtime for Windows/WSL1 (HP Z600) -- Zig runtime, gateway manager, SDK Python The TRIX daemon port can be controlled via the TRIX_WORKSPACE_ID environment variable (see clients for details).",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785967667.8949754,
+    "size": 16384
+  },
+  "9c115ee371894276": {
+    "name": "ECOS-C_cli",
+    "layer": "L5-ARCHIVE",
+    "status": "active",
+    "role": "CLI",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785030344.141935,
+    "size": 0
+  },
+  "8ad073e66906294e": {
+    "name": "ONTOLOGY_MC",
+    "layer": "L5-ARCHIVE",
+    "status": "active",
+    "role": "Ontologie",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785030347.0741756,
+    "size": 0
+  },
+  "3aab838626f91aef": {
+    "name": "TRANSCENDANCE",
+    "layer": "L5-ARCHIVE",
+    "status": "active",
+    "role": "Transcendence",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1782432481.5996492,
+    "size": 4096
+  },
+  "a4d7b840f39c45b3": {
+    "name": "loopany-platform",
+    "layer": "L1-INFRA",
+    "status": "active",
+    "role": "Orchestrateur de boucles agent - scheduler + daemon",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1784231773.2717826,
+    "size": 4096
+  },
+  "4858e5d03deb69bc": {
+    "name": "2025-1103-DOC-UNIV-DEV",
+    "layer": "L5-ARCHIVE",
+    "status": "active",
+    "role": "Documentation",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1782432369.7497513,
+    "size": 4096
+  },
+  "3e705bf1558b6128": {
+    "name": "2025-1003-GERIBOOKING",
+    "layer": "L5-ARCHIVE",
+    "status": "active",
+    "role": "Repo 2025-1003-GERIBOOKING",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1782432369.6585474,
+    "size": 8192
+  },
+  "386b066a8bce023e": {
+    "name": "CTULU",
+    "layer": "L4-TOOLS",
+    "status": "active",
+    "role": "Repo CTULU",
+    "bridges": [
+      "crosslink:ARGUS.md",
+      "crosslink:BRAIN.md",
+      "crosslink:CORTEX.md",
+      "crosslink:DevTools.md",
+      "crosslink:ECOS-CLI.md",
+      "crosslink:FLUENCE.md",
+      "crosslink:GOVERNANCE-HUB.md",
+      "crosslink:IRIS.md",
+      "crosslink:KRONOS.md",
+      "crosslink:NEXUS.md",
+      "crosslink:ONTOLOGY.md",
+      "crosslink:photon.yaml",
+      "crosslink:repo-standards.md",
+      "crosslink:TINA.md",
+      "crosslink:VERSES.md"
+    ],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785463252.1679823,
+    "size": 368640
+  },
+  "ae0e1f49930e65f9": {
+    "name": "CTULU-LLUX-RVBA-PORTAGE",
+    "layer": "L4_TOOLS",
+    "status": "active",
+    "role": "LLUX RVBA Portage Piano — Base 3^5 RVBA primitives, PIANO adapter zero-copy, SSE4.2 kernels, TRIX handler 238",
+    "bridges": [
+      "crosslink:ARGUS.md",
+      "crosslink:BRAIN.md",
+      "crosslink:CORTEX.md",
+      "crosslink:DevTools.md",
+      "crosslink:ECOS-CLI.md",
+      "crosslink:FLUENCE.md",
+      "crosslink:GOVERNANCE-HUB.md",
+      "crosslink:IRIS.md",
+      "crosslink:KRONOS.md",
+      "crosslink:NEXUS.md",
+      "crosslink:ONTOLOGY.md",
+      "crosslink:photon.yaml",
+      "crosslink:repo-standards.md",
+      "crosslink:TINA.md",
+      "crosslink:VERSES.md"
+    ],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785463252.1679823,
+    "size": 368640
+  },
+  "6d6d1ffdc755fc25": {
+    "name": "CLINE",
+    "layer": "L4-TOOLS",
+    "status": "active",
+    "role": "CLI",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785018100.7822754,
+    "size": 12288
+  },
+  "c8ac826fba178a7e": {
+    "name": "PITCH-1",
+    "layer": "L4-TOOLS",
+    "status": "active",
+    "role": "Repo PITCH-1",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785042892.3051949,
+    "size": 8192
+  },
+  "4be15d4d1c421609": {
+    "name": "2025-0303-GERI CMS V2",
+    "layer": "L5-ARCHIVE",
+    "status": "active",
+    "role": "CMS",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1785298451.9576182,
+    "size": 8192
+  }
+}

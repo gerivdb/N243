@@ -1,0 +1,536 @@
+graph:
+  generated: 2026-08-06T20:15:18.423202
+  nodes: 87
+  edges: 0
+  repositories:
+    - id: repo:gerivdb/GOST
+      name: GOST
+      layer: L0-CANON
+      status: active
+      role: Gost
+      bridges: 0
+    - id: repo:gerivdb/BRAIN
+      name: BRAIN
+      layer: L3_EMERGENCE
+      status: active
+      role: Couche IA, agents cognitifs
+      bridges: 0
+    - id: repo:gerivdb/FERMI-EVER
+      name: FERMI-EVER
+      layer: L0-CANON
+      status: active
+      role: Fermi
+      bridges: 0
+    - id: repo:gerivdb/BLO
+      name: BLO
+      layer: L0-CANON
+      status: active
+      role: Repo BLO
+      bridges: 0
+    - id: repo:gerivdb/NEXUS
+      name: NEXUS
+      layer: L1_CAUSALITY
+      status: active
+      role: Mega-SOT -- registre des registres, gouvernance
+      bridges: 0
+    - id: repo:gerivdb/ECOS-CLI
+      name: ECOS-CLI
+      layer: L1_CAUSALITY
+      status: active
+      role: Orchestrateur local CLI, workflows EECS
+      bridges: 0
+    - id: repo:gerivdb/GOVERNANCE-HUB
+      name: GOVERNANCE-HUB
+      layer: L0_CONSTITUTIONAL
+      status: active
+      role: SOT execution, regles de gouvernance executables, Trit*, registres
+      bridges: 1
+    - id: repo:gerivdb/ONTOLOGY
+      name: ONTOLOGY
+      layer: L1_CAUSALITY
+      status: active
+      role: SOT semantique, dictionnaire canonique, ontologies
+      bridges: 0
+    - id: repo:gerivdb/unified-design
+      name: personae
+      layer: L0-CANON
+      status: active
+      role: Meta-Design (MDU) -- Atlas global des invariants architecturaux
+      bridges: 1
+    - id: repo:gerivdb/KIVA
+      name: KIVA
+      layer: L1_CAUSALITY
+      status: active
+      role: Infrastructure runtime, agents, scheduler, WAL
+      bridges: 0
+    - id: repo:gerivdb/GATEWAY-MANAGER
+      name: GATEWAY-MANAGER
+      layer: L1_CAUSALITY
+      status: active
+      role: Proxy/reverse proxy, BDCP, Clapet
+      bridges: 0
+    - id: repo:gerivdb/connard-design
+      name: connard-design
+      layer: L0-CANON
+      status: active
+      role: Validateur design MDU -- dissipateur d'entropie
+      bridges: 15
+    - id: repo:gerivdb/morphohdl-anamorphic-growth
+      name: morphohdl-anamorphic-growth
+      layer: L0-CANON
+      status: active
+      role: Optimisation matérielle -- croissance anamorphique Base 243
+      bridges: 0
+    - id: repo:gerivdb/triadic-compound-eye
+      name: triadic-compound-eye
+      layer: L0-CANON
+      status: active
+      role: Orchestration agents -- Triade C-E-Obs
+      bridges: 0
+    - id: repo:gerivdb/sonar-driven-design
+      name: sonar-driven-design
+      layer: L0-CANON
+      status: active
+      role: Observabilité -- Ping/Echo, Sonar Map, PRF
+      bridges: 0
+    - id: repo:gerivdb/KIVA-CLI
+      name: KIVA-CLI
+      layer: L2_COMPOSITION
+      status: active
+      role: CLI orchestrateur projets/apps, scaffolding
+      bridges: 1
+    - id: repo:gerivdb/HERMES
+      name: HERMES
+      layer: L0_CONSTITUTIONAL
+      status: active
+      role: SOT mémoire hiérarchique -- MEMORY.md, USER.md, Skills, Facts DB
+      bridges: 1
+    - id: repo:gerivdb/CANDIDATOR
+      name: CANDIDATOR
+      layer: L3_EMERGENCE
+      status: active
+      role: Gestion candidatures, CV, lettres
+      bridges: 0
+    - id: repo:gerivdb/TOPOS
+      name: TOPOS
+      layer: L1b
+      status: active
+      role: Registre canonique des lieux d'execution (ENV0-5+) -- territoire, souverainete, stack, capacites
+      bridges: 0
+    - id: repo:gerivdb/KORX
+      name: KORX
+      layer: L4_TOOLS
+      status: active
+      role: State Machine Compiler -- compilateur de machines a etat ecrit en Zig. DSL de definition de state machines, compilation vers Zig. Consumers: SPIDX, TALEX, N243.
+      bridges: 0
+    - id: repo:gerivdb/FLUENCE
+      name: FLUENCE
+      layer: L3_EMERGENCE
+      status: active
+      role: Composant transverse, orchestration cognitive
+      bridges: 1
+    - id: repo:gerivdb/SPIDX
+      name: SPIDX
+      layer: L4_TOOLS
+      status: active
+      role: Spider Graph Rewriting Kernel -- noyau de reecriture de graphe deterministe, pur et rejouable. Implements SPARQL-like graph operations: canonization, rewriting, guards, proofs, WAL. Rust workspace with crates: core, canon, rewrite, guard, proof, wal, cli, fuzz, pdd. Consumers: KORX (state machines), TALEX (narrative), VERSES (lore graph).
+      bridges: 0
+    - id: repo:gerivdb/TQL
+      name: TQL
+      layer: L4_TOOLS
+      status: active
+      role: Ternary Query Language -- grammaire, spec, fixtures de test du langage de requete ternaire. Source de verite pour la syntaxe TQL (operateurs, types, semantique). Interpretation par BRAIN, donnees par NEXUS.
+
+      bridges: 0
+    - id: repo:gerivdb/LLM-REPO
+      name: LLM-REPO
+      layer: L1b
+      status: active
+      role: Hub cognitif LLM -- navigation, comportement, profils agents (L1b). Boot protocol GATE-0->4.
+      bridges: 0
+    - id: repo:gerivdb/KEEL
+      name: KEEL
+      layer: L1b
+      status: active
+      role: Knowledge Encoding & Execution Language -- langue de representation de flux, raisonnement versionne (Thought-Commits), substrat ternaire base-243, profondeur PLIX x5 (T1->T5), requetes TQL (Ternary Query Language). DSL textuel -> IR executable par BRAIN.
+
+      bridges: 6
+    - id: repo:gerivdb/IRIS
+      name: IRIS
+      layer: L2b_SENSOR
+      status: active
+      role: Capteur externe Triade Cognitive IRIS/KRONOS/FLUX -- poll repos tiers publics (bun, claude-code, PowerShell...), extrait signaux bruts, emet vers KRONOS. Cron 6h. 100% HITL (D4 inviolable).
+
+      bridges: 0
+    - id: repo:gerivdb/TRIX
+      name: TRIX
+      layer: L4_TOOLS
+      status: active
+      role: Minimal Linux syscall dispatch runtime for Windows/WSL1 (HP Z600) -- Zig runtime, gateway manager, SDK Python The TRIX daemon port can be controlled via the TRIX_WORKSPACE_ID environment variable (see clients for details).
+      bridges: 0
+    - id: repo:gerivdb/STYX
+      name: STYX
+      layer: L3_EMERGENCE
+      status: active
+      role: Pipeline d'expulsion terminal (Cycle Digestif MUD) -- reçoit signaux MUD depuis IRIS et WAL NEXUS, score chaque artefact, prononce verdict d'expulsion, achemine vers TRANSCENDANCE (HOLE) ou EMRG-ARCHIVE. Miroir sortant de KRONOS. Valve HITL obligatoire avant toute expulsion irréversible.
+
+      bridges: 0
+    - id: repo:gerivdb/UAE
+      name: UAE
+      layer: L3_EMERGENCE
+      status: active
+      role: Moteur d'attention universelle 1/sqrt(d) -- fondation cognitive transverse. Contexte infini O(1), drop-in HuggingFace, CUDA natif. Base mathematique de tous les moteurs cognitifs de l'ecosysteme. Quantification Base 243 (3^5) native -- LADYBIRD-243 ATTENTION CORE.
+
+      bridges: 1
+    - id: repo:gerivdb/KRONOS
+      name: KRONOS
+      layer: L2b_QUALIFIER
+      status: active
+      role: Qualificateur Triade Cognitive -- consomme signaux bruts IRIS, applique heuristiques de qualification, produit fiches validees/archivees. 0 auto-promotion vers NEXUS sans review humaine via FLUX (D4).
+
+      bridges: 0
+    - id: repo:gerivdb/DevTools
+      name: DevTools
+      layer: L2-PLATFORM
+      status: active
+      role: Outil
+      bridges: 0
+    - id: repo:gerivdb/diff0-fork
+      name: diff0-fork
+      layer: L4_TOOLS
+      status: active
+      role: Fork local de diff0 (eersnington/diff0) -- agent de review de code IA pour GitHub. Analyse automatique des PRs, detection de bugs/securite/performance, commentaires inline actionnables. Webhook-driven, sandbox Daytona, multi-provider LLM.
+
+      bridges: 0
+    - id: repo:gerivdb/BOINC-LLM-P2P
+      name: BOINC-LLM-P2P
+      layer: L1-INFRA
+      status: active
+      role: Repo BOINC-LLM-P2P
+      bridges: 0
+    - id: repo:gerivdb/RLM-MDU
+      name: RLM-MDU
+      layer: L2b_QUALIFIER
+      status: active
+      role: Runner MDU Friction Guard -- detection et correction automatisee des 14 frictions MDU (ERR-001 a ERR-014)
+      bridges: 0
+    - id: repo:gerivdb/PULSE
+      name: PULSE
+      layer: L2-PLATFORM
+      status: active
+      role: Pulse
+      bridges: 0
+    - id: repo:gerivdb/PLIX
+      name: PLIX
+      layer: L2-PLATFORM
+      status: active
+      role: Repo PLIX
+      bridges: 1
+    - id: repo:gerivdb/CTULU-LLUX-RVBA-PORTAGE
+      name: CTULU-LLUX-RVBA-PORTAGE
+      layer: L4_TOOLS
+      status: active
+      role: LLUX RVBA Portage Piano — Base 3^5 RVBA primitives, PIANO adapter zero-copy, SSE4.2 kernels, TRIX handler 238
+      bridges: 15
+    - id: repo:gerivdb/PHOTON
+      name: PHOTON
+      layer: L4_TOOLS
+      status: active
+      role: Semantic chunking pipeline -- anamorphosis of TRIX
+      bridges: 0
+    - id: repo:gerivdb/LLUX
+      name: LLUX
+      layer: L3_EMERGENCE
+      status: active
+      role: Moteur d'inférence LLM natif TRIX (Base 243, RVBA, alpha, index)
+      bridges: 0
+    - id: repo:gerivdb/RLM-CONFIG
+      name: RLM-CONFIG
+      layer: L2-PLATFORM
+      status: active
+      role: RLM-CONFIG - Validation syntaxique, ARGUS→NEXUS endpoint
+      bridges: 0
+    - id: repo:gerivdb/teamlore
+      name: TEAMLORE
+      layer: L4_TOOLS
+      status: active
+      role: Lore-as-Code Memory Layer -- couche mémoire versionnee de l ecosysteme. Skills: lore_validator.py, scarmap_generator.py. Integration CTULU via path-scoped recall.
+      bridges: 0
+    - id: repo:gerivdb/RLM-SECURE
+      name: RLM-SECURE
+      layer: L2-PLATFORM
+      status: active
+      role: RLM-SECURE - Validation sécurité, pattern sécurité PES
+      bridges: 0
+    - id: repo:gerivdb/PIANO
+      name: PIANO
+      layer: L2-PLATFORM
+      status: active
+      role: Operateur T sur etats triadiques base 243, moteur de codage ternaire
+      bridges: 0
+    - id: repo:gerivdb/EMIT
+      name: EMIT
+      layer: L2_COMPOSITION
+      status: active
+      role: Bus d'événements centralisé -- WAL événementiel, ζ-DAG anchoring, φ-CPS logging, ACP adapter ingest. Strate L2b signaux entrants.
+
+      bridges: 0
+    - id: repo:gerivdb/RLM-DEPLOY
+      name: RLM-DEPLOY
+      layer: L2-PLATFORM
+      status: active
+      role: RLM-DEPLOY - Résultat exécution, TRIX→UAE endpoint
+      bridges: 0
+    - id: repo:gerivdb/KIX
+      name: KIX
+      layer: L2-PLATFORM
+      status: active
+      role: KIX - Orchestrateur central du cycle de vie des runners RLM
+      bridges: 0
+    - id: repo:gerivdb/CTULU
+      name: CTULU
+      layer: L4-TOOLS
+      status: active
+      role: Repo CTULU
+      bridges: 15
+    - id: repo:gerivdb/CAPTA-4D
+      name: CAPTA-4D
+      layer: L4-TOOLS
+      status: active
+      role: Repo CAPTA-4D
+      bridges: 0
+    - id: repo:gerivdb/RLM-RELEASE
+      name: RLM-RELEASE
+      layer: L2-PLATFORM
+      status: active
+      role: RLM-RELEASE - Auto-migration TOPOS→ARGUS, release management
+      bridges: 0
+    - id: repo:gerivdb/RLM-GRAPH
+      name: RLM-GRAPH
+      layer: L2-PLATFORM
+      status: active
+      role: RLM-GRAPH - Cohérence topologie B243, UAE→TOPOS validation
+      bridges: 0
+    - id: repo:gerivdb/RLM-INCIDENT
+      name: RLM-INCIDENT
+      layer: L2-PLATFORM
+      status: active
+      role: RLM-INCIDENT - Gestion incidents, détection anomalies PES
+      bridges: 0
+    - id: repo:gerivdb/CLINE
+      name: CLINE
+      layer: L4-TOOLS
+      status: active
+      role: CLI
+      bridges: 0
+    - id: repo:ggerganov/llama.cpp
+      name: llama.cpp
+      layer: L4-TOOLS
+      status: active
+      role: Base ggml/LLM inference engine
+      bridges: 0
+    - id: repo:gerivdb/DATA-MINER
+      name: DATA-MINER
+      layer: L4-TOOLS
+      status: active
+      role: Data mining
+      bridges: 0
+    - id: repo:gerivdb/RLM-METRICS
+      name: RLM-METRICS
+      layer: L2-PLATFORM
+      status: active
+      role: RLM-METRICS - Metrics collector and aggregator for phi-CPS, benchmarks, health
+      bridges: 0
+    - id: repo:gerivdb/Gitnote
+      name: Gitnote
+      layer: L4-TOOLS
+      status: active
+      role: Git tool
+      bridges: 0
+    - id: repo:gerivdb/ECOYSTEM
+      name: ECOYSTEM
+      layer: L1-INFRA
+      status: active
+      role: Repo ECOYSTEM
+      bridges: 0
+    - id: repo:gerivdb/HOLMES
+      name: HOLMES
+      layer: L4-TOOLS
+      status: active
+      role: Repo HOLMES
+      bridges: 0
+    - id: repo:gerivdb/FLUENCE-CLI
+      name: FLUENCE-CLI
+      layer: L4-TOOLS
+      status: active
+      role: CLI
+      bridges: 0
+    - id: repo:gerivdb/PRIMUS
+      name: PRIMUS
+      layer: L4-TOOLS
+      status: active
+      role: Repo PRIMUS
+      bridges: 0
+    - id: repo:gerivdb/Mnemo-SRC
+      name: Mnemo-SRC
+      layer: L4-TOOLS
+      status: active
+      role: Mnemo
+      bridges: 0
+    - id: repo:gerivdb/LYCOS
+      name: LYCOS
+      layer: L4-TOOLS
+      status: active
+      role: Lycos
+      bridges: 0
+    - id: repo:gerivdb/CodeDB-E5620
+      name: CodeDB-E5620
+      layer: L4-TOOLS
+      status: active
+      role: Repo CodeDB-E5620
+      bridges: 0
+    - id: repo:gerivdb/Mnemo
+      name: Mnemo
+      layer: L4-TOOLS
+      status: active
+      role: Mnemo
+      bridges: 0
+    - id: repo:gerivdb/PITCH-1
+      name: PITCH-1
+      layer: L4-TOOLS
+      status: active
+      role: Repo PITCH-1
+      bridges: 0
+    - id: repo:gerivdb/SKILLS
+      name: SKILLS
+      layer: L4-TOOLS
+      status: active
+      role: Skills
+      bridges: 0
+    - id: repo:gerivdb/REPO-STANDARDS
+      name: REPO-STANDARDS
+      layer: L4-TOOLS
+      status: active
+      role: Standards, conventions, templates, outils meta
+      bridges: 3
+    - id: repo:gerivdb/GERI-VON-DER-BITSH
+      name: GERI-VON-DER-BITSH
+      layer: L4-TOOLS
+      status: active
+      role: Repo GERI-VON-DER-BITSH
+      bridges: 0
+    - id: repo:gerivdb/REPOMIX-FORK
+      name: REPOMIX-FORK
+      layer: L4-TOOLS
+      status: active
+      role: Repomix
+      bridges: 0
+    - id: repo:gerivdb/VDB
+      name: VDB
+      layer: L4-TOOLS
+      status: active
+      role: VDB
+      bridges: 0
+    - id: repo:gerivdb/ecos-sync
+      name: ecos-sync
+      layer: L4-TOOLS
+      status: active
+      role: Synchronisation
+      bridges: 0
+    - id: repo:gerivdb/opensrc
+      name: opensrc
+      layer: L4-TOOLS
+      status: active
+      role: Open Source
+      bridges: 0
+    - id: repo:gerivdb/TOOL-FACTORY-1
+      name: TOOL-FACTORY-1
+      layer: L4-TOOLS
+      status: active
+      role: Outil
+      bridges: 0
+    - id: repo:gerivdb/diffscope-fork
+      name: diffscope-fork
+      layer: L4-TOOLS
+      status: active
+      role: Diff tool
+      bridges: 0
+    - id: repo:gerivdb/vsix-ai-orchestrator
+      name: vsix-ai-orchestrator
+      layer: L4-TOOLS
+      status: active
+      role: VSIX AI Orchestrator
+      bridges: 0
+    - id: repo:gerivdb/2025-0909-DMR
+      name: 2025-0909-DMR
+      layer: L5-ARCHIVE
+      status: active
+      role: Repo 2025-0909-DMR
+      bridges: 0
+    - id: repo:NousResearch/hermes-agent
+      name: HERMES-NousResearch
+      layer: L4_TOOLS
+      status: active
+      role: HERMES Agent - AI agent auto-améliorant (NousResearch)
+      bridges: 0
+    - id: repo:gerivdb/2025-0303-GERI CMS V2
+      name: 2025-0303-GERI CMS V2
+      layer: L5-ARCHIVE
+      status: active
+      role: CMS
+      bridges: 0
+    - id: repo:gerivdb/2025-1003-GERIBOOKING
+      name: 2025-1003-GERIBOOKING
+      layer: L5-ARCHIVE
+      status: active
+      role: Repo 2025-1003-GERIBOOKING
+      bridges: 0
+    - id: repo:gerivdb/2025-0902-optimiser-Perplexity
+      name: 2025-0902-optimiser-Perplexity
+      layer: L5-ARCHIVE
+      status: active
+      role: Repo 2025-0902-optimiser-Perplexity
+      bridges: 0
+    - id: repo:gerivdb/vscode-lm-proxy
+      name: vscode-lm-proxy
+      layer: L4-TOOLS
+      status: active
+      role: VSCode LM Proxy
+      bridges: 0
+    - id: repo:gerivdb/ECOS-C_cli
+      name: ECOS-C_cli
+      layer: L5-ARCHIVE
+      status: active
+      role: CLI
+      bridges: 0
+    - id: repo:gerivdb/ONTOLOGY_MC
+      name: ONTOLOGY_MC
+      layer: L5-ARCHIVE
+      status: active
+      role: Ontologie
+      bridges: 0
+    - id: repo:gerivdb/2025-0920-BOOKING
+      name: 2025-0920-BOOKING
+      layer: L5-ARCHIVE
+      status: active
+      role: Repo 2025-0920-BOOKING
+      bridges: 0
+    - id: repo:gerivdb/2025-1103-DOC-UNIV-DEV
+      name: 2025-1103-DOC-UNIV-DEV
+      layer: L5-ARCHIVE
+      status: active
+      role: Documentation
+      bridges: 0
+    - id: repo:gerivdb/loopany-platform
+      name: loopany-platform
+      layer: L1-INFRA
+      status: active
+      role: Orchestrateur de boucles agent - scheduler + daemon
+      bridges: 0
+    - id: repo:gerivdb/TRANSCENDANCE
+      name: TRANSCENDANCE
+      layer: L5-ARCHIVE
+      status: active
+      role: Transcendence
+      bridges: 0
+  edges:

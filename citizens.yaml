@@ -24,3 +24,24 @@ citizens:
     role: "enforcer"
     description: "Applique BDCP sur les clones et forks"
     phase: "governance"
+
+  # PRD-MOC-N243-SOVEREIGN-CROSS-REPO-GRAPH-2026-08-04 citizens
+  - name: "n243-builder"
+    role: "builder"
+    description: "Construit et maintient le graphe souverain N243"
+    phase: "ingestion"
+
+  - name: "n243-query"
+    role: "query"
+    description: "Exécute les requêtes TQL sur le graphe N243 via CTULU"
+    phase: "query"
+
+  - name: "mox-validator"
+    role: "validator"
+    description: "Garantit la méta-cohérence cross-repo via PLIX + KIX + NEXUS"
+    phase: "validation"
+
+  - name: "auto-dev-orchestrator"
+    role: "orchestrator"
+    description: "Orchestre les cycles RAI (KEEL, META-LOOP, champion, PR factory)"
+    phase: "orchestration"

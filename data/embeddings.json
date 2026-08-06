@@ -1,0 +1,693 @@
+{
+  "generated": "2026-08-06T20:15:18.423202",
+  "stats": {
+    "total_nodes": 87,
+    "total_edges": 0,
+    "layers": 1,
+    "repos_with_bridges": 12
+  },
+  "nodes": [
+    {
+      "id": "repo:gerivdb/GOST",
+      "name": "GOST",
+      "layer": "L0-CANON",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/BRAIN",
+      "name": "BRAIN",
+      "layer": "L3_EMERGENCE",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/FERMI-EVER",
+      "name": "FERMI-EVER",
+      "layer": "L0-CANON",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/BLO",
+      "name": "BLO",
+      "layer": "L0-CANON",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/NEXUS",
+      "name": "NEXUS",
+      "layer": "L1_CAUSALITY",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/ECOS-CLI",
+      "name": "ECOS-CLI",
+      "layer": "L1_CAUSALITY",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/GOVERNANCE-HUB",
+      "name": "GOVERNANCE-HUB",
+      "layer": "L0_CONSTITUTIONAL",
+      "status": "active",
+      "bridges": [
+        "bridges:yaml"
+      ]
+    },
+    {
+      "id": "repo:gerivdb/ONTOLOGY",
+      "name": "ONTOLOGY",
+      "layer": "L1_CAUSALITY",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/unified-design",
+      "name": "personae",
+      "layer": "L0-CANON",
+      "status": "active",
+      "bridges": [
+        "crosslink:talex-unified-graph.md"
+      ]
+    },
+    {
+      "id": "repo:gerivdb/KIVA",
+      "name": "KIVA",
+      "layer": "L1_CAUSALITY",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/GATEWAY-MANAGER",
+      "name": "GATEWAY-MANAGER",
+      "layer": "L1_CAUSALITY",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/connard-design",
+      "name": "connard-design",
+      "layer": "L0-CANON",
+      "status": "active",
+      "bridges": [
+        "crosslink:ARGUS.md",
+        "crosslink:BRAIN.md",
+        "crosslink:CORTEX.md",
+        "crosslink:DevTools.md",
+        "crosslink:ECOS-CLI.md",
+        "crosslink:FLUENCE.md",
+        "crosslink:GOVERNANCE-HUB.md",
+        "crosslink:IRIS.md",
+        "crosslink:KRONOS.md",
+        "crosslink:NEXUS.md",
+        "crosslink:ONTOLOGY.md",
+        "crosslink:photon.yaml",
+        "crosslink:repo-standards.md",
+        "crosslink:TINA.md",
+        "crosslink:VERSES.md"
+      ]
+    },
+    {
+      "id": "repo:gerivdb/morphohdl-anamorphic-growth",
+      "name": "morphohdl-anamorphic-growth",
+      "layer": "L0-CANON",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/triadic-compound-eye",
+      "name": "triadic-compound-eye",
+      "layer": "L0-CANON",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/sonar-driven-design",
+      "name": "sonar-driven-design",
+      "layer": "L0-CANON",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/KIVA-CLI",
+      "name": "KIVA-CLI",
+      "layer": "L2_COMPOSITION",
+      "status": "active",
+      "bridges": [
+        "crosslink:repo-standards.md"
+      ]
+    },
+    {
+      "id": "repo:gerivdb/HERMES",
+      "name": "HERMES",
+      "layer": "L0_CONSTITUTIONAL",
+      "status": "active",
+      "bridges": [
+        "crosslink:README.md"
+      ]
+    },
+    {
+      "id": "repo:gerivdb/CANDIDATOR",
+      "name": "CANDIDATOR",
+      "layer": "L3_EMERGENCE",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/TOPOS",
+      "name": "TOPOS",
+      "layer": "L1b",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/KORX",
+      "name": "KORX",
+      "layer": "L4_TOOLS",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/FLUENCE",
+      "name": "FLUENCE",
+      "layer": "L3_EMERGENCE",
+      "status": "active",
+      "bridges": [
+        "crosslink:repo-standards.md"
+      ]
+    },
+    {
+      "id": "repo:gerivdb/SPIDX",
+      "name": "SPIDX",
+      "layer": "L4_TOOLS",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/TQL",
+      "name": "TQL",
+      "layer": "L4_TOOLS",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/LLM-REPO",
+      "name": "LLM-REPO",
+      "layer": "L1b",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/KEEL",
+      "name": "KEEL",
+      "layer": "L1b",
+      "status": "active",
+      "bridges": [
+        "crosslink:argus.md",
+        "crosslink:brain.md",
+        "crosslink:CROSSLINK-2026-07-01-piano-base243.md",
+        "crosslink:governance-hub.md",
+        "crosslink:repo-standards.md",
+        "crosslink:uae.md"
+      ]
+    },
+    {
+      "id": "repo:gerivdb/IRIS",
+      "name": "IRIS",
+      "layer": "L2b_SENSOR",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/TRIX",
+      "name": "TRIX",
+      "layer": "L4_TOOLS",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/STYX",
+      "name": "STYX",
+      "layer": "L3_EMERGENCE",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/UAE",
+      "name": "UAE",
+      "layer": "L3_EMERGENCE",
+      "status": "active",
+      "bridges": [
+        "crosslink:repo-standards.md"
+      ]
+    },
+    {
+      "id": "repo:gerivdb/KRONOS",
+      "name": "KRONOS",
+      "layer": "L2b_QUALIFIER",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/DevTools",
+      "name": "DevTools",
+      "layer": "L2-PLATFORM",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/diff0-fork",
+      "name": "diff0-fork",
+      "layer": "L4_TOOLS",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/BOINC-LLM-P2P",
+      "name": "BOINC-LLM-P2P",
+      "layer": "L1-INFRA",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/RLM-MDU",
+      "name": "RLM-MDU",
+      "layer": "L2b_QUALIFIER",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/PULSE",
+      "name": "PULSE",
+      "layer": "L2-PLATFORM",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/PLIX",
+      "name": "PLIX",
+      "layer": "L2-PLATFORM",
+      "status": "active",
+      "bridges": [
+        "bridges:yaml"
+      ]
+    },
+    {
+      "id": "repo:gerivdb/CTULU-LLUX-RVBA-PORTAGE",
+      "name": "CTULU-LLUX-RVBA-PORTAGE",
+      "layer": "L4_TOOLS",
+      "status": "active",
+      "bridges": [
+        "crosslink:ARGUS.md",
+        "crosslink:BRAIN.md",
+        "crosslink:CORTEX.md",
+        "crosslink:DevTools.md",
+        "crosslink:ECOS-CLI.md",
+        "crosslink:FLUENCE.md",
+        "crosslink:GOVERNANCE-HUB.md",
+        "crosslink:IRIS.md",
+        "crosslink:KRONOS.md",
+        "crosslink:NEXUS.md",
+        "crosslink:ONTOLOGY.md",
+        "crosslink:photon.yaml",
+        "crosslink:repo-standards.md",
+        "crosslink:TINA.md",
+        "crosslink:VERSES.md"
+      ]
+    },
+    {
+      "id": "repo:gerivdb/PHOTON",
+      "name": "PHOTON",
+      "layer": "L4_TOOLS",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/LLUX",
+      "name": "LLUX",
+      "layer": "L3_EMERGENCE",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/RLM-CONFIG",
+      "name": "RLM-CONFIG",
+      "layer": "L2-PLATFORM",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/teamlore",
+      "name": "TEAMLORE",
+      "layer": "L4_TOOLS",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/RLM-SECURE",
+      "name": "RLM-SECURE",
+      "layer": "L2-PLATFORM",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/PIANO",
+      "name": "PIANO",
+      "layer": "L2-PLATFORM",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/EMIT",
+      "name": "EMIT",
+      "layer": "L2_COMPOSITION",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/RLM-DEPLOY",
+      "name": "RLM-DEPLOY",
+      "layer": "L2-PLATFORM",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/KIX",
+      "name": "KIX",
+      "layer": "L2-PLATFORM",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/CTULU",
+      "name": "CTULU",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "bridges": [
+        "crosslink:ARGUS.md",
+        "crosslink:BRAIN.md",
+        "crosslink:CORTEX.md",
+        "crosslink:DevTools.md",
+        "crosslink:ECOS-CLI.md",
+        "crosslink:FLUENCE.md",
+        "crosslink:GOVERNANCE-HUB.md",
+        "crosslink:IRIS.md",
+        "crosslink:KRONOS.md",
+        "crosslink:NEXUS.md",
+        "crosslink:ONTOLOGY.md",
+        "crosslink:photon.yaml",
+        "crosslink:repo-standards.md",
+        "crosslink:TINA.md",
+        "crosslink:VERSES.md"
+      ]
+    },
+    {
+      "id": "repo:gerivdb/CAPTA-4D",
+      "name": "CAPTA-4D",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/RLM-RELEASE",
+      "name": "RLM-RELEASE",
+      "layer": "L2-PLATFORM",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/RLM-GRAPH",
+      "name": "RLM-GRAPH",
+      "layer": "L2-PLATFORM",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/RLM-INCIDENT",
+      "name": "RLM-INCIDENT",
+      "layer": "L2-PLATFORM",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/CLINE",
+      "name": "CLINE",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:ggerganov/llama.cpp",
+      "name": "llama.cpp",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/DATA-MINER",
+      "name": "DATA-MINER",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/RLM-METRICS",
+      "name": "RLM-METRICS",
+      "layer": "L2-PLATFORM",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/Gitnote",
+      "name": "Gitnote",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/ECOYSTEM",
+      "name": "ECOYSTEM",
+      "layer": "L1-INFRA",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/HOLMES",
+      "name": "HOLMES",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/FLUENCE-CLI",
+      "name": "FLUENCE-CLI",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/PRIMUS",
+      "name": "PRIMUS",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/Mnemo-SRC",
+      "name": "Mnemo-SRC",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/LYCOS",
+      "name": "LYCOS",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/CodeDB-E5620",
+      "name": "CodeDB-E5620",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/Mnemo",
+      "name": "Mnemo",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/PITCH-1",
+      "name": "PITCH-1",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/SKILLS",
+      "name": "SKILLS",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/REPO-STANDARDS",
+      "name": "REPO-STANDARDS",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "bridges": [
+        "crosslink:bridges.yaml",
+        "crosslink:README.md",
+        "crosslink:talex-unified-graph.md"
+      ]
+    },
+    {
+      "id": "repo:gerivdb/GERI-VON-DER-BITSH",
+      "name": "GERI-VON-DER-BITSH",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/REPOMIX-FORK",
+      "name": "REPOMIX-FORK",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/VDB",
+      "name": "VDB",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/ecos-sync",
+      "name": "ecos-sync",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/opensrc",
+      "name": "opensrc",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/TOOL-FACTORY-1",
+      "name": "TOOL-FACTORY-1",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/diffscope-fork",
+      "name": "diffscope-fork",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/vsix-ai-orchestrator",
+      "name": "vsix-ai-orchestrator",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/2025-0909-DMR",
+      "name": "2025-0909-DMR",
+      "layer": "L5-ARCHIVE",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:NousResearch/hermes-agent",
+      "name": "HERMES-NousResearch",
+      "layer": "L4_TOOLS",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/2025-0303-GERI CMS V2",
+      "name": "2025-0303-GERI CMS V2",
+      "layer": "L5-ARCHIVE",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/2025-1003-GERIBOOKING",
+      "name": "2025-1003-GERIBOOKING",
+      "layer": "L5-ARCHIVE",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/2025-0902-optimiser-Perplexity",
+      "name": "2025-0902-optimiser-Perplexity",
+      "layer": "L5-ARCHIVE",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/vscode-lm-proxy",
+      "name": "vscode-lm-proxy",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/ECOS-C_cli",
+      "name": "ECOS-C_cli",
+      "layer": "L5-ARCHIVE",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/ONTOLOGY_MC",
+      "name": "ONTOLOGY_MC",
+      "layer": "L5-ARCHIVE",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/2025-0920-BOOKING",
+      "name": "2025-0920-BOOKING",
+      "layer": "L5-ARCHIVE",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/2025-1103-DOC-UNIV-DEV",
+      "name": "2025-1103-DOC-UNIV-DEV",
+      "layer": "L5-ARCHIVE",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/loopany-platform",
+      "name": "loopany-platform",
+      "layer": "L1-INFRA",
+      "status": "active",
+      "bridges": []
+    },
+    {
+      "id": "repo:gerivdb/TRANSCENDANCE",
+      "name": "TRANSCENDANCE",
+      "layer": "L5-ARCHIVE",
+      "status": "active",
+      "bridges": []
+    }
+  ]
+}

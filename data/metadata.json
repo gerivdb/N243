@@ -1,0 +1,1491 @@
+{
+  "generated": "2026-08-06T20:15:18.423202",
+  "stats": {
+    "total_nodes": 87,
+    "total_edges": 0,
+    "layers": 1,
+    "repos_with_bridges": 12
+  },
+  "nodes": [
+    {
+      "id": "repo:gerivdb/GOST",
+      "name": "GOST",
+      "layer": "L0-CANON",
+      "status": "active",
+      "role": "Gost",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L0-CANON\\GOST",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/BRAIN",
+      "name": "BRAIN",
+      "layer": "L3_EMERGENCE",
+      "status": "active",
+      "role": "Couche IA, agents cognitifs",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L0-CANON\\BRAIN",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/FERMI-EVER",
+      "name": "FERMI-EVER",
+      "layer": "L0-CANON",
+      "status": "active",
+      "role": "Fermi",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L0-CANON\\FERMI-EVER",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/BLO",
+      "name": "BLO",
+      "layer": "L0-CANON",
+      "status": "active",
+      "role": "Repo BLO",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L0-CANON\\BLO",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/NEXUS",
+      "name": "NEXUS",
+      "layer": "L1_CAUSALITY",
+      "status": "active",
+      "role": "Mega-SOT -- registre des registres, gouvernance",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L1-INFRA\\NEXUS",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/ECOS-CLI",
+      "name": "ECOS-CLI",
+      "layer": "L1_CAUSALITY",
+      "status": "active",
+      "role": "Orchestrateur local CLI, workflows EECS",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L1-INFRA\\ECOS-CLI",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/GOVERNANCE-HUB",
+      "name": "GOVERNANCE-HUB",
+      "layer": "L0_CONSTITUTIONAL",
+      "status": "active",
+      "role": "SOT execution, regles de gouvernance executables, Trit*, registres",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L0-CANON\\GOVERNANCE-HUB",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/ONTOLOGY",
+      "name": "ONTOLOGY",
+      "layer": "L1_CAUSALITY",
+      "status": "active",
+      "role": "SOT semantique, dictionnaire canonique, ontologies",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L0-CANON\\ONTOLOGY",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/unified-design",
+      "name": "personae",
+      "layer": "L0-CANON",
+      "status": "active",
+      "role": "Meta-Design (MDU) -- Atlas global des invariants architecturaux",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L0-CANON\\unified-design",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/KIVA",
+      "name": "KIVA",
+      "layer": "L1_CAUSALITY",
+      "status": "active",
+      "role": "Infrastructure runtime, agents, scheduler, WAL",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L1-INFRA\\KIVA",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/GATEWAY-MANAGER",
+      "name": "GATEWAY-MANAGER",
+      "layer": "L1_CAUSALITY",
+      "status": "active",
+      "role": "Proxy/reverse proxy, BDCP, Clapet",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L1-INFRA\\GATEWAY-MANAGER",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/connard-design",
+      "name": "connard-design",
+      "layer": "L0-CANON",
+      "status": "active",
+      "role": "Validateur design MDU -- dissipateur d'entropie",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L0-CANON\\connard-design",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/morphohdl-anamorphic-growth",
+      "name": "morphohdl-anamorphic-growth",
+      "layer": "L0-CANON",
+      "status": "active",
+      "role": "Optimisation matérielle -- croissance anamorphique Base 243",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L0-CANON\\morphohdl-anamorphic-growth",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/triadic-compound-eye",
+      "name": "triadic-compound-eye",
+      "layer": "L0-CANON",
+      "status": "active",
+      "role": "Orchestration agents -- Triade C-E-Obs",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L0-CANON\\triadic-compound-eye",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/sonar-driven-design",
+      "name": "sonar-driven-design",
+      "layer": "L0-CANON",
+      "status": "active",
+      "role": "Observabilité -- Ping/Echo, Sonar Map, PRF",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L0-CANON\\sonar-driven-design",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/KIVA-CLI",
+      "name": "KIVA-CLI",
+      "layer": "L2_COMPOSITION",
+      "status": "active",
+      "role": "CLI orchestrateur projets/apps, scaffolding",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L1-INFRA\\KIVA-CLI",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/HERMES",
+      "name": "HERMES",
+      "layer": "L0_CONSTITUTIONAL",
+      "status": "active",
+      "role": "SOT mémoire hiérarchique -- MEMORY.md, USER.md, Skills, Facts DB",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L0-CANON\\HERMES",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/CANDIDATOR",
+      "name": "CANDIDATOR",
+      "layer": "L3_EMERGENCE",
+      "status": "active",
+      "role": "Gestion candidatures, CV, lettres",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L3-CITIZENS\\CANDIDATOR",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/TOPOS",
+      "name": "TOPOS",
+      "layer": "L1b",
+      "status": "active",
+      "role": "Registre canonique des lieux d'execution (ENV0-5+) -- territoire, souverainete, stack, capacites",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L1-INFRA\\TOPOS",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/KORX",
+      "name": "KORX",
+      "layer": "L4_TOOLS",
+      "status": "active",
+      "role": "State Machine Compiler -- compilateur de machines a etat ecrit en Zig. DSL de definition de state machines, compilation vers Zig. Consumers: SPIDX, TALEX, N243.",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\KORX",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/FLUENCE",
+      "name": "FLUENCE",
+      "layer": "L3_EMERGENCE",
+      "status": "active",
+      "role": "Composant transverse, orchestration cognitive",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L1-INFRA\\FLUENCE",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/SPIDX",
+      "name": "SPIDX",
+      "layer": "L4_TOOLS",
+      "status": "active",
+      "role": "Spider Graph Rewriting Kernel -- noyau de reecriture de graphe deterministe, pur et rejouable. Implements SPARQL-like graph operations: canonization, rewriting, guards, proofs, WAL. Rust workspace with crates: core, canon, rewrite, guard, proof, wal, cli, fuzz, pdd. Consumers: KORX (state machines), TALEX (narrative), VERSES (lore graph).",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\SPIDX",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/TQL",
+      "name": "TQL",
+      "layer": "L4_TOOLS",
+      "status": "active",
+      "role": "Ternary Query Language -- grammaire, spec, fixtures de test du langage de requete ternaire. Source de verite pour la syntaxe TQL (operateurs, types, semantique). Interpretation par BRAIN, donnees par NEXUS.\n",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\TQL",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/LLM-REPO",
+      "name": "LLM-REPO",
+      "layer": "L1b",
+      "status": "active",
+      "role": "Hub cognitif LLM -- navigation, comportement, profils agents (L1b). Boot protocol GATE-0->4.",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L1-INFRA\\LLM-REPO",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/KEEL",
+      "name": "KEEL",
+      "layer": "L1b",
+      "status": "active",
+      "role": "Knowledge Encoding & Execution Language -- langue de representation de flux, raisonnement versionne (Thought-Commits), substrat ternaire base-243, profondeur PLIX x5 (T1->T5), requetes TQL (Ternary Query Language). DSL textuel -> IR executable par BRAIN.\n",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L2-PLATFORM\\KEEL",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/IRIS",
+      "name": "IRIS",
+      "layer": "L2b_SENSOR",
+      "status": "active",
+      "role": "Capteur externe Triade Cognitive IRIS/KRONOS/FLUX -- poll repos tiers publics (bun, claude-code, PowerShell...), extrait signaux bruts, emet vers KRONOS. Cron 6h. 100% HITL (D4 inviolable).\n",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L3-CITIZENS\\IRIS",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/TRIX",
+      "name": "TRIX",
+      "layer": "L4_TOOLS",
+      "status": "active",
+      "role": "Minimal Linux syscall dispatch runtime for Windows/WSL1 (HP Z600) -- Zig runtime, gateway manager, SDK Python The TRIX daemon port can be controlled via the TRIX_WORKSPACE_ID environment variable (see clients for details).",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\TRIX",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/STYX",
+      "name": "STYX",
+      "layer": "L3_EMERGENCE",
+      "status": "active",
+      "role": "Pipeline d'expulsion terminal (Cycle Digestif MUD) -- reçoit signaux MUD depuis IRIS et WAL NEXUS, score chaque artefact, prononce verdict d'expulsion, achemine vers TRANSCENDANCE (HOLE) ou EMRG-ARCHIVE. Miroir sortant de KRONOS. Valve HITL obligatoire avant toute expulsion irréversible.\n",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L3-CITIZENS\\STYX",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/UAE",
+      "name": "UAE",
+      "layer": "L3_EMERGENCE",
+      "status": "active",
+      "role": "Moteur d'attention universelle 1/sqrt(d) -- fondation cognitive transverse. Contexte infini O(1), drop-in HuggingFace, CUDA natif. Base mathematique de tous les moteurs cognitifs de l'ecosysteme. Quantification Base 243 (3^5) native -- LADYBIRD-243 ATTENTION CORE.\n",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L3-CITIZENS\\UAE",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/KRONOS",
+      "name": "KRONOS",
+      "layer": "L2b_QUALIFIER",
+      "status": "active",
+      "role": "Qualificateur Triade Cognitive -- consomme signaux bruts IRIS, applique heuristiques de qualification, produit fiches validees/archivees. 0 auto-promotion vers NEXUS sans review humaine via FLUX (D4).\n",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L3-CITIZENS\\KRONOS",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/DevTools",
+      "name": "DevTools",
+      "layer": "L2-PLATFORM",
+      "status": "active",
+      "role": "Outil",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L2-PLATFORM\\DevTools",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/diff0-fork",
+      "name": "diff0-fork",
+      "layer": "L4_TOOLS",
+      "status": "active",
+      "role": "Fork local de diff0 (eersnington/diff0) -- agent de review de code IA pour GitHub. Analyse automatique des PRs, detection de bugs/securite/performance, commentaires inline actionnables. Webhook-driven, sandbox Daytona, multi-provider LLM.\n",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\diff0-fork",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/BOINC-LLM-P2P",
+      "name": "BOINC-LLM-P2P",
+      "layer": "L1-INFRA",
+      "status": "active",
+      "role": "Repo BOINC-LLM-P2P",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L1-INFRA\\BOINC-LLM-P2P",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/RLM-MDU",
+      "name": "RLM-MDU",
+      "layer": "L2b_QUALIFIER",
+      "status": "active",
+      "role": "Runner MDU Friction Guard -- detection et correction automatisee des 14 frictions MDU (ERR-001 a ERR-014)",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L2-PLATFORM\\RLM-MDU",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/PULSE",
+      "name": "PULSE",
+      "layer": "L2-PLATFORM",
+      "status": "active",
+      "role": "Pulse",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L2-PLATFORM\\PULSE",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/PLIX",
+      "name": "PLIX",
+      "layer": "L2-PLATFORM",
+      "status": "active",
+      "role": "Repo PLIX",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L2-PLATFORM\\PLIX",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/CTULU-LLUX-RVBA-PORTAGE",
+      "name": "CTULU-LLUX-RVBA-PORTAGE",
+      "layer": "L4_TOOLS",
+      "status": "active",
+      "role": "LLUX RVBA Portage Piano — Base 3^5 RVBA primitives, PIANO adapter zero-copy, SSE4.2 kernels, TRIX handler 238",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\CTULU",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/PHOTON",
+      "name": "PHOTON",
+      "layer": "L4_TOOLS",
+      "status": "active",
+      "role": "Semantic chunking pipeline -- anamorphosis of TRIX",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\PHOTON",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/LLUX",
+      "name": "LLUX",
+      "layer": "L3_EMERGENCE",
+      "status": "active",
+      "role": "Moteur d'inférence LLM natif TRIX (Base 243, RVBA, alpha, index)",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L3-CITIZENS\\LLUX",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/RLM-CONFIG",
+      "name": "RLM-CONFIG",
+      "layer": "L2-PLATFORM",
+      "status": "active",
+      "role": "RLM-CONFIG - Validation syntaxique, ARGUS→NEXUS endpoint",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L2-PLATFORM\\RLM-CONFIG",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/teamlore",
+      "name": "TEAMLORE",
+      "layer": "L4_TOOLS",
+      "status": "active",
+      "role": "Lore-as-Code Memory Layer -- couche mémoire versionnee de l ecosysteme. Skills: lore_validator.py, scarmap_generator.py. Integration CTULU via path-scoped recall.",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\teamlore",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/RLM-SECURE",
+      "name": "RLM-SECURE",
+      "layer": "L2-PLATFORM",
+      "status": "active",
+      "role": "RLM-SECURE - Validation sécurité, pattern sécurité PES",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L2-PLATFORM\\RLM-SECURE",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/PIANO",
+      "name": "PIANO",
+      "layer": "L2-PLATFORM",
+      "status": "active",
+      "role": "Operateur T sur etats triadiques base 243, moteur de codage ternaire",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\REPO-STANDARDS\\PIANO",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/EMIT",
+      "name": "EMIT",
+      "layer": "L2_COMPOSITION",
+      "status": "active",
+      "role": "Bus d'événements centralisé -- WAL événementiel, ζ-DAG anchoring, φ-CPS logging, ACP adapter ingest. Strate L2b signaux entrants.\n",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L2-PLATFORM\\EMIT",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/RLM-DEPLOY",
+      "name": "RLM-DEPLOY",
+      "layer": "L2-PLATFORM",
+      "status": "active",
+      "role": "RLM-DEPLOY - Résultat exécution, TRIX→UAE endpoint",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L2-PLATFORM\\RLM-DEPLOY",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/KIX",
+      "name": "KIX",
+      "layer": "L2-PLATFORM",
+      "status": "active",
+      "role": "KIX - Orchestrateur central du cycle de vie des runners RLM",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L2-PLATFORM\\KIX",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/CTULU",
+      "name": "CTULU",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "role": "Repo CTULU",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\CTULU",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/CAPTA-4D",
+      "name": "CAPTA-4D",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "role": "Repo CAPTA-4D",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\CAPTA-4D",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/RLM-RELEASE",
+      "name": "RLM-RELEASE",
+      "layer": "L2-PLATFORM",
+      "status": "active",
+      "role": "RLM-RELEASE - Auto-migration TOPOS→ARGUS, release management",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L2-PLATFORM\\RLM-RELEASE",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/RLM-GRAPH",
+      "name": "RLM-GRAPH",
+      "layer": "L2-PLATFORM",
+      "status": "active",
+      "role": "RLM-GRAPH - Cohérence topologie B243, UAE→TOPOS validation",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L2-PLATFORM\\RLM-GRAPH",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/RLM-INCIDENT",
+      "name": "RLM-INCIDENT",
+      "layer": "L2-PLATFORM",
+      "status": "active",
+      "role": "RLM-INCIDENT - Gestion incidents, détection anomalies PES",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L2-PLATFORM\\RLM-INCIDENT",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/CLINE",
+      "name": "CLINE",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "role": "CLI",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\CLINE",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:ggerganov/llama.cpp",
+      "name": "llama.cpp",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "role": "Base ggml/LLM inference engine",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\llama.cpp",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/DATA-MINER",
+      "name": "DATA-MINER",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "role": "Data mining",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\DATA-MINER",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/RLM-METRICS",
+      "name": "RLM-METRICS",
+      "layer": "L2-PLATFORM",
+      "status": "active",
+      "role": "RLM-METRICS - Metrics collector and aggregator for phi-CPS, benchmarks, health",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L2-PLATFORM\\RLM-METRICS",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/Gitnote",
+      "name": "Gitnote",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "role": "Git tool",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\Gitnote",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/ECOYSTEM",
+      "name": "ECOYSTEM",
+      "layer": "L1-INFRA",
+      "status": "active",
+      "role": "Repo ECOYSTEM",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L1-INFRA\\ECOYSTEM",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/HOLMES",
+      "name": "HOLMES",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "role": "Repo HOLMES",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\HOLMES",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/FLUENCE-CLI",
+      "name": "FLUENCE-CLI",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "role": "CLI",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\FLUENCE-CLI",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/PRIMUS",
+      "name": "PRIMUS",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "role": "Repo PRIMUS",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\PRIMUS",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/Mnemo-SRC",
+      "name": "Mnemo-SRC",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "role": "Mnemo",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\Mnemo-SRC",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/LYCOS",
+      "name": "LYCOS",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "role": "Lycos",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\LYCOS",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/CodeDB-E5620",
+      "name": "CodeDB-E5620",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "role": "Repo CodeDB-E5620",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\CodeDB-E5620",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/Mnemo",
+      "name": "Mnemo",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "role": "Mnemo",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\Mnemo",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/PITCH-1",
+      "name": "PITCH-1",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "role": "Repo PITCH-1",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\PITCH-1",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/SKILLS",
+      "name": "SKILLS",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "role": "Skills",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\SKILLS",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/REPO-STANDARDS",
+      "name": "REPO-STANDARDS",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "role": "Standards, conventions, templates, outils meta",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\REPO-STANDARDS",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/GERI-VON-DER-BITSH",
+      "name": "GERI-VON-DER-BITSH",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "role": "Repo GERI-VON-DER-BITSH",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\GERI-VON-DER-BITSH",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/REPOMIX-FORK",
+      "name": "REPOMIX-FORK",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "role": "Repomix",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\REPOMIX-FORK",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/VDB",
+      "name": "VDB",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "role": "VDB",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\VDB",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/ecos-sync",
+      "name": "ecos-sync",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "role": "Synchronisation",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\ecos-sync",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/opensrc",
+      "name": "opensrc",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "role": "Open Source",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\opensrc",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/TOOL-FACTORY-1",
+      "name": "TOOL-FACTORY-1",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "role": "Outil",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\TOOL-FACTORY-1",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/diffscope-fork",
+      "name": "diffscope-fork",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "role": "Diff tool",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\diffscope-fork",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/vsix-ai-orchestrator",
+      "name": "vsix-ai-orchestrator",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "role": "VSIX AI Orchestrator",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\vsix-ai-orchestrator",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/2025-0909-DMR",
+      "name": "2025-0909-DMR",
+      "layer": "L5-ARCHIVE",
+      "status": "active",
+      "role": "Repo 2025-0909-DMR",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L5-ARCHIVE\\2025-0909-DMR",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:NousResearch/hermes-agent",
+      "name": "HERMES-NousResearch",
+      "layer": "L4_TOOLS",
+      "status": "active",
+      "role": "HERMES Agent - AI agent auto-améliorant (NousResearch)",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\HERMES-NousResearch",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/2025-0303-GERI CMS V2",
+      "name": "2025-0303-GERI CMS V2",
+      "layer": "L5-ARCHIVE",
+      "status": "active",
+      "role": "CMS",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L5-ARCHIVE\\2025-0303-GERI CMS V2",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/2025-1003-GERIBOOKING",
+      "name": "2025-1003-GERIBOOKING",
+      "layer": "L5-ARCHIVE",
+      "status": "active",
+      "role": "Repo 2025-1003-GERIBOOKING",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L5-ARCHIVE\\2025-1003-GERIBOOKING",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/2025-0902-optimiser-Perplexity",
+      "name": "2025-0902-optimiser-Perplexity",
+      "layer": "L5-ARCHIVE",
+      "status": "active",
+      "role": "Repo 2025-0902-optimiser-Perplexity",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L5-ARCHIVE\\2025-0902-optimiser-Perplexity",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/vscode-lm-proxy",
+      "name": "vscode-lm-proxy",
+      "layer": "L4-TOOLS",
+      "status": "active",
+      "role": "VSCode LM Proxy",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\vscode-lm-proxy",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/ECOS-C_cli",
+      "name": "ECOS-C_cli",
+      "layer": "L5-ARCHIVE",
+      "status": "active",
+      "role": "CLI",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L5-ARCHIVE\\ECOS-C_cli",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/ONTOLOGY_MC",
+      "name": "ONTOLOGY_MC",
+      "layer": "L5-ARCHIVE",
+      "status": "active",
+      "role": "Ontologie",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L5-ARCHIVE\\ONTOLOGY_MC",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/2025-0920-BOOKING",
+      "name": "2025-0920-BOOKING",
+      "layer": "L5-ARCHIVE",
+      "status": "active",
+      "role": "Repo 2025-0920-BOOKING",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L5-ARCHIVE\\2025-0920-BOOKING",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/2025-1103-DOC-UNIV-DEV",
+      "name": "2025-1103-DOC-UNIV-DEV",
+      "layer": "L5-ARCHIVE",
+      "status": "active",
+      "role": "Documentation",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L5-ARCHIVE\\2025-1103-DOC-UNIV-DEV",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/loopany-platform",
+      "name": "loopany-platform",
+      "layer": "L1-INFRA",
+      "status": "active",
+      "role": "Orchestrateur de boucles agent - scheduler + daemon",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L1-INFRA\\loopany-platform",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    },
+    {
+      "id": "repo:gerivdb/TRANSCENDANCE",
+      "name": "TRANSCENDANCE",
+      "layer": "L5-ARCHIVE",
+      "status": "active",
+      "role": "Transcendence",
+      "local_path": "D:\\DO\\WEB\\TOOLS\\L5-ARCHIVE\\TRANSCENDANCE",
+      "metadata": {
+        "adr": [],
+        "prd": [],
+        "intent": [],
+        "epic": [],
+        "report": [],
+        "roadmap": [],
+        "spec": []
+      }
+    }
+  ],
+  "edges": []
+}
