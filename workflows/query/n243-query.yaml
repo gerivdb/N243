@@ -38,7 +38,6 @@ steps:
       event: query
       intent_hash: 0xN243_QUERY_20260806
 ---
-
 # Workflow — N243 Query
 
 ## Objectif
@@ -82,3 +81,5 @@ Repondre aux requêtes cross-repo, temporelles et de contradiction.
 - `CTULU/` : orchestrateur TQL
 - `KORX/` : cache contexte
 - `KRONOS/` : time-series
+
+

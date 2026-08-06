@@ -40,7 +40,6 @@ steps:
       event: ingestion
       intent_hash: 0xN243_INGESTION_20260806
 ---
-
 # Workflow — N243 Ingestion
 
 ## Objectif
@@ -83,3 +82,5 @@ Scanne les repos, extrait les metadonnees, construit le graphe, et met a jour l'
 - `TOPOS/repo-manifest.yaml`
 - `GOVERNANCE-HUB/known_repositories.yaml`
 - `D:\DO\WEB\TOOLS\L4-TOOLS\N243\data\`
+
+

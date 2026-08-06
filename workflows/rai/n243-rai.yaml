@@ -42,7 +42,6 @@ steps:
       event: rai-cycle
       intent_hash: 0xN243_RAI_20260806
 ---
-
 # Workflow — N243 RAI
 
 ## Objectif
@@ -85,3 +84,5 @@ Executer les cycles RAI (Recursive Auto-Improvement) jusqu'a convergence.
 - `act-protocol/reports/rai/`
 - `act-protocol/docs/convergence.md`
 - `auto-dev/` : orchestrateur RAI
+
+
