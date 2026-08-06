@@ -31,6 +31,10 @@ steps:
     action: mox-validator
     input:
       document: act-protocol/PRD/PRD-MOC-ACTPROTOCOL/fractal/architecture/PRD-MOC-ACTPROTOCOL-SOVEREIGN-CROSS-REPO-GRAPH-2026-08-04.md
+  - name: pre-impl-inventory
+    action: pre-impl-inventory
+    input:
+      prd: act-protocol/PRD/PRD-MOC-PRE_IMPL_INVENTORY_V21_2026-08-05.md
   - name: flux-d4-gate
     action: flux-d4
     input:

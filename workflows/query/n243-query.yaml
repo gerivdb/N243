@@ -37,6 +37,10 @@ steps:
     input:
       documents: <result>
       mode: query-result
+  - name: pre-impl-inventory
+    action: pre-impl-inventory
+    input:
+      prd: act-protocol/PRD/PRD-MOC-PRE_IMPL_INVENTORY_V21_2026-08-05.md
   - name: log-wal
     action: nexus-wal
     input:
