@@ -1,8 +1,10 @@
 # Patch PRD-001 — Ajout des kinds L* dans buzz-core/src/kind.rs
 
+> **SUPERSEDÉ (2026-08-23)** : cible Buzz@block abandonnée dans ENV2 — remplacée par **WAZAA** (bus Intent, WAL append-only, enforcement BDCP natif N243). Réf : INTENT-2026-08-22-KG-L-WAZAA-N243-SOUVERAIN-V0_5. Document conservé pour historique — NE PAS APPLIQUER.
+
 **Date** : 2026-08-01
 **Cible** : BUZZ-X/Buzz@block/crates/buzz-core/src/kind.rs
-**Statut** : DRAFT
+**Statut** : SUPERSEDÉ (WAZAA)
 
 ---
 

@@ -16,7 +16,7 @@ N243 orchestre les 5 runners cognitifs core de l'écosystème L* :
 - **ROOTX** (Racines Symboliques)
 - **TLM-CORE** (Logique Ternaire)
 
-S'appuie sur **Buzz@block** (fork de `block/buzz`) comme infrastructure.
+S'appuie sur **WAZAA** (`gerivdb/WAZAA`, L4) comme infrastructure d'orchestration : bus événementiel Intent, WAL append-only, EventServer WebSocket (pivot 2026-08-23, Buzz@block abandonné dans ENV2).
 
 ---
 
@@ -40,7 +40,7 @@ N243/
 
 | Dépendance | Chemin | Rôle |
 |------------|--------|------|
-| Buzz@block | ../../BUZZ-X/Buzz@block/ | Relay, ACP, Workflow |
+| WAZAA | ../WAZAA/ | Bus Intent, WAL emitter, EventServer, workflow |
 | LLUX | PATH | Runner LLM |
 | RLM-243 | PATH | Runner Release |
 | TIMX | PATH | Runner Temporel |

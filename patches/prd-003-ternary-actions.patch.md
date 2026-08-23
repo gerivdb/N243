@@ -1,5 +1,7 @@
 # PRD-003 — Patch Ternary Workflow Actions
 
+> **SUPERSEDÉ (2026-08-23)** : cible Buzz@block abandonnée dans ENV2 — remplacée par **WAZAA** (moteur workflow natif `src/workflows.rs`). Réf : INTENT-2026-08-22-KG-L-WAZAA-N243-SOUVERAIN-V0_5. Document conservé pour historique — NE PAS APPLIQUER.
+
 **Fichier** : `BUZZ-X/patches/prd-003-ternary-actions.diff`
 **Appliqué à** : `Buzz@block/crates/buzz-workflow/src/ternary_actions.rs`
 

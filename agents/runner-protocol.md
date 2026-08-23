@@ -16,7 +16,7 @@ N243 orchestre les runners cognitifs L* :
 - **ROOTX** - Racines Symboliques (Zig)
 - **TLM-CORE** - Logique Ternaire (Zig)
 
-Buzz fournit `buzz-acp` (ACP harness) comme base.
+Le bus WAZAA (`../WAZAA/src/wazaa_bus.py`, port 1873, unités Intent) assure l'invocation ; `RunnerAdapter` reste la façade N243.
 
 ---
 
@@ -106,7 +106,7 @@ runners:
 
 | Check | Commande |
 |-------|----------|
-| ACP compatibility | `buzz-acp` build + test |
+| Bus WAZAA joignable | ping bus + tests adaptateur N243 |
 | Runner availability | Verifier PATH des runners Zig |
 | Nostr events | Verifier events 40050-40051 |
 
@@ -114,6 +114,6 @@ runners:
 
 ## 7. References
 
-- **buzz-acp** : `crates/buzz-acp/README.md`
+- **Bus WAZAA** : `../WAZAA/src/wazaa_bus.py`
 - **PRD-001** : Event Schema & Kinds L*
 - **ADR-2026-08-01-002** : N243 Meta-Engine Architecture

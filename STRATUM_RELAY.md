@@ -17,8 +17,8 @@ rss_compliance:
 rules:
   - id: R1
     assertion: >-
-      N243 n'est PAS un fork Git de BUZZ-X.
-      C'est un meta-orchestrateur cognitif qui pilote BUZZ-X via runners Zig/ACP et WAL ternaire.
+      N243 n'est PAS un fork Git de WAZAA.
+      C'est un meta-orchestrateur cognitif qui pilote les runners Zig via le bus WAZAA et un WAL ternaire.
       Posture : couche N+3 d'orchestration, pas duplication de code.
     status: VERIFIED
     severity: MEDIUM
@@ -28,7 +28,7 @@ rules:
     status: VERIFIED
     severity: HIGH
   - id: R3
-    assertion: Les patches Buzz@block sont tracés dans BUZZ-X/patches/ et documentés dans N243/patches/.
+    assertion: Les patches historiques Buzz@block sont SUPERSEDES (pivot WAZAA 2026-08-23) et conservés dans N243/patches/.
     status: VERIFIED
     severity: MEDIUM
 ---
@@ -42,7 +42,7 @@ rules:
 ## Identité stratique
 
 - **Strate** : `L4-TOOLS` — Extensions & Intégrations
-- **Role canonique** : Meta-orchestrateur cognitif L* qui pilote BUZZ-X via runners Zig/ACP, WAL ternaire et protocole BDCP
+- **Role canonique** : Meta-orchestrateur cognitif L* qui pilote les runners Zig via le bus WAZAA, WAL ternaire et protocole BDCP
 - **Posture** : Couche N+3 d'orchestration — pas duplication de code, orchestration par événements
 - **Parent** : L3
 - **Enfants** : L5
@@ -60,7 +60,7 @@ rules:
 
 ## Architecture
 
-N243 **n'est pas un fork** de BUZZ-X. C'est un **meta-orchestrateur** qui :
+N243 **n'est pas un fork** de WAZAA. C'est un **meta-orchestrateur** qui :
 
 - Définit les schémas d'événements Nostr personnalisés (kinds 40050-40057)
 - Pilote les runners Zig via ACP/subprocess (RunnerAdapter)
@@ -72,13 +72,13 @@ N243 **n'est pas un fork** de BUZZ-X. C'est un **meta-orchestrateur** qui :
 
 ## Composants N243
 
-| Composant | Crate | Description |
+| Composant | Localisation | Description |
 |---|---|---|
-| PRD-001 | buzz-core/kinds | Nouveaux kinds Nostr 40050-40057 |
-| PRD-002 | buzz-acp/runner_adapter | RunnerAdapter pour runners Zig |
-| PRD-003 | buzz-workflow/ternary_actions | TernaryAction + TernaryActionConfig |
-| PRD-004 | buzz-audit/ternary_wal | TernaryState + TernaryWAL |
-| PRD-005 | buzz-auth/bdcp | BDCPChecker pour validation clones |
+| PRD-001 | schemas/kinds-lstar.md | Nouveaux kinds 40050-40057 |
+| PRD-002 | agents/runner-protocol.md (bus WAZAA) | RunnerAdapter pour runners Zig |
+| PRD-003 | workflows/ternary-actions.md | TernaryAction + TernaryActionConfig |
+| PRD-004 | wal/ternary-wal.md (+ WAZAA wal_event_emitter.py) | TernaryState + TernaryWAL |
+| PRD-005 | bdcp/enforcer.md (src/bdcp.rs) | BDCPChecker pour validation clones |
 
 ---
 
@@ -104,7 +104,7 @@ N243 **n'est pas un fork** de BUZZ-X. C'est un **meta-orchestrateur** qui :
 ## Dependances directes
 
 **Parents (amont)** :
-- gerivdb/BUZZ-X
+- gerivdb/WAZAA
 - gerivdb/BRAIN-DOCS
 - gerivdb/SKILLS
 
@@ -117,7 +117,7 @@ N243 **n'est pas un fork** de BUZZ-X. C'est un **meta-orchestrateur** qui :
 
 | Vague | Contenu | Statut |
 |---|---|---|
-| **1 (courante)** | Scaffolding N243, dépendances BUZZ-X, PRD-001 à PRD-005 | En cours |
+| **1 (courante)** | Scaffolding N243, intégration WAZAA (pivot Buzz@block), PRD-001 à PRD-005 | En cours |
 
 ---
 

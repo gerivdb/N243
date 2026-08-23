@@ -10,7 +10,8 @@ rss_depth: 2
 profile: CITIZEN
 archived: false
 description: >
-  Meta-orchestrateur cognitif L* — orchestration BUZZ-X via API Nostr/NIP-34,
+  Meta-orchestrateur cognitif L* — supervision ternaire via le bus WAZAA
+  (remplacement Buzz@block, 2026-08-23),
   runners Zig/ACP, WAL ternaire et enforcement BDCP.
 remote: gerivdb/N243
 local_path: D:/DO/WEB/TOOLS/L4-TOOLS/N243
@@ -20,9 +21,9 @@ packages:
     tag: CONFORME_NEXUS
 hub: gerivdb/GOVERNANCE-HUB
 stratum_relay: STRATUM_RELAY.md
-intent_primary: INTENT-260 (buzz-workflow-binder)
+intent_primary: INTENT-260 (binder workflow, pivoté WAZAA)
 dependencies_upstream:
-  - gerivdb/BUZZ-X
+  - gerivdb/WAZAA
   - gerivdb/BRAIN-DOCS
   - gerivdb/SKILLS
 dependencies_downstream: []

@@ -12,7 +12,7 @@ repo:
 citizens:
   - name: "Orchestrator"
     role: "orchestrator"
-    description: "Orchestre les runners L* via Buzz@block"
+    description: "Orchestre les runners L* via le bus WAZAA"
     phase: "orchestration"
   
   - name: "TernaryGuardian"

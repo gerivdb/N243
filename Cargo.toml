@@ -4,11 +4,10 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-# Core minimal pour N243
-buzz-core = { path = "../BUZZ-X/Buzz@block/crates/buzz-core" }
-buzz-acp = { path = "../BUZZ-X/Buzz@block/crates/buzz-acp" }
-buzz-workflow = { path = "../BUZZ-X/Buzz@block/crates/buzz-workflow" }
-buzz-auth = { path = "../BUZZ-X/Buzz@block/crates/buzz-auth" }
+# Orchestration : bus WAZAA (Python, port 1873) — plus de dépendance Rust Buzz@block
+# (pivot 2026-08-23, INTENT-2026-08-22-KG-L-WAZAA-N243-SOUVERAIN-V0_5).
+# Les crates buzz-core/acp/workflow/auth sont supprimées ; l'invocation passe par
+# le bus WAZAA (Intent/events) et le WAL append-only (wal_event_emitter.py).
 
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"

@@ -120,8 +120,8 @@ mod tests {
     fn test_bridge_contract_validation() {
         let contract = BridgeContractSchema {
             source_repo: "WAZAA".to_string(),
-            target_repo: "BUZZ-X".to_string(),
-            protocol: "buzz-bridge".to_string(),
+            target_repo: "WAZAA".to_string(),
+            protocol: "wazaa-bus".to_string(),
             version: "1.0".to_string(),
             endpoints: vec!["relay".to_string(), "acp".to_string()],
         };

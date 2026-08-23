@@ -8,13 +8,13 @@
 
 ## Posture
 
-N243 est un **meta-orchestrateur cognitif L4** sur BUZZ-X — une couche d'orchestration
-qui pilote BUZZ-X via l'API `Nostr ^1.0.0` sans embarquer de code BUZZ-X.
+N243 est un **meta-orchestrateur cognitif L4** sur WAZAA — une couche d'orchestration
+qui pilote les runners via le bus WAZAA sans embarquer de code WAZAA.
 
-- Pas un fork Git de `BUZZ-X`
-- Pas de code BUZZ-X embarqué
-- Orchestration par événements Nostr signés
-- Exécution déléguée aux runners Zig via ACP/subprocess
+- Pas un fork Git de `WAZAA`
+- Pas de code WAZAA embarqué
+- Orchestration par événements (unités Intent) signés
+- Exécution déléguée aux runners Zig via l'adaptateur N243/subprocess
 
 ---
 
@@ -27,26 +27,26 @@ N243/
 ├── workflows/                ← PRD-003 : actions ternaires
 ├── wal/                      ← PRD-004 : WAL ternaire
 ├── bdcp/                     ← PRD-005 : enforcement BDCP
-├── patches/                  ← Proxies documentation BUZZ-X
+├── patches/                  ← Patches historiques supersedés (pivot WAZAA)
 ├── src/                      ← Code Rust placeholder
 ├── docs/                     ← Documentation
 ├── tests/                    ← Tests
 ├── STRATUM_RELAY.md          ← Gouvernance L4
 ├── REPO.yaml                 ← Identité RSS-v2
 ├── design.yaml               ← Configuration conception
-└── Cargo.toml                ← Dépendances BUZZ-X
+└── Cargo.toml                ← Dépendances Rust pures (orchestration via bus WAZAA)
 ```
 
 ---
 
 ## Dépendances
 
-- **Upstream :** BUZZ-X, BRAIN-DOCS, SKILLS  
-  (fournissent overlay Buzz@block, documentation, compétences)
+- **Upstream :** WAZAA, BRAIN-DOCS, SKILLS  
+  (fournissent bus d'orchestration, documentation, compétences)
 
 - **Downstream :** Aucun pour l'instant (proposed)
 
-- **Runtime cible :** Buzz@block (Nostr client) — via API Nostr/NIP-34
+- **Runtime cible :** bus WAZAA (unités Intent) — port 1873
 
 ---
 
@@ -62,32 +62,32 @@ N243 agit comme un **méta-orchestrateur** qui :
 
 ---
 
-## Relation BUZZ-X ↔ N243
+## Relation WAZAA ↔ N243
 
 ```
-BUZZ-X (overlay Buzz@block)
+WAZAA (bus orchestration, port 1873)
     ↑
-    │ API Nostr/NIP-34
+    │ unités Intent / événements
     │
 N243 (meta-orchestrateur)
     │
-    ├── buzz-core/kinds → kinds 40050-40057
-    ├── buzz-acp/runner_adapter → RunnerAdapter
-    ├── buzz-workflow/ternary_actions → TernaryAction
-    ├── buzz-audit/ternary_wal → TernaryWAL
-    └── buzz-auth/bdcp → BDCPChecker
+    ├── schemas/kinds-lstar.md → kinds 40050-40057
+    ├── agents/runner-protocol.md → RunnerAdapter
+    ├── workflows/ternary-actions.md → TernaryAction
+    ├── wal/ternary-wal.md → TernaryWAL (+ wal_event_emitter.py)
+    └── bdcp/enforcer.md → BDCPChecker (src/bdcp.rs)
 ```
 
 ---
 
-## Migration depuis BUZZ-X
+## Pivot Buzz@block → WAZAA
 
-N243 est construit sur BUZZ-X comme BUZZ-X est construit sur Buzz@block :
+L'ancienne base Buzz@block est abandonnée dans ENV2 (décision 2026-08-23) :
 
-| Élément BUZZ-X | Équivalent N243 |
+| Élément historique (Buzz@block) | Équivalent N243 / WAZAA |
 |---|---|
-| Overlay Buzz@block | Meta-orchestrateur BUZZ-X |
-| API Nostr/NIP-34 | API Nostr/NIP-34 + runners Zig |
-| buzz-ecos-integration | n243-orchestrator |
-| KiloCode (VS Code) | Buzz@block (Nostr) |
+| Relay/bloc Buzz@block | Bus WAZAA + meta-orchestrateur N243 |
+| API Nostr/NIP-34 | Unités Intent + runners Zig |
+| buzz-ecos-integration | n243-orchestrator (via WAZAA) |
+| KiloCode (VS Code) | WAZAA (bus événements) |
 | Extension overlay | Orchestration cognitive |

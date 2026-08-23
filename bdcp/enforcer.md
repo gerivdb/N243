@@ -60,6 +60,6 @@ impl BDCPChecker {
 
 ## 6. References
 
-- **buzz-auth** : `crates/buzz-auth/src/lib.rs`
+- **Enforcement BDCP** : `src/bdcp.rs` (N243 natif) + SOT `known_repositories.yaml`
 - **ADR-032** : Clone Governance
 - **PRD-001** : Event Schema

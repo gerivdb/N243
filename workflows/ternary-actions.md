@@ -9,7 +9,7 @@
 
 ## 1. Contexte
 
-N243 etend `buzz-workflow` avec des actions ternaires L* :
+N243 implémente les actions ternaires L* dans son moteur (`src/workflows.rs`) :
 - **APPROUVE** (1.0) - validation
 - **SUSPEND** (0.5) - conditionnel
 - **REJETTE** (0.0) - veto
@@ -72,13 +72,13 @@ steps:
 
 | Check | Commande |
 |-------|----------|
-| YAML validation | `buzz-workflow/src/schema.rs` |
+| Validation schéma | `src/schemas.rs` (N243WorkflowSchema) |
 | Nostr events | Events 40052, 40053 |
 
 ---
 
 ## 5. References
 
-- **buzz-workflow** : `crates/buzz-workflow/src/schema.rs`
+- **Moteur workflow** : `src/workflows.rs` + `src/schemas.rs`
 - **PRD-001** : Event Schema
 - **PRD-002** : Runner Protocol

@@ -1,5 +1,5 @@
 // N243 — WAL (Write-Ahead Log)
-// Mirrors Buzz@block ternary WAL with N243-specific governance entries.
+// Ternary WAL N243 — sémantique append-only alignée sur WAZAA (wal_event_emitter.py).
 
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;

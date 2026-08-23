@@ -9,7 +9,7 @@
 
 ## 1. Contexte
 
-N243 etend Buzz (relay Nostr) avec des concepts L* :
+N243 étend le modèle événementiel WAZAA avec des concepts L* :
 - **Runners cognitifs** (LLUX, RLM-243, TIMX, ROOTX, TLM-CORE)
 - **Logique ternaire** (APPROUVE / SUSPEND / REJETTE)
 - **WAL ternaire** (CONVERGENCE / DIVERGENCE / OSCILLATION)
@@ -35,9 +35,9 @@ Ces concepts necessitent de nouveaux **kinds Nostr** pour etre representes dans 
 
 ---
 
-## 3. Extension des Kinds Existants (Buzz)
+## 3. Extension des Kinds Existants (WAZAA)
 
-| Kind Buzz | Extension L* | Description |
+| Kind WAZAA | Extension L* | Description |
 |-----------|--------------|-------------|
 | **1** (text) | `kind: 1, lstar: true` | Message avec source L* |
 | **42** (metadata) | `kind: 42, lstar: string` | Metadonnees runner |
@@ -76,9 +76,9 @@ Ces concepts necessitent de nouveaux **kinds Nostr** pour etre representes dans 
 
 | Check | Commande |
 |-------|----------|
-| Nostr validation | buzz-core/src/kind.rs doit inclure les nouveaux kinds |
-| Schema validation | buzz-db/migrations/ doit ajouter les nouveaux indexes |
-| WAL audit | buzz-audit/ doit logger les evenements L* |
+| Validation kinds | registre N243 (`src/schemas.rs`) doit inclure les nouveaux kinds |
+| Validation store | store événements WAZAA (`data/`) doit porter les index |
+| Audit WAL | `../WAZAA/src/wal_event_emitter.py` doit logger les événements L* |
 | KIVA-CI | python scripts/validate_meta_design.py |
 
 ---
@@ -97,4 +97,4 @@ Ces concepts necessitent de nouveaux **kinds Nostr** pour etre representes dans 
 - NIP-01 : Nostr event format
 - ADR-2026-08-01-002 : N243 Meta-Engine Architecture
 - VERSES : D:/DO/WEB/TOOLS/L1-INFRA/VERSES/
-- Buzz code : buzz-core/src/kind.rs
+- Registre kinds : `src/schemas.rs`

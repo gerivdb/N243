@@ -1,5 +1,5 @@
 // N243 — BDCP Integration
-// Bridges N243 governance with Buzz@block BDCP enforcement (PRD-005).
+// Enforcement BDCP N243 natif (PRD-005) — pivot WAZAA 2026-08-23 (Buzz@block abandonné).
 
 use std::collections::HashMap;
 use std::path::Path;
@@ -15,7 +15,7 @@ pub struct RepoEntry {
     pub license: String,
 }
 
-/// BDCP checker from Buzz@block PRD-005.
+/// BDCP checker N243 (PRD-005) — valide contre la SOT connue.
 #[derive(Debug, Clone)]
 pub struct BDCPChecker {
     pub known_repos: HashMap<String, RepoEntry>,
@@ -48,7 +48,7 @@ impl BDCPChecker {
     }
 }
 
-/// N243 BDCP governor — wraps Buzz@block BDCPChecker with N243-specific rules.
+/// N243 BDCP governor — applique les règles de clone (strates L*, SOT).
 pub struct N243BDCPGovernor {
     checker: BDCPChecker,
     enforced_strata: Vec<&'static str>,
@@ -65,17 +65,6 @@ impl N243BDCPGovernor {
                 stratum: "L4".to_string(),
                 status: "active".to_string(),
                 upstream: Some("https://github.com/gerivdb/WAZAA".to_string()),
-                license: "Apache-2.0".to_string(),
-            },
-        );
-        known_repos.insert(
-            "BUZZ-X".to_string(),
-            RepoEntry {
-                name: "BUZZ-X".to_string(),
-                local_path: "D:/DO/WEB/TOOLS/L4-TOOLS/BUZZ-X".to_string(),
-                stratum: "L4".to_string(),
-                status: "active".to_string(),
-                upstream: Some("https://github.com/gerivdb/BUZZ-X".to_string()),
                 license: "Apache-2.0".to_string(),
             },
         );

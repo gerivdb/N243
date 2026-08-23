@@ -1,6 +1,6 @@
 ---
 name: N243
-description: "Meta-orchestrateur cognitif L* — orcHESTRATION BUZZ-X via API Nostr/NIP-34 et runners Zig."
+description: "Meta-orchestrateur cognitif L* — orchestration WAZAA (bus KG-L) et runners Zig."
 version: "0.1.0"
 parent: unified-design
 inherits:

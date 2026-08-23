@@ -69,5 +69,5 @@ oscillation_detection:
 
 ## 6. References
 
-- **buzz-audit** : `crates/buzz-audit/src/lib.rs`
+- **WAZAA WAL** : `../WAZAA/src/wal_event_emitter.py` (JSONL append-only)
 - **PRD-001** : Event Schema

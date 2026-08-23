@@ -1,5 +1,5 @@
 // N243 — Workflows
-// N243-specific workflow orchestration bridging Buzz@block workflow engine.
+// Orchestration de workflows N243 — pont vers le bus WAZAA.
 
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
@@ -80,7 +80,7 @@ mod tests {
             name: "Test Workflow".to_string(),
             triggers: vec![N243WorkflowTrigger {
                 intent_hash: "0xTEST".to_string(),
-                source: "buzz-relay".to_string(),
+                source: "wazaa-bus".to_string(),
                 event_kind: 7,
                 payload: serde_json::json!({"test": true}),
             }],
