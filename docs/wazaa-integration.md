@@ -34,7 +34,7 @@ Décision N243 (ternaire APPROUVER/SUSPENDRE/REJETER)
 |---|---|
 | N243 déclare WAZAA en dépendance upstream (`REPO.yaml`) | ✅ |
 | N243 déclaré dans la SOT (`known_repositories.yaml`) | ✅ 2026-08-23 |
-| Bus WAZAA joignable depuis l'adaptateur N243 | 🔲 à valider (Sprint 2 INTENT V0.5) |
+| Bus WAZAA joignable depuis l'adaptateur N243 | 🔲 sondé 2026-08-23T21:30+02:00 — ports 1873/8200 **fermés** (bus non démarré) ; à rejouer après lancement bus (Sprint 2 INTENT V0.5) |
 | Pipeline KG-L → WAZAA → N243 → MCP | 🔲 Sprint 2-3 |
 
 ---
