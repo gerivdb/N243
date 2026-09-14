@@ -4,19 +4,24 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-# Orchestration : bus WAZAA (Python, port 1873) — plus de dépendance Rust Buzz@block
-# (pivot 2026-08-23, INTENT-2026-08-22-KG-L-WAZAA-N243-SOUVERAIN-V0_5).
-# Les crates buzz-core/acp/workflow/auth sont supprimées ; l'invocation passe par
-# le bus WAZAA (Intent/events) et le WAL append-only (wal_event_emitter.py).
+# Orchestration : bus WAZAA (Python, port 1873) — dépendances BUZZ via git
+# Les crates buzz-core/acp/workflow/auth sont disponibles via git
 
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 tokio = { version = "1.0", features = ["full"] }
 anyhow = "1.0"
-uuid = { version = "1.0", features = ["v4"] }
+uuid = { version = "1.0", features = ["v4", "serde"] }
 chrono = { version = "0.4", features = ["serde"] }
 thiserror = "2"
 ed25519-dalek = { version = "2", features = ["rand_core"] }
+blake3 = "1.5"
+
+# BUZZ crates - via git dependencies (local BUZZ-X workspace)
+buzz-core = { git = "file:///D:/DO/WEB/TOOLS/L4-TOOLS/BUZZ-X/Buzz@block", package = "buzz-core" }
+buzz-acp = { git = "file:///D:/DO/WEB/TOOLS/L4-TOOLS/BUZZ-X/Buzz@block", package = "buzz-acp" }
+buzz-workflow = { git = "file:///D:/DO/WEB/TOOLS/L4-TOOLS/BUZZ-X/Buzz@block", package = "buzz-workflow" }
+buzz-auth = { git = "file:///D:/DO/WEB/TOOLS/L4-TOOLS/BUZZ-X/Buzz@block", package = "buzz-auth" }
 
 [features]
 default = []
