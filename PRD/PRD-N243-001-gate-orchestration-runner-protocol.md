@@ -224,12 +224,13 @@ class PRDMOCSupervisor:
 
 ## 8. ÉTAT OBSERVÉ
 
-**2026-09-14T22:07+02:00** :
+**2026-09-14T23:08+02:00** :
 - [x] Branche feature créée
 - [x] `ONTOLOGY_DECLARATION.yaml` créé
 - [x] `PRD/` directory créé
-- [ ] `PRD/PRD-N243-001-gate-orchestration-runner-protocol.md` créé (ce document)
+- [x] `PRD/PRD-N243-001-gate-orchestration-runner-protocol.md` créé (ce document)
+- [x] `PRD/PRD-000-index.md` créé
 - [ ] WAL replay implémenté
 - [ ] Runner protocol stabilisé
-- [ ] Supervisor PRD/MOC étendu
+- [x] Supervisor frontmatter validator étendu (S3.1)
 - [ ] Conformité RSS-v2.3 validée

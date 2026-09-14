@@ -12,12 +12,14 @@ Rôle :
 - Publier sur WAZAA bus
 - Tracer dans KG-L
 - Synchroniser OBS
+- Valider le frontmatter des PRD/MOC (NOUVEAU S3.1)
 """
 
 from __future__ import annotations
 
 import argparse
 import json
+import re
 import subprocess
 import sys
 from datetime import datetime, timezone
@@ -31,6 +33,12 @@ try:
     TALEX_AVAILABLE = True
 except ImportError:
     TALEX_AVAILABLE = False
+
+try:
+    import yaml
+    YAML_AVAILABLE = True
+except ImportError:
+    YAML_AVAILABLE = False
 
 
 # ── Chemins ──────────────────────────────────────────────────────────────
@@ -234,6 +242,72 @@ class N243Supervisor:
             )
         except Exception:
             pass
+
+    def validate_frontmatter(self, path: Path) -> Dict[str, Any]:
+        """Valide le frontmatter YAML d'un PRD/MOC.
+
+        Retourne un verdict APPROUVER/SUSPENDRE/REJETER selon la conformité.
+        """
+        result: Dict[str, Any] = {
+            "path": str(path),
+            "valid": False,
+            "verdict": "REJETER",
+            "errors": [],
+        }
+
+        if not YAML_AVAILABLE:
+            result["errors"].append("PyYAML not available")
+            return result
+
+        if not path.exists():
+            result["errors"].append(f"File not found: {path}")
+            return result
+
+        content = path.read_text(encoding="utf-8")
+        match = re.search(r"^---\s*\n(.*?)\n---\s*\n", content, re.DOTALL)
+        if not match:
+            result["errors"].append("Missing YAML frontmatter block")
+            return result
+
+        try:
+            frontmatter = yaml.safe_load(match.group(1)) or {}
+        except Exception as exc:
+            result["errors"].append(f"Invalid YAML: {exc}")
+            return result
+
+        required_fields = ["type", "version", "date", "status", "intent_hash"]
+        missing = [field for field in required_fields if field not in frontmatter]
+        if missing:
+            result["errors"].append(f"Missing required fields: {missing}")
+            return result
+
+        allowed_types = {"PRD", "PRD-MOC", "EPIC", "ADR", "SPEC", "INTENT"}
+        doc_type = str(frontmatter.get("type", ""))
+        if doc_type not in allowed_types:
+            result["errors"].append(f"Invalid type: {doc_type}")
+            return result
+
+        allowed_statuses = {
+            "PRD": {"draft", "active", "deprecated", "superseded"},
+            "PRD-MOC": {"draft", "proposed", "approved", "active", "deprecated", "superseded"},
+            "EPIC": {"draft", "active", "done", "deprecated", "superseded"},
+            "ADR": {"proposed", "accepted", "deprecated", "superseded"},
+            "SPEC": {"draft", "stable", "deprecated", "superseded"},
+            "INTENT": {"draft", "proposed", "active", "deprecated", "superseded"},
+        }
+        status = str(frontmatter.get("status", ""))
+        if status not in allowed_statuses.get(doc_type, set()):
+            result["errors"].append(f"Invalid status '{status}' for type '{doc_type}'")
+            return result
+
+        if not re.search(r"^0x[A-Z0-9_]+$", str(frontmatter.get("intent_hash", ""))):
+            result["errors"].append("Invalid intent_hash format")
+            return result
+
+        result["valid"] = True
+        result["verdict"] = "APPROUVER"
+        result["frontmatter"] = frontmatter
+        return result
 
 
 # ── CLI ──────────────────────────────────────────────────────────────────
