@@ -197,7 +197,7 @@ class N243Supervisor:
                     sys.executable,
                     str(WAZAA_BUS),
                     "publish",
-                    "prd.moc.validated",
+                    "prd_moc.gate",
                     json.dumps(decision, ensure_ascii=False),
                 ],
                 capture_output=True,

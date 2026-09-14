@@ -73,3 +73,34 @@ def test_runner_decision_reject_creates_archive_action():
     )
     assert decision["action"] == "archive"
     assert "rejetée" in decision["message"]
+
+
+def test_supervisor_wazaa_topic_is_prd_moc_gate(monkeypatch, tmp_path):
+    """S3.2 — Le supervisor publie sur le topic WAZAA prd_moc.gate"""
+    calls: list = []
+
+    def fake_run(cmd, **kwargs):
+        calls.append(cmd)
+        class FakeResult:
+            returncode = 0
+            stdout = b""
+            stderr = b""
+        return FakeResult()
+
+    monkeypatch.setattr("subprocess.run", fake_run)
+    fake_wazaa = tmp_path / "wazaa_bus.py"
+    fake_wazaa.write_text("", encoding="utf-8")
+    monkeypatch.setattr("prd_moc_supervisor.WAZAA_BUS", fake_wazaa)
+
+    supervisor = N243Supervisor()
+    decision = supervisor.supervise(
+        repo="N243",
+        verdict="APPROUVER",
+        payload={"runner": "LLUX"},
+    )
+
+    wazaa_calls = [cmd for cmd in calls if "prd_moc.gate" in cmd]
+    assert len(wazaa_calls) >= 1, f"Expected WAZAA publish call, got: {calls}"
+    payload = json.loads(wazaa_calls[0][4])
+    assert payload["verdict"] == "APPROUVER"
+    assert payload["repo"] == "N243"
