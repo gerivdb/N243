@@ -290,6 +290,16 @@ mod tests {
     use super::*;
     
     #[test]
+    fn test_runner_protocol_channels() {
+        assert_eq!(channels::RUNNER_PROTOCOL, "L4-TOOLS/N243/runners/protocol");
+        assert_eq!(channels::RUNNER_STATE, "L4-TOOLS/N243/runners/state/*");
+        assert_eq!(channels::RUNNER_CLUSTER_TOPOLOGY, "L4-TOOLS/N243/runners/cluster");
+        assert_eq!(channels::RUNNER_PROTOCOL_EVENT, "RUNNER_PROTOCOL");
+        assert_eq!(channels::RUNNER_STATE_EVENT, "RUNNER_STATE");
+        assert_eq!(channels::RUNNER_CLUSTER_EVENT, "RUNNER_CLUSTER_TOPOLOGY");
+    }
+    
+    #[test]
     fn test_runner_protocol_functor_creation() {
         let mut functor = RunnerProtocolFunctor::new(RunnerType::LLUX);
         assert_eq!(functor.runner_type, RunnerType::LLUX);
