@@ -3,6 +3,7 @@
 
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
+use std::env;
 use std::fs::{self, OpenOptions};
 use std::io::Write;
 use std::path::Path;
@@ -103,6 +104,24 @@ impl N243WAL {
         pairs
     }
 
+    pub fn replay(&mut self, path: impl AsRef<Path>) -> std::io::Result<usize> {
+        let path = path.as_ref();
+        let content = fs::read_to_string(path)?;
+        let mut count = 0;
+        for line in content.lines() {
+            let line = line.trim();
+            if line.is_empty() {
+                continue;
+            }
+            if let Ok(entry) = serde_json::from_str::<WalEntry>(line) {
+                self.entries.push(entry.clone());
+                self.current_states.insert(entry.entity.clone(), entry.current);
+                count += 1;
+            }
+        }
+        Ok(count)
+    }
+
     fn append_to_file(&self, path: &str, entry: &WalEntry) -> std::io::Result<()> {
         if let Some(parent) = Path::new(path).parent() {
             fs::create_dir_all(parent)?;
@@ -136,5 +155,19 @@ mod tests {
         wal.record("x", TernaryState::Oscillation, "");
         let oscillations = wal.detect_oscillations("x");
         assert_eq!(oscillations.len(), 2);
+    }
+
+    #[test]
+    fn test_n243_wal_replay() {
+        let tmp = std::env::temp_dir().join("n243-wal-replay-test.jsonl");
+        let _ = fs::write(&tmp, r#"{"entity":"replay.entity","previous":"Oscillation","current":"Convergence","reason":"replay","timestamp":0}
+{"entity":"replay.entity","previous":"Convergence","current":"Divergence","reason":"replay","timestamp":1}
+"#);
+        let mut wal = N243WAL::new();
+        let count = wal.replay(&tmp).expect("replay");
+        assert_eq!(count, 2);
+        assert_eq!(wal.current_state("replay.entity"), Some(&TernaryState::Divergence));
+        assert_eq!(wal.history("replay.entity").len(), 2);
+        let _ = fs::remove_file(&tmp);
     }
 }
