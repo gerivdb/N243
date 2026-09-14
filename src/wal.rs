@@ -122,6 +122,15 @@ impl N243WAL {
         Ok(count)
     }
 
+    pub fn compact(&mut self, max_entries: usize) -> usize {
+        if self.entries.len() <= max_entries {
+            return 0;
+        }
+        let remove = self.entries.len() - max_entries;
+        self.entries.drain(0..remove);
+        remove
+    }
+
     fn append_to_file(&self, path: &str, entry: &WalEntry) -> std::io::Result<()> {
         if let Some(parent) = Path::new(path).parent() {
             fs::create_dir_all(parent)?;
@@ -169,5 +178,19 @@ mod tests {
         assert_eq!(wal.current_state("replay.entity"), Some(&TernaryState::Divergence));
         assert_eq!(wal.history("replay.entity").len(), 2);
         let _ = fs::remove_file(&tmp);
+    }
+
+    #[test]
+    fn test_n243_wal_compact() {
+        let mut wal = N243WAL::new();
+        wal.record("a", TernaryState::Convergence, "");
+        wal.record("b", TernaryState::Oscillation, "");
+        wal.record("c", TernaryState::Divergence, "");
+        assert_eq!(wal.entries.len(), 3);
+        let removed = wal.compact(2);
+        assert_eq!(removed, 1);
+        assert_eq!(wal.entries.len(), 2);
+        assert_eq!(wal.entries[0].entity, "b");
+        assert_eq!(wal.entries[1].entity, "c");
     }
 }
