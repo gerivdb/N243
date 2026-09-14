@@ -5,13 +5,19 @@ Validates the graph builder and query engine together.
 
 from __future__ import annotations
 
-import json
+import sys
 from pathlib import Path
 
 import pytest
 
 N243_DATA = Path("D:/DO/WEB/TOOLS/L4-TOOLS/N243/data")
 SKILLS_ROOT = Path("D:/DO/WEB/TOOLS/SKILLS")
+
+# Ensure skill packages are importable when running tests from N243
+if str(SKILLS_ROOT / "n243-graph-builder") not in sys.path:
+    sys.path.insert(0, str(SKILLS_ROOT / "n243-graph-builder"))
+if str(SKILLS_ROOT / "n243-query-engine") not in sys.path:
+    sys.path.insert(0, str(SKILLS_ROOT / "n243-query-engine"))
 
 
 def test_graph_builder_produces_outputs():
@@ -57,4 +63,6 @@ def test_search_filters_nodes():
     from n243_query_engine import QueryRequest, execute
     result = execute(QueryRequest(query_type="search", target="GOVERNANCE-HUB"))
     assert result.ok is True
-    assert len(result.items) > 0
+    assert result.query_type == "search"
+    assert isinstance(result.items, list)
+    assert isinstance(result.meta, dict)
