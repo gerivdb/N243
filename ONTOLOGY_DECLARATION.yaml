@@ -1,0 +1,41 @@
+# ONTOLOGY_DECLARATION.yaml — N243
+# Conformité RSS-v2.3 — profil CITIZEN
+# 2026-09-14
+
+version: "1.0"
+repo: "N243"
+type: "both"
+ontology_lifecycle: "SPEC/ontology-lifecycle-protocol.md"
+nexus_indexer: "SPEC/nexus-concept-indexer-protocol.md"
+argus_wiring: "SPEC/argus-wiring-protocol.md"
+
+concepts:
+  - id: "n243_gate"
+    status: "actif"
+    nexus_index: "gerivdb/NEXUS/concepts/n243_gate"
+    last_updated: "2026-09-14"
+    description: "Gate ternaire N243 — validation APPROUVER/SUSPENDRE/REJETER sur écritures mémoire et orchestration"
+
+  - id: "ternary_wal"
+    status: "actif"
+    nexus_index: "gerivdb/NEXUS/concepts/ternary_wal"
+    last_updated: "2026-09-14"
+    description: "WAL ternaire N243 — journal append-only des décisions de gate avec statut Convergence/Divergence/Oscillation"
+
+  - id: "runner_protocol"
+    status: "actif"
+    nexus_index: "gerivdb/NEXUS/concepts/runner_protocol"
+    last_updated: "2026-09-14"
+    description: "Protocole d'orchestration des runners L* (LLUX, RLM-243, TIMX, ROOTX, TLM-CORE) via WAZAA"
+
+  - id: "memory_gate"
+    status: "actif"
+    nexus_index: "gerivdb/NEXUS/concepts/memory_gate"
+    last_updated: "2026-09-14"
+    description: "Gate mémoire N243 — validation des écritures mémoire avant propagation vers KG-L, Mnemo, CTULU"
+
+  - id: "prd_moc_supervisor"
+    status: "proposition"
+    nexus_index: "gerivdb/NEXUS/concepts/prd_moc_supervisor"
+    last_updated: "2026-09-14"
+    description: "Superviseur PRD/MOC — agent autonome de validation et de routage des documents de gouvernance"
