@@ -1637,5 +1637,23 @@
     },
     "mtime": 1785298451.9576182,
     "size": 8192
+  },
+  "7155c979988cde6c": {
+    "name": "ECOS-CLI",
+    "layer": "L1-INFRA",
+    "status": "active",
+    "role": "Orchestration CLI",
+    "bridges": [],
+    "metadata": {
+      "adr": [],
+      "prd": [],
+      "intent": [],
+      "epic": [],
+      "report": [],
+      "roadmap": [],
+      "spec": []
+    },
+    "mtime": 1789413288.556729,
+    "size": 262144
   }
 }
