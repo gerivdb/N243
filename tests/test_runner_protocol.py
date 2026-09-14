@@ -45,7 +45,7 @@ def test_wal_records_runner_decision(tmp_path):
 
 def test_supervisor_validates_prd_frontmatter_before_runner_gate():
     supervisor = N243Supervisor()
-    prd_path = N243_ROOT / "PRD" / "PRD-N243-001-gate-orchestration-runner-protocol.md"
+    prd_path = N243_ROOT / "PRD" / "PRD-001-gate-orchestration-runner-protocol.md"
     result = supervisor.validate_frontmatter(prd_path)
     assert result["valid"] is True
     assert result["verdict"] == "APPROUVER"

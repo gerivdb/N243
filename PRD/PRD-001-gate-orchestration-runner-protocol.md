@@ -233,7 +233,7 @@ class PRDMOCSupervisor:
 - [x] Branche feature créée
 - [x] `ONTOLOGY_DECLARATION.yaml` créé
 - [x] `PRD/` directory créé
-- [x] `PRD/PRD-N243-001-gate-orchestration-runner-protocol.md` créé (ce document)
+- [x] `PRD/PRD-001-gate-orchestration-runner-protocol.md` créé (ce document)
 - [x] `PRD/PRD-000-index.md` créé
 - [x] WAL replay implémenté (Rust + tests) — `src/wal.rs::replay()`
 - [x] WAL compact TTL 30j implémenté (Rust + tests) — `src/wal.rs::compact_ttl()`
