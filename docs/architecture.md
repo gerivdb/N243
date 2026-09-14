@@ -22,17 +22,18 @@ qui pilote les runners via le bus WAZAA sans embarquer de code WAZAA.
 
 ```
 N243/
-├── schemas/                  ← PRD-001 : kinds Nostr personnalisés
-├── agents/                   ← PRD-002 : protocole runner
-├── workflows/                ← PRD-003 : actions ternaires
-├── wal/                      ← PRD-004 : WAL ternaire
-├── bdcp/                     ← PRD-005 : enforcement BDCP
+├── PRD/                      ← PRD-001 : gate orchestration & runner protocol
+├── src/
+│   └── gates/                ← L5/L6 gates, memory gate, runner protocol
+├── agents/                   ← Supervisor PRD/MOC autonome
+├── wal/                      ← WAL ternaire (replay + compact TTL 30j)
+├── bdcp/                     ← Enforcement BDCP
 ├── patches/                  ← Patches historiques supersedés (pivot WAZAA)
-├── src/                      ← Code Rust placeholder
 ├── docs/                     ← Documentation
-├── tests/                    ← Tests
+├── tests/                    ← Tests Rust + Python
 ├── STRATUM_RELAY.md          ← Gouvernance L4
 ├── REPO.yaml                 ← Identité RSS-v2
+├── ONTOLOGY_DECLARATION.yaml ← Ontologie N243
 ├── design.yaml               ← Configuration conception
 └── Cargo.toml                ← Dépendances Rust pures (orchestration via bus WAZAA)
 ```
@@ -54,11 +55,11 @@ N243/
 
 N243 agit comme un **méta-orchestrateur** qui :
 
-1. Définit les schémas d'événements Nostr personnalisés (kinds 40050-40057)
-2. Pilote les runners Zig via ACP/subprocess (RunnerAdapter)
-3. Implémente les actions ternaires Approve/Suspend/Reject
-4. Trace l'état Convergence/Divergence/Oscillation dans un WAL
-5. Valide les clones via BDCPChecker contre `known_repositories.yaml`
+1. Orchestre les gates ternaires L5/L6 via `src/gates/`
+2. Pilote les runners L* (LLUX, RLM-243, TIMX, ROOTX, TLM-CORE) via `runner_protocol.rs`
+3. Trace les décisions APPROUVER/SUSPENDRE/REJETER dans un WAL ternaire (`src/wal.rs`)
+4. Valide les documents de gouvernance PRD/MOC via `agents/prd_moc_supervisor.py`
+5. Publie les verdicts sur le bus WAZAA topic `prd_moc.gate`
 
 ---
 
@@ -71,10 +72,12 @@ WAZAA (bus orchestration, port 1873)
     │
 N243 (meta-orchestrateur)
     │
-    ├── schemas/kinds-lstar.md → kinds 40050-40057
-    ├── agents/runner-protocol.md → RunnerAdapter
-    ├── workflows/ternary-actions.md → TernaryAction
-    ├── wal/ternary-wal.md → TernaryWAL (+ wal_event_emitter.py)
+    ├── src/gates/l5.rs → Gate domaine (APPROUVER/SUSPENDRE/REJETER)
+    ├── src/gates/l6.rs → Gate runner (Ed25519 proof)
+    ├── src/gates/memory_gate.rs → Gate mémoire (écritures)
+    ├── src/gates/runner_protocol.rs → Protocole runners L* (KEEL R9)
+    ├── agents/prd_moc_supervisor.py → Validation PRD/MOC + WAZAA publish
+    ├── wal/ternary-wal.md → WAL ternaire (replay + compact TTL 30j)
     └── bdcp/enforcer.md → BDCPChecker (src/bdcp.rs)
 ```
 
