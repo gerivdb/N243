@@ -104,3 +104,22 @@ def test_supervisor_wazaa_topic_is_prd_moc_gate(monkeypatch, tmp_path):
     payload = json.loads(wazaa_calls[0][4])
     assert payload["verdict"] == "APPROUVER"
     assert payload["repo"] == "N243"
+
+
+def test_supervisor_last_decisions_returns_history(tmp_path):
+    wal = TernaryWAL(tmp_path / "history-wal.jsonl")
+    supervisor = N243Supervisor(wal_path=tmp_path / "history-wal.jsonl")
+    for i in range(3):
+        supervisor.supervise("N243", "APPROUVER", {"step": i})
+    last = supervisor.last_decisions(2)
+    assert len(last) == 2
+    assert all("timestamp" in d for d in last)
+
+
+def test_supervisor_narrative_contains_decisions(tmp_path):
+    wal = TernaryWAL(tmp_path / "narrative-wal.jsonl")
+    supervisor = N243Supervisor(wal_path=tmp_path / "narrative-wal.jsonl")
+    supervisor.supervise("N243", "SUSPENDRE", {"reason": "waiting"})
+    narrative = supervisor.narrative()
+    assert "N243 Supervision Narrative" in narrative
+    assert "SUSPENDRE" in narrative
