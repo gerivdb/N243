@@ -1,8 +1,10 @@
 // N243/gates/l5/types.rs
 // Types partagés pour le L5 Trust Gate.
 
+use serde::{Deserialize, Serialize};
+
 /// Verdict L5
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub enum Verdict {
     Approved,
     Rejected,
@@ -16,6 +18,7 @@ impl Default for Verdict {
 }
 
 /// Changement à vérifier par le L5 Trust Gate.
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Change {
     pub id: String,
     pub description: String,
@@ -33,7 +36,7 @@ impl Change {
 }
 
 /// Résultat d'un check L5.
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct CheckResult {
     pub passed: bool,
     pub detail: String,

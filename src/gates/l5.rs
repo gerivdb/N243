@@ -4,7 +4,9 @@
 
 pub mod types;
 
-use crate::gates::l5::types::{Change, CheckResult, Checker, Verdict};
+// Re-export types for external use
+pub use types::{Change, CheckResult, Checker, Verdict};
+
 use crate::gates::maintainability_oracle::MaintainabilityOracle;
 
 /// ADR Checker — vérifie qu'un changement a un ADR associé.
