@@ -45,3 +45,29 @@ citizens:
     role: "orchestrator"
     description: "Orchestre les cycles RAI (KEEL, META-LOOP, champion, PR factory)"
     phase: "orchestration"
+
+  # PRD-MOC-GEN-082 automation primitives
+  - name: "repo-sanitizer"
+    role: "sanitizer"
+    description: "Nettoie les working trees, supprime les caches sales, formate les YAML"
+    phase: "session-end"
+
+  - name: "test-runner-adaptive"
+    role: "runner"
+    description: "Lance pytest avec timeout dynamique, parse les résultats, isole les échecs"
+    phase: "post-modif"
+
+  - name: "sdk-compatibility-checker"
+    role: "checker"
+    description: "Vérifie que les imports d'un repo correspondent aux SDK installés"
+    phase: "pre-commit"
+
+  - name: "nexus-validator"
+    role: "validator"
+    description: "Vérifie la conformité des frontmatter et noms de fichiers NEXUS"
+    phase: "pre-commit"
+
+  - name: "drift-classifier"
+    role: "classifier"
+    description: "Classe les drifts en legitimate/noise/blocking avant commit"
+    phase: "session-end"
