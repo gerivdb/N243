@@ -144,7 +144,7 @@ impl MemoryGate {
                 require_schema_validation: true,
                 require_ttl_for_hot: false,
                 max_value_size_bytes: 10 * 1024 * 1024,
-                allowed_provenances: vec![Provenance::KgL, Provenance::Ctulu, Provenance::N243],
+                allowed_provenances: vec![Provenance::KgL, Provenance::Ctulu, Provenance::N243, Provenance::Human],
             },
         );
         

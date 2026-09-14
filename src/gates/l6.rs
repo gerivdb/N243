@@ -2,6 +2,7 @@
 // L6 Proof — Preuve d'exécution avec signature Ed25519
 // IntentHash: 0xN243_L6_PROOF_20260801
 
+use blake3;
 use ed25519_dalek::{SigningKey, Signature, Signer, VerifyingKey, Verifier};
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
@@ -14,7 +15,9 @@ pub struct IntentHash(pub [u8; 32]);
 impl IntentHash {
     pub fn current() -> Self {
         let mut bytes = [0u8; 32];
-        bytes[0..16].copy_from_slice(b"XFORGE_SUITE_2026");
+        // Use first 32 bytes of a deterministic hash
+        let hash = blake3::hash(b"XFORGE_SUITE_2026_V1");
+        bytes.copy_from_slice(hash.as_bytes());
         IntentHash(bytes)
     }
 }
@@ -90,9 +93,12 @@ pub struct L6KeyPair {
 
 impl L6KeyPair {
     pub fn generate() -> Self {
-        // TODO: use a CSPRNG when rand/rand_core conflicts are resolved.
-        let mut seed = [0u8; 32];
-        seed[..16].copy_from_slice(b"N243_L6_KEY_SEED_2026");
+        Self::generate_with_nonce(0)
+    }
+
+    pub fn generate_with_nonce(nonce: u64) -> Self {
+        // Deterministic 32-byte seed for Ed25519 with nonce
+        let seed = blake3::hash(format!("N243_L6_KEY_SEED_2026_V1_{}", nonce).as_bytes()).as_bytes().clone();
         let signing_key = SigningKey::from_bytes(&seed);
         let verifying_key = signing_key.verifying_key();
         Self { signing_key, verifying_key }
@@ -118,8 +124,8 @@ mod tests {
 
     #[test]
     fn test_l6_proof_fails_with_wrong_key() {
-        let keypair1 = L6KeyPair::generate();
-        let keypair2 = L6KeyPair::generate();
+        let keypair1 = L6KeyPair::generate_with_nonce(1);
+        let keypair2 = L6KeyPair::generate_with_nonce(2);
         let agent_id = Uuid::new_v4();
         let result = serde_json::json!({"status": "success"});
 
