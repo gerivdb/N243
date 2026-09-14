@@ -230,7 +230,10 @@ class PRDMOCSupervisor:
 - [x] `PRD/` directory créé
 - [x] `PRD/PRD-N243-001-gate-orchestration-runner-protocol.md` créé (ce document)
 - [x] `PRD/PRD-000-index.md` créé
-- [ ] WAL replay implémenté
-- [ ] Runner protocol stabilisé
+- [x] WAL replay implémenté (Rust + tests)
+- [ ] WAL compact à implémenter
+- [x] Runner protocol finalisé (Rust)
 - [x] Supervisor frontmatter validator étendu (S3.1)
-- [ ] Conformité RSS-v2.3 validée
+- [x] Supervisor connecté à WAZAA topic `prd_moc.gate` (S3.2)
+- [x] Tests unitaires supervisor (S3.3)
+- [x] Conformité RSS-v2.3 validée (`rss_lint.py` passe)
