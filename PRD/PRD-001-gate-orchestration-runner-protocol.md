@@ -5,6 +5,11 @@ date: "2026-09-14"
 status: proposed
 state_observed: "2026-09-14T22:07:00+02:00"
 intent_hash: "0xN243_GATE_ORCHESTRATION_RUNNER_PROTOCOL_20260914"
+author: "N243"
+created: "2026-09-14"
+id: "PRD-001"
+repo: "N243"
+title: "N243 Gate Orchestration & Runner Protocol Integration"
 inherits:
   - "moc-governance"
   - "PRD-MOC-ECOSYSTEM-MEMORY-ARCHITECTURE-2026-08-28"
@@ -92,7 +97,7 @@ N243/
 │   ├── test-n243-*.jsonl       ← Fixtures de test
 │   └── test/                   ← Répertoire de tests WAL
 ├── PRD/
-│   └── PRD-N243-001-*.md       ← Ce document
+│   └── PRD-001-*.md       ← Ce document
 ├── ADR/
 │   └── ADR-2026-08-28-003-N243-MEMORY-GATE.md
 └── ...
@@ -224,16 +229,39 @@ class PRDMOCSupervisor:
 
 ## 8. ÉTAT OBSERVÉ
 
-**2026-09-14T23:08+02:00** :
+**2026-09-15T00:30+02:00** — Proof-of-Life auto-mode SLM :
 - [x] Branche feature créée
 - [x] `ONTOLOGY_DECLARATION.yaml` créé
 - [x] `PRD/` directory créé
 - [x] `PRD/PRD-N243-001-gate-orchestration-runner-protocol.md` créé (ce document)
 - [x] `PRD/PRD-000-index.md` créé
-- [x] WAL replay implémenté (Rust + tests)
-- [ ] WAL compact à implémenter
-- [x] Runner protocol finalisé (Rust)
-- [x] Supervisor frontmatter validator étendu (S3.1)
-- [x] Supervisor connecté à WAZAA topic `prd_moc.gate` (S3.2)
-- [x] Tests unitaires supervisor (S3.3)
-- [x] Conformité RSS-v2.3 validée (`rss_lint.py` passe)
+- [x] WAL replay implémenté (Rust + tests) — `src/wal.rs::replay()`
+- [x] WAL compact TTL 30j implémenté (Rust + tests) — `src/wal.rs::compact_ttl()`
+- [x] Runner protocol finalisé (Rust) — `src/gates/runner_protocol.rs`
+- [x] Supervisor frontmatter validator étendu (S3.1) — `agents/prd_moc_supervisor.py::validate_frontmatter()`
+- [x] Supervisor connecté à WAZAA topic `prd_moc.gate` (S3.2) — `agents/prd_moc_supervisor.py::_publish_wazaa()`
+- [x] Tests unitaires supervisor (S3.3) — `agents/test_n243_supervisor.py`
+- [x] Conformité RSS-v2.3 validée (`rss_lint.py --depth 4` → PASS)
+
+### Preuves d'exécution horodatées
+
+```
+[WAL] cargo test wal::tests -- 2026-09-15T00:28+02:00
+  test wal::tests::test_n243_wal_record ... ok
+  test wal::tests::test_n243_wal_oscillation_detection ... ok
+  test wal::tests::test_n243_wal_compact ... ok
+  test wal::tests::test_n243_wal_replay ... ok
+  test wal::tests::test_n243_wal_compact_ttl ... ok
+  test result: ok. 5 passed; 0 failed
+
+[SUPERVISOR] pytest agents/test_n243_supervisor.py -v -- 2026-09-15T00:29+02:00
+  agents/test_n243_supervisor.py::test_ternary_wal PASSED
+  agents/test_n243_supervisor.py::test_n243_supervisor_approve PASSED
+  agents/test_n243_supervisor.py::test_n243_supervisor_suspend PASSED
+  agents/test_n243_supervisor.py::test_n243_supervisor_reject PASSED
+  agents/test_n243_supervisor.py::test_n243_narrative PASSED
+  ======================= 5 passed in 32.63s =======================
+
+[RSS] rss_lint.py --repo . --depth 4 -- 2026-09-15T00:30+02:00
+  [PASS] Repo conforme RSS-v2
+```

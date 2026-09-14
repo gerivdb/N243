@@ -130,6 +130,19 @@ impl N243WAL {
         remove
     }
 
+    pub fn compact_ttl(&mut self, ttl_days: u64) -> std::io::Result<usize> {
+        let cutoff = chrono::Utc::now().timestamp() - (ttl_days * 24 * 60 * 60) as i64;
+        let initial_len = self.entries.len();
+        self.entries.retain(|entry| entry.timestamp >= cutoff);
+        let removed = initial_len - self.entries.len();
+        if removed > 0 {
+            if let Some(ref path) = self.path {
+                self.rewrite_file(path)?;
+            }
+        }
+        Ok(removed)
+    }
+
     fn append_to_file(&self, path: &str, entry: &WalEntry) -> std::io::Result<()> {
         if let Some(parent) = Path::new(path).parent() {
             fs::create_dir_all(parent)?;
@@ -137,6 +150,16 @@ impl N243WAL {
         let mut file = OpenOptions::new().create(true).append(true).open(path)?;
         let line = serde_json::to_string(entry).unwrap_or_default();
         writeln!(file, "{}", line)
+    }
+
+    fn rewrite_file(&self, path: &str) -> std::io::Result<()> {
+        let content = self
+            .entries
+            .iter()
+            .map(|entry| serde_json::to_string(entry).unwrap_or_default())
+            .collect::<Vec<_>>()
+            .join("\n");
+        fs::write(path, content + "\n")
     }
 }
 
@@ -191,5 +214,32 @@ mod tests {
         assert_eq!(wal.entries.len(), 2);
         assert_eq!(wal.entries[0].entity, "b");
         assert_eq!(wal.entries[1].entity, "c");
+    }
+
+    #[test]
+    fn test_n243_wal_compact_ttl() {
+        let tmp = std::env::temp_dir().join("n243-wal-compact-ttl-test.jsonl");
+        let now = chrono::Utc::now().timestamp();
+        let old_ts = now - (31 * 24 * 60 * 60); // 31 jours
+        let fresh_ts = now;
+        let _ = fs::write(
+            &tmp,
+            format!(
+                r#"{{"entity":"old","previous":"Convergence","current":"Divergence","reason":"old","timestamp":{old_ts}}}
+{{"entity":"fresh","previous":"Oscillation","current":"Convergence","reason":"fresh","timestamp":{fresh_ts}}}
+"#
+            ),
+        );
+        let mut wal = N243WAL::with_path(tmp.to_str().unwrap());
+        let _ = wal.replay(&tmp);
+        assert_eq!(wal.entries.len(), 2);
+        let removed = wal.compact_ttl(30).expect("compact_ttl");
+        assert_eq!(removed, 1);
+        assert_eq!(wal.entries.len(), 1);
+        assert_eq!(wal.entries[0].entity, "fresh");
+        let content = fs::read_to_string(&tmp).expect("read compacted wal");
+        assert!(content.contains("fresh"));
+        assert!(!content.contains("old"));
+        let _ = fs::remove_file(&tmp);
     }
 }

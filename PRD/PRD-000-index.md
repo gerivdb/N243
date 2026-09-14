@@ -7,7 +7,7 @@
 
 | ID | Fichier | Titre | Statut | Date |
 |----|---------|-------|--------|------|
-| PRD-N243-001 | [PRD-N243-001-gate-orchestration-runner-protocol.md](PRD-N243-001-gate-orchestration-runner-protocol.md) | N243 Gate Orchestration & Runner Protocol Integration | proposed | 2026-09-14 |
+| PRD-N243-001 | [PRD-001-gate-orchestration-runner-protocol.md](PRD-001-gate-orchestration-runner-protocol.md) | N243 Gate Orchestration & Runner Protocol Integration | proposed | 2026-09-14 |
 
 ## Archives
 
