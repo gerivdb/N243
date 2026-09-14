@@ -2,3 +2,4 @@
 # Exclure les build artifacts et git internes
 target/
 .git/
+.pytest_cache/
