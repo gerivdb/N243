@@ -6,9 +6,6 @@
 //
 // IntentHash: 0xRUNNER_PROTOCOL_FUNCTOR_20260828
 
-use crate::gates::l5::{L5Gate, Verdict};
-use crate::gates::l5::types::Change as L5Change;
-use crate::gates::l6::{L6KeyPair, L6Proof};
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 
@@ -119,7 +116,6 @@ impl RunnerProtocolFunctor {
     
     /// L5 Trust Gate: 5 checkers (ADR, φ-CPS, Tests, Security, Maintainability)
     pub fn l5_verify(&mut self, change: &RunnerChange) -> crate::gates::l5::Verdict {
-        let l5_gate = crate::gates::l5::L5Gate::new();
         let l5_change = crate::gates::l5::types::Change::new(
             change.id.clone(),
             change.description.clone()
@@ -131,7 +127,6 @@ impl RunnerProtocolFunctor {
     
     /// L6 Proof: Ed25519 signature on L5 verdict
     pub fn l6_prove(&mut self, keypair: &crate::gates::l6::L6KeyPair) -> crate::gates::l6::L6Proof {
-        let verdict = self.l5_verdict.as_ref().expect("L5 verdict required before L6");
         let agent_id = uuid::Uuid::new_v4();
         let result = serde_json::json!({
             "verdict": format!("{:?}", self.l5_verdict),
@@ -143,13 +138,13 @@ impl RunnerProtocolFunctor {
     }
     
     /// Full L5/L6 gate cycle
-    pub fn l5_l6_gate(&mut self, change: &RunnerChange, keypair: &crate::gates::l6::L6KeyPair) -> RunnerProtocolResult {
+    pub fn l5_l6_gate(&mut self, change: &RunnerChange, _keypair: &crate::gates::l6::L6KeyPair) -> RunnerProtocolResult {
         // L5: 5 checkers
-        let l5_verdict = self.l5_verify(change);
+        self.l5_verify(change);
         
         // L6: Ed25519 proof
         let keypair = crate::gates::l6::L6KeyPair::generate();
-        let l6_proof = self.l6_prove(&keypair);
+        let _l6_proof = self.l6_prove(&keypair);
         
         RunnerProtocolResult {
             functor_name: self.name.clone(),
@@ -199,7 +194,6 @@ pub struct RunnerProtocolResult {
 /// Registry for all runner protocol functors
 pub struct RunnerProtocolRegistry {
     functors: std::collections::HashMap<RunnerType, RunnerProtocolFunctor>,
-    l5_gate: crate::gates::l5::L5Gate,
     l6_keypair: crate::gates::l6::L6KeyPair,
 }
 
@@ -207,7 +201,6 @@ impl RunnerProtocolRegistry {
     pub fn new() -> Self {
         let mut registry = Self {
             functors: std::collections::HashMap::new(),
-            l5_gate: crate::gates::l5::L5Gate::new(),
             l6_keypair: crate::gates::l6::L6KeyPair::generate(),
         };
         

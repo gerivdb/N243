@@ -107,9 +107,7 @@ pub struct MemoryGate {
 #[derive(Debug, Clone)]
 struct GatePolicy {
     default_decision: TernaryDecision,
-    require_schema_validation: bool,
     require_ttl_for_hot: bool,
-    max_value_size_bytes: usize,
     allowed_provenances: Vec<Provenance>,
 }
 
@@ -121,9 +119,7 @@ impl MemoryGate {
             (MemoryDomain::Identity, MemoryTier::Hot),
             GatePolicy {
                 default_decision: TernaryDecision::Approuver,
-                require_schema_validation: true,
                 require_ttl_for_hot: true,
-                max_value_size_bytes: 1024 * 1024,
                 allowed_provenances: vec![Provenance::Human, Provenance::Brain, Provenance::HermesNr],
             },
         );
@@ -131,9 +127,7 @@ impl MemoryGate {
             (MemoryDomain::Facts, MemoryTier::Hot),
             GatePolicy {
                 default_decision: TernaryDecision::Approuver,
-                require_schema_validation: true,
                 require_ttl_for_hot: true,
-                max_value_size_bytes: 512 * 1024,
                 allowed_provenances: vec![Provenance::Human, Provenance::Brain, Provenance::HermesNr, Provenance::N243],
             },
         );
@@ -141,9 +135,7 @@ impl MemoryGate {
             (MemoryDomain::Causal, MemoryTier::Cold),
             GatePolicy {
                 default_decision: TernaryDecision::Suspendre,
-                require_schema_validation: true,
                 require_ttl_for_hot: false,
-                max_value_size_bytes: 10 * 1024 * 1024,
                 allowed_provenances: vec![Provenance::KgL, Provenance::Ctulu, Provenance::N243, Provenance::Human],
             },
         );
@@ -179,9 +171,7 @@ impl MemoryGate {
             .cloned()
             .unwrap_or_else(|| GatePolicy {
                 default_decision: TernaryDecision::Suspendre,
-                require_schema_validation: true,
                 require_ttl_for_hot: false,
-                max_value_size_bytes: 1024 * 1024,
                 allowed_provenances: vec![],
             })
     }
@@ -198,12 +188,6 @@ impl MemoryGate {
             conditions.push("provenance_valid".to_string());
         }
         (decision, reason, conditions)
-    }
-
-    fn check_ttl(&self, policy: &GatePolicy, tier: MemoryTier, conditions: &mut Vec<String>) {
-        if policy.require_ttl_for_hot && matches!(tier, MemoryTier::Hot) {
-            conditions.push("ttl_required".to_string());
-        }
     }
 
     pub fn validate(&self, request: MemoryGateRequest) -> MemoryGateDecision {
@@ -223,10 +207,8 @@ impl MemoryGate {
         let policy = self.get_policy(request.domain, request.tier);
         
         let mut conditions = Vec::new();
-        let mut decision = policy.default_decision;
         
-        let (dec, reason, mut conds) = self.check_provenance(&policy, request.provenance, request.domain);
-        decision = dec;
+        let (decision, reason, mut conds) = self.check_provenance(&policy, request.provenance, request.domain);
         conditions.append(&mut conds);
         
         if policy.require_ttl_for_hot && matches!(request.tier, MemoryTier::Hot) {
