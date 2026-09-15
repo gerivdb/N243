@@ -4,8 +4,8 @@
 sanitizer_utils.py — N243 Sanitizer Utils
 
 Rôle :
-- Fournir un assainisseur de texte simple
-- Supprimer les caractères dangereux
+- Fournir un assainisseur simple de chaînes
+- Supprimer des caractères indésirables
 - Publier un rapport d'assainissement
 """
 
@@ -13,31 +13,28 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import datetime, timezone
-from typing import Any, Dict, List, Optional
+from typing import Any, List
 
 
 @dataclass
-class SanitizeResult:
+class SanitizeReport:
     original: str
     sanitized: str
-    removals: int
+    removed: int
     timestamp: str
 
 
 class SanitizerUtils:
-    def __init__(self, allowed_chars: str = "") -> None:
-        self._allowed = set(allowed_chars)
+    @staticmethod
+    def remove_chars(value: str, chars: List[str]) -> str:
+        for char in chars:
+            value = value.replace(char, "")
+        return value
 
-    def sanitize(self, text: str) -> SanitizeResult:
-        removals = 0
-        sanitized = "".join(
-            char if char.isprintable() and (not self._allowed or char in self._allowed) else ""
-            for char in text
-        )
-        removals = len(text) - len(sanitized)
-        return SanitizeResult(
-            original=text,
+    def report(self, original: str, sanitized: str, removed: int) -> SanitizeReport:
+        return SanitizeReport(
+            original=original,
             sanitized=sanitized,
-            removals=removals,
+            removed=removed,
             timestamp=datetime.now(timezone.utc).isoformat(),
         )
