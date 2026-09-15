@@ -1,0 +1,81 @@
+---
+name: n243-ml-train
+description: >
+  Workflow ML training pour N243.
+  Orchestre l'entraînement de modèles ML sur les données KG-L via TIMX.
+  Déclenché par les décisions de gate N243 ou manuellement.
+version: "1.0.0"
+status: proposed
+intent_hash: 0xN243_ML_TRAIN_WORKFLOW_20260915
+author: KiloAuto
+source_repo: gerivdb/N243
+source_path: workflows/ml_train/n243-ml-train.yaml
+triggers:
+  - "n243.gate.decision"
+  - "timx.schedule"
+  - "manual"
+steps:
+  - name: receive_trigger
+    action: n243-supervisor
+    input:
+      source: wazaa-topic
+      topic: n243.gates
+      format: json
+  - name: validate_gf
+    action: n243-gate-l5
+    input:
+      checkers:
+        - GF-1
+        - GF-2
+        - GF-3
+        - GF-4
+        - GF-5
+        - GF-6
+        - GF-7
+        - GF-8
+        - GF-9
+        - GF-10
+        - GF-11
+        - GF-12
+        - GF-13
+        - GF-14
+      mode: strict
+  - name: export_dataset
+    action: timx-agent
+    input:
+      operation: export_dataset
+      query: "${trigger.payload.kg_query}"
+      format: jsonl
+  - name: schedule_train
+    action: timx-agent
+    input:
+      operation: schedule_train
+      dataset_path: "${export_dataset.output.path}"
+      split_ratio: 0.8
+  - name: run_training
+    action: kg-l-training
+    input:
+      dataset: "${export_dataset.output.path}"
+      model: "${trigger.payload.model}"
+      epochs: 10
+      batch_size: 32
+  - name: evaluate_model
+    action: rootx-agent
+    input:
+      operation: validate_ontology
+      ontology_id: "${run_training.output.model_id}"
+  - name: log_wal
+    action: n243-wal
+    input:
+      entity: ml_train
+      state: CONVERGENCE
+      reason: "ML training completed via N243 workflow"
+  - name: publish_wazaa
+    action: wazaa-publish
+    input:
+      topic: kg-l.ml.train
+      payload:
+        workflow: ml_train
+        decision: "${trigger.payload.verdict}"
+        model_id: "${run_training.output.model_id}"
+        metrics: "${run_training.output.metrics}"

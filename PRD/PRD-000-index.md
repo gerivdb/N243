@@ -10,6 +10,7 @@
 | PRD-N243-001 | [PRD-001-gate-orchestration-runner-protocol.md](PRD-001-gate-orchestration-runner-protocol.md) | N243 Gate Orchestration & Runner Protocol Integration | proposed | 2026-09-14 |
 | PRD-N243-002 | [PRD-002-automation-primitives.md](PRD-002-automation-primitives.md) | N243 Automation Primitives — Skills & Citizens | proposed | 2026-09-15 |
 | PRD-N243-003 | [PRD-003-kg-l-ml-orchestration.md](PRD-003-kg-l-ml-orchestration.md) | N243 KG-L ML Orchestration — Agents & Workflow | proposed | 2026-09-15 |
+| PRD-N243-004 | [PRD-004-operationalization.md](PRD-004-operationalization.md) | N243 Operationalization — Workflows ML + WAZAA Bridge | proposed | 2026-09-15 |
 
 ## Archives
 

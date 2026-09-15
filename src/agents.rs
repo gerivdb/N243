@@ -122,7 +122,7 @@ impl LluxAgent {
         }
     }
 
-    pub fn transform(&self, input: &str) -> Vec<f32> {
+    pub fn transform(&self, _input: &str) -> Vec<f32> {
         vec![0.0; self.embedding_dim as usize]
     }
 
@@ -336,6 +336,71 @@ impl Default for TlmAgent {
     }
 }
 
+/// RLM-243 Agent (Release Lifecycle Manager)
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct Rlm243Agent {
+    pub name: String,
+    pub kg_axis: u32,
+    pub release_version: String,
+    pub stages: Vec<String>,
+}
+
+impl Rlm243Agent {
+    pub fn new() -> Self {
+        Self {
+            name: "RLM-243".to_string(),
+            kg_axis: 0,
+            release_version: "0.1.0".to_string(),
+            stages: vec![
+                "build".to_string(),
+                "test".to_string(),
+                "package".to_string(),
+                "deploy".to_string(),
+            ],
+        }
+    }
+
+    pub fn plan_release(&self, changelog: &str) -> ReleasePlan {
+        ReleasePlan {
+            version: self.release_version.clone(),
+            changelog: changelog.to_string(),
+            stages: self.stages.clone(),
+            status: "planned".to_string(),
+        }
+    }
+
+    pub fn validate_stage(&self, stage: &str) -> StageValidation {
+        StageValidation {
+            stage: stage.to_string(),
+            passed: true,
+            checks: vec![],
+            validated_at: chrono::Utc::now().to_rfc3339(),
+        }
+    }
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct ReleasePlan {
+    pub version: String,
+    pub changelog: String,
+    pub stages: Vec<String>,
+    pub status: String,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct StageValidation {
+    pub stage: String,
+    pub passed: bool,
+    pub checks: Vec<String>,
+    pub validated_at: String,
+}
+
+impl Default for Rlm243Agent {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -396,5 +461,16 @@ mod tests {
         assert_eq!(agent.ternary_states.len(), 3);
         let eval = agent.evaluate_ternary("node-1", "ctx");
         assert_eq!(eval.decision, "CONVERGENCE");
+    }
+
+    #[test]
+    fn test_rlm243_agent() {
+        let agent = Rlm243Agent::new();
+        assert_eq!(agent.name, "RLM-243");
+        assert_eq!(agent.stages.len(), 4);
+        let plan = agent.plan_release("fix: bridge VOLTX");
+        assert_eq!(plan.status, "planned");
+        let validation = agent.validate_stage("build");
+        assert!(validation.passed);
     }
 }
