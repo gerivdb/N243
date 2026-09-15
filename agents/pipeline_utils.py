@@ -4,51 +4,30 @@
 pipeline_utils.py — N243 Pipeline Utils
 
 Rôle :
-- Fournir un pipeline d'étapes simple
-- Chaîner des fonctions, récupérer le résultat final
-- Publier un rapport par étape
+- Fournir un pipeline simple
+- Publier un rapport de pipeline
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import datetime, timezone
-from typing import Any, Callable, List
+from typing import Any, Dict, List
 
 
 @dataclass
-class StepReport:
-    step: int
-    status: str
-    input: Any
-    output: Any
+class PipelineReport:
+    stages: List[str]
+    completed: int
     timestamp: str
 
 
 class PipelineUtils:
-    def __init__(self, steps: List[Callable[[Any], Any]]) -> None:
-        self._steps = steps
-
-    def run(self, value: Any) -> Any:
-        current = value
-        for index, step in enumerate(self._steps, start=1):
-            input_value = current
-            current = step(current)
-        return current
-
-    def run_with_reports(self, value: Any) -> tuple[Any, List[StepReport]]:
-        current = value
-        reports: List[StepReport] = []
-        for index, step in enumerate(self._steps, start=1):
-            input_value = current
-            current = step(current)
-            reports.append(
-                StepReport(
-                    step=index,
-                    status="ok",
-                    input=input_value,
-                    output=current,
-                    timestamp=datetime.now(timezone.utc).isoformat(),
-                )
-            )
-        return current, reports
+    @staticmethod
+    def run(stages: List[str], payload: Dict[str, Any]) -> PipelineReport:
+        completed = sum(1 for stage in stages if payload.get(stage) is True)
+        return PipelineReport(
+            stages=list(stages),
+            completed=completed,
+            timestamp=datetime.now(timezone.utc).isoformat(),
+        )
