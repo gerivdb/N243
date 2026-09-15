@@ -52,9 +52,9 @@ Implémentation de l'intégration KG-L ↔ N243 pour l'orchestration ML :
 - [x] `TlmAgent` — evaluate_ternary + detect_oscillation
 
 ### Tâche 3 — Validation
-- [ ] `cargo test` → 0 échec
-- [ ] `rss_lint.py --depth 4 --check-governance` → PASS
-- [ ] `pytest agents/ tests/` → 0 échec
+- [x] `cargo test` → 0 échec
+- [x] `rss_lint.py --depth 4 --check-governance` → PASS
+- [x] `pytest agents/ tests/` → 0 échec
 
 ## 3. CRITÈRES DE VALIDATION
 
