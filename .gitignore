@@ -15,3 +15,7 @@ Thumbs.db
 
 # === Compiled ===
 *.so
+
+# === Reports ===
+reports/
+
