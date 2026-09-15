@@ -4,8 +4,7 @@
 loader_utils.py — N243 Loader Utils
 
 Rôle :
-- Fournir un chargeur simple de données
-- Charger depuis un dictionnaire ou une source
+- Fournir un outil de chargement simple
 - Publier un rapport de chargement
 """
 
@@ -18,22 +17,15 @@ from typing import Any, Dict, List
 
 @dataclass
 class LoaderReport:
-    source: str
-    loaded: int
+    loaded: List[str]
     timestamp: str
 
 
 class LoaderUtils:
     @staticmethod
-    def load_from_dict(source: Dict[str, Any], default: Any = None) -> Dict[str, Any]:
-        return dict(source)
-
-    def load_items(self, source: Dict[str, Any]) -> List[Any]:
-        return list(source.values())
-
-    def report(self, source: str, loaded: int) -> LoaderReport:
+    def inspect(sources: List[str], payload: Dict[str, Any]) -> LoaderReport:
+        loaded = [source for source in sources if payload.get(source) is True]
         return LoaderReport(
-            source=source,
             loaded=loaded,
             timestamp=datetime.now(timezone.utc).isoformat(),
         )
