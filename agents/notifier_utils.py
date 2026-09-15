@@ -4,8 +4,7 @@
 notifier_utils.py — N243 Notifier Utils
 
 Rôle :
-- Fournir un système de notification simple
-- Envoyer des messages à des abonnés
+- Fournir un outil de notification simple
 - Publier un rapport de notification
 """
 
@@ -13,33 +12,20 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import datetime, timezone
-from typing import Any, Callable, Dict, List
+from typing import Any, Dict, List
 
 
 @dataclass
-class NotifyResult:
-    message: str
-    subscribers: int
+class NotifierReport:
+    notified: List[str]
     timestamp: str
 
 
 class NotifierUtils:
-    def __init__(self) -> None:
-        self._subscribers: Dict[str, List[Callable[[str], None]]] = {}
-
-    def subscribe(self, topic: str, handler: Callable[[str], None]) -> None:
-        self._subscribers.setdefault(topic, []).append(handler)
-
-    def notify(self, topic: str, message: str) -> None:
-        for handler in self._subscribers.get(topic, []):
-            handler(message)
-
-    def subscriber_count(self, topic: str) -> int:
-        return len(self._subscribers.get(topic, []))
-
-    def report(self, topic: str, message: str) -> NotifyResult:
-        return NotifyResult(
-            message=message,
-            subscribers=self.subscriber_count(topic),
+    @staticmethod
+    def send(targets: List[str], payload: Dict[str, Any]) -> NotifierReport:
+        notified = [target for target in targets if payload.get(target) is True]
+        return NotifierReport(
+            notified=notified,
             timestamp=datetime.now(timezone.utc).isoformat(),
         )
