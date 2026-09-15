@@ -4,42 +4,28 @@
 stream_utils.py — N243 Stream Utils
 
 Rôle :
-- Fournir des utilitaires pour le streaming/accumulation
-- Découper un flux en paquets
-- Publier un rapport par paquet
+- Fournir un outil de flux simple
+- Publier un rapport de flux
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import datetime, timezone
-from typing import Any, Callable, Iterable, List
+from typing import Any, Dict, List
 
 
 @dataclass
-class StreamResult:
-    operation: str
-    chunk_index: int
-    chunk_size: int
+class StreamReport:
+    streamed: List[str]
     timestamp: str
 
 
 class StreamUtils:
     @staticmethod
-    def chunk_items(items: List[Any], size: int) -> List[List[Any]]:
-        if size <= 0:
-            raise ValueError("size must be > 0")
-        return [items[i:i + size] for i in range(0, len(items), size)]
-
-    @staticmethod
-    def consume(items: Iterable[Any], consumer: Callable[[Any], None]) -> None:
-        for item in items:
-            consumer(item)
-
-    def report(self, operation: str, chunk_index: int, chunk_size: int) -> StreamResult:
-        return StreamResult(
-            operation=operation,
-            chunk_index=chunk_index,
-            chunk_size=chunk_size,
+    def inspect(targets: List[str], payload: Dict[str, Any]) -> StreamReport:
+        streamed = [target for target in targets if payload.get(target) is True]
+        return StreamReport(
+            streamed=streamed,
             timestamp=datetime.now(timezone.utc).isoformat(),
         )
