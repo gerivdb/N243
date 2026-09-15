@@ -1,0 +1,66 @@
+---
+name: n243-kg-mutation
+description: >
+  Workflow KG-L mutation pour N243.
+  Orchestre les mutations du Knowledge Graph via le méta-orchestrateur N243.
+  Déclenché par les décisions de gate N243 (APPROUVER/SUSPENDRE/REJETER).
+version: "1.0.0"
+status: proposed
+intent_hash: 0xN243_KG_MUTATION_WORKFLOW_20260915
+author: KiloAuto
+source_repo: gerivdb/N243
+source_path: workflows/kg_mutation/n243-kg-mutation.yaml
+triggers:
+  - "n243.gate.decision"
+  - "wazaa.event"
+  - "manual"
+steps:
+  - name: receive_decision
+    action: n243-supervisor
+    input:
+      source: wazaa-topic
+      topic: n243.gates
+      format: json
+  - name: validate_gf
+    action: n243-gate-l5
+    input:
+      checkers:
+        - GF-1
+        - GF-2
+        - GF-3
+        - GF-4
+        - GF-5
+        - GF-6
+        - GF-7
+        - GF-8
+        - GF-9
+        - GF-10
+        - GF-11
+        - GF-12
+        - GF-13
+        - GF-14
+      mode: strict
+  - name: mutate_kg_l
+    action: kg-l-mutation
+    input:
+      operation: MUTATE
+      command: add_node
+      params:
+        label: "${decision.payload.kg_label}"
+        kind: "${decision.payload.kg_kind}"
+        properties: "${decision.payload.kg_properties}"
+      validate: true
+  - name: log_wal
+    action: n243-wal
+    input:
+      entity: kg_mutation
+      state: CONVERGENCE
+      reason: "KG-L mutation executed via N243 workflow"
+  - name: publish_wazaa
+    action: wazaa-publish
+    input:
+      topic: kg-l.mutation
+      payload:
+        workflow: kg_mutation
+        decision: "${decision.verdict}"
+        node_id: "${mutate_kg_l.output.node_id}"
