@@ -1,0 +1,99 @@
+---
+name: n243-personae-ingest
+description: >
+  Workflow d'ingestion Personae → KG-L pour N243.
+  Orchestre l'import des 7 profils Personae dans le Knowledge Graph KG-L.
+  Déclenché par les événements WAZAA ou manuellement.
+version: "1.0.0"
+status: proposed
+intent_hash: 0xN243_PERSONAE_INGEST_WORKFLOW_20260915
+author: KiloAuto
+source_repo: gerivdb/N243
+source_path: workflows/personae_ingest/n243-personae-ingest.yaml
+triggers:
+  - "personae.updated"
+  - "n243.gate.decision"
+  - "manual"
+steps:
+  - name: receive_trigger
+    action: n243-supervisor
+    input:
+      source: wazaa-topic
+      topic: personae.updates
+      format: json
+  - name: validate_gf
+    action: n243-gate-l5
+    input:
+      checkers:
+        - GF-1
+        - GF-2
+        - GF-3
+        - GF-4
+        - GF-5
+        - GF-6
+        - GF-7
+        - GF-8
+        - GF-9
+        - GF-10
+        - GF-11
+        - GF-12
+        - GF-13
+        - GF-14
+      mode: strict
+  - name: load_personae
+    action: n243-agent
+    input:
+      agent: rootx
+      operation: load_yaml
+      source: "personae/personae/*.yaml"
+      format: yaml
+  - name: map_to_kg_l
+    action: kg-l-mapper
+    input:
+      operation: personae_to_kg
+      mapping:
+        - personae: poincare
+          axe: Axe-3
+          role: Structure
+        - personae: musk
+          axe: Axe-18
+          role: Innovation
+        - personae: lecun
+          axe: Axe-16
+          role: Deep Learning
+        - personae: karpathy
+          axe: Axe-7
+          role: Efficiency
+        - personae: bellard
+          axe: Axe-21
+          role: Optimization
+        - personae: steinberger
+          axe: Axe-4
+          role: Performance
+        - personae: maxwell
+          axe: Axe-21
+          role: Budget
+  - name: create_edges
+    action: kg-l-mapper
+    input:
+      operation: create_edges
+      edge_types:
+        - team_member
+        - expertise
+        - governed_by
+  - name: log_wal
+    action: n243-wal
+    input:
+      entity: personae_ingest
+      state: CONVERGENCE
+      reason: "Personae ingested into KG-L via N243 workflow"
+  - name: publish_wazaa
+    action: wazaa-publish
+    input:
+      topic: personae.updated
+      payload:
+        workflow: personae_ingest
+        decision: "${trigger.payload.verdict}"
+        personae_count: 7
+        kg_l_nodes_created: "${map_to_kg_l.output.nodes_created}"
+        edges_created: "${create_edges.output.edges_created}"
