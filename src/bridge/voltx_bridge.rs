@@ -93,6 +93,11 @@ impl VoltxBridge {
         self.connected = false;
         self.subscribers.clear();
     }
+
+    /// Vérifie si le bridge est connecté
+    pub fn is_connected(&self) -> bool {
+        self.connected
+    }
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]

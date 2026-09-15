@@ -27,11 +27,15 @@ impl WazaaBridge {
     }
 
     /// Publie un message sur un topic WAZAA
-    pub fn publish(&self, _topic: &str, _payload: &str) -> Result<(), String> {
+    pub fn publish(&self, topic: &str, payload: &str) -> Result<(), String> {
         if !self.connected {
             return Err("Bridge not connected".to_string());
         }
-        // Placeholder: publication sur le bus
+        if let Some(handlers) = self.subscribers.get(topic) {
+            for handler in handlers {
+                handler(payload.to_string());
+            }
+        }
         Ok(())
     }
 
@@ -54,6 +58,11 @@ impl WazaaBridge {
     pub fn disconnect(&mut self) {
         self.connected = false;
         self.subscribers.clear();
+    }
+
+    /// Vérifie si le bridge est connecté
+    pub fn is_connected(&self) -> bool {
+        self.connected
     }
 }
 
