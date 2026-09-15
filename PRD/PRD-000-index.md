@@ -12,6 +12,7 @@
 | PRD-N243-003 | [PRD-003-kg-l-ml-orchestration.md](PRD-003-kg-l-ml-orchestration.md) | N243 KG-L ML Orchestration — Agents & Workflow | proposed | 2026-09-15 |
 | PRD-N243-004 | [PRD-004-operationalization.md](PRD-004-operationalization.md) | N243 Operationalization — Workflows ML + WAZAA Bridge | proposed | 2026-09-15 |
 | PRD-N243-005 | [PRD-005-voltx-integration.md](PRD-005-voltx-integration.md) | N243 VOLTX Integration — Bus Unifié 5 Canaux | proposed | 2026-09-15 |
+| PRD-N243-006 | [PRD-006-ml-training-pipeline.md](PRD-006-ml-training-pipeline.md) | N243 ML Training Pipeline — Orchestration Rust | proposed | 2026-09-15 |
 
 ## Archives
 
