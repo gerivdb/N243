@@ -8,22 +8,24 @@ from agents.collection_utils import CollectionUtils
 
 
 class TestCollectionUtils:
-    def test_deduplicate(self):
+    def test_group_by(self):
+        utils = CollectionUtils()
+        items = [{"type": "a", "v": 1}, {"type": "b", "v": 2}, {"type": "a", "v": 3}]
+        grouped = utils.group_by(items, lambda x: x["type"])
+        assert grouped["a"] == [{"type": "a", "v": 1}, {"type": "a", "v": 3}]
+
+    def test_count_by(self):
         utils = CollectionUtils()
         items = [1, 2, 2, 3, 3, 3]
-        result = utils.deduplicate(items)
-        assert result == [1, 2, 3]
+        counts = utils.count_by(items, lambda x: x)
+        assert counts[3] == 3
 
-    def test_partition(self):
+    def test_flatten(self):
         utils = CollectionUtils()
-        items = [1, 2, 3, 4]
-        matched, unmatched = utils.partition(items, lambda x: x % 2 == 0)
-        assert matched == [2, 4]
-        assert unmatched == [1, 3]
+        assert utils.flatten([[1, 2], [3]]) == [1, 2, 3]
 
     def test_report(self):
         utils = CollectionUtils()
-        report = utils.report("dedup", 10, 5)
-        assert report.operation == "dedup"
-        assert report.input_count == 10
-        assert report.output_count == 5
+        result = utils.report("flatten", 2, 3, [1, 2, 3])
+        assert result.operation == "flatten"
+        assert result.output_count == 3
