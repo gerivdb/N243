@@ -16,6 +16,7 @@
 | PRD-N243-007 | [PRD-007-integration-tests.md](PRD-007-integration-tests.md) | N243 Integration Tests — tests/integration/ + docs/operationalization.md | proposed | 2026-09-15 |
 | PRD-N243-008 | [PRD-008-release-v1.md](PRD-008-release-v1.md) | N243 Release v1.0.0 — Tag + Déploiement | proposed | 2026-09-15 |
 | PRD-N243-009 | [PRD-009-personae-kg-l-integration.md](PRD-009-personae-kg-l-integration.md) | N243 Personae-KG-L Integration — Orchestration | proposed | 2026-09-15 |
+| PRD-N243-010 | [PRD-010-verses-kg-l-integration.md](PRD-010-verses-kg-l-integration.md) | N243 VERSES-KG-L Integration — Orchestration | proposed | 2026-09-15 |
 
 ## Archives
 

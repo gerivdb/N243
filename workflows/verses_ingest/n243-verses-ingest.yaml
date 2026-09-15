@@ -1,0 +1,75 @@
+---
+name: n243-verses-ingest
+description: >
+  Workflow d'ingestion VERSES → KG-L pour N243.
+  Orchestre l'import des versets VERSES dans le Knowledge Graph KG-L.
+  Déclenché par les événements WAZAA ou manuellement.
+version: "1.0.0"
+status: proposed
+intent_hash: 0xN243_VERSES_INGEST_WORKFLOW_20260915
+author: KiloAuto
+source_repo: gerivdb/N243
+source_path: workflows/verses_ingest/n243-verses-ingest.yaml
+triggers:
+  - "verse.updated"
+  - "n243.gate.decision"
+  - "manual"
+steps:
+  - name: receive_trigger
+    action: n243-supervisor
+    input:
+      source: wazaa-topic
+      topic: verse.updates
+      format: json
+  - name: validate_gf
+    action: n243-gate-l5
+    input:
+      checkers:
+        - GF-1
+        - GF-2
+        - GF-3
+        - GF-4
+        - GF-5
+        - GF-6
+        - GF-7
+        - GF-8
+        - GF-9
+        - GF-10
+        - GF-11
+        - GF-12
+        - GF-13
+        - GF-14
+      mode: strict
+  - name: load_verses
+    action: n243-agent
+    input:
+      agent: llux
+      operation: load_markdown
+      source: "verses/actifs/*.verse.md"
+      format: markdown
+  - name: validate_ontology
+    action: rootx-agent
+    input:
+      operation: validate_ontology
+      ontology_id: "verses"
+  - name: index_kg_l
+    action: kg-l-indexer
+    input:
+      operation: index_verses
+      source: "${load_verses.output.path}"
+      target: "kilocode/axes/"
+  - name: log_wal
+    action: n243-wal
+    input:
+      entity: verses_ingest
+      state: CONVERGENCE
+      reason: "VERSES ingested into KG-L via N243 workflow"
+  - name: publish_wazaa
+    action: wazaa-publish
+    input:
+      topic: verse.updated
+      payload:
+        workflow: verses_ingest
+        decision: "${trigger.payload.verdict}"
+        verses_count: "${load_verses.output.count}"
+        kg_l_nodes_created: "${index_kg_l.output.nodes_created}"
