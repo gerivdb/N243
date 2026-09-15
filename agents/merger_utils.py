@@ -4,8 +4,8 @@
 merger_utils.py — N243 Merger Utils
 
 Rôle :
-- Fournir un fusionneur simple pour des dictionnaires
-- Fusionner des mappings en profondeur
+- Fournir un fusionneur simple d'objets
+- Fusionner des dictionnaires
 - Publier un rapport de fusion
 """
 
@@ -17,34 +17,27 @@ from typing import Any, Dict, List
 
 
 @dataclass
-class MergeResult:
+class MergeReport:
     sources: int
-    keys_added: int
-    keys_overwritten: int
+    keys: List[str]
     timestamp: str
 
 
 class MergerUtils:
     @staticmethod
-    def merge(base: Dict[str, Any], override: Dict[str, Any]) -> Dict[str, Any]:
-        result = dict(base)
-        keys_added = 0
-        keys_overwritten = 0
-        for key, value in override.items():
-            if key in result:
-                keys_overwritten += 1
+    def merge_dicts(left: Dict[str, Any], right: Dict[str, Any]) -> Dict[str, Any]:
+        merged = dict(left)
+        for key, value in right.items():
+            if key in merged:
+                merged[key] = value
             else:
-                keys_added += 1
-            result[key] = value
-        return result
+                merged[key] = value
+        return merged
 
-    def report(self, base: Dict[str, Any], override: Dict[str, Any]) -> MergeResult:
-        merged = self.merge(base, override)
-        keys_added = sum(1 for key in override if key not in base)
-        keys_overwritten = sum(1 for key in override if key in base)
-        return MergeResult(
-            sources=2,
-            keys_added=keys_added,
-            keys_overwritten=keys_overwritten,
+    def report(self, sources: List[Dict[str, Any]]) -> MergeReport:
+        keys = sorted({key for source in sources for key in source.keys()})
+        return MergeReport(
+            sources=len(sources),
+            keys=keys,
             timestamp=datetime.now(timezone.utc).isoformat(),
         )
