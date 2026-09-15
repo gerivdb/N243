@@ -8,14 +8,30 @@ from agents.validator_utils import ValidatorUtils
 
 
 class TestValidatorUtils:
+    def test_required(self):
+        validator = ValidatorUtils()
+        assert validator.required("name", None) is not None
+        assert validator.required("name", 1) is None
+
+    def test_type_check(self):
+        validator = ValidatorUtils()
+        assert validator.type_check("age", 1, int) is None
+        assert validator.type_check("age", "1", int) is not None
+
     def test_validate_valid(self):
-        utils = ValidatorUtils()
-        report = utils.validate({"a": 1}, ["a"])
-        assert report.valid is True
-        assert report.missing == []
+        validator = ValidatorUtils()
+        result = validator.validate(
+            [
+                {"name": "age", "value": 5, "required": True, "type": int, "min": 0, "max": 10},
+            ]
+        )
+        assert result.valid is True
 
     def test_validate_invalid(self):
-        utils = ValidatorUtils()
-        report = utils.validate({"a": 1}, ["a", "b"])
-        assert report.valid is False
-        assert report.missing == ["b"]
+        validator = ValidatorUtils()
+        result = validator.validate(
+            [
+                {"name": "age", "value": None, "required": True},
+            ]
+        )
+        assert result.valid is False
