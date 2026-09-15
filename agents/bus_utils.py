@@ -17,14 +17,15 @@ from typing import Any, Dict, List
 
 @dataclass
 class BusReport:
-    messages: int
+    routed: List[str]
     timestamp: str
 
 
 class BusUtils:
     @staticmethod
-    def publish(values: List[Dict[str, Any]]) -> BusReport:
+    def inspect(buses: List[str], payload: Dict[str, Any]) -> BusReport:
+        routed = [bus for bus in buses if payload.get(bus) is True]
         return BusReport(
-            messages=len(values),
+            routed=routed,
             timestamp=datetime.now(timezone.utc).isoformat(),
         )

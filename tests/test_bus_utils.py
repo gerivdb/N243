@@ -8,7 +8,7 @@ from agents.bus_utils import BusUtils
 
 
 class TestBusUtils:
-    def test_publish(self):
+    def test_inspect(self):
         utils = BusUtils()
-        report = utils.publish([{"topic": "a"}, {"topic": "b"}])
-        assert report.messages == 2
+        report = utils.inspect(["a", "b"], {"a": True, "b": False})
+        assert report.routed == ["a"]
