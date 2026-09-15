@@ -71,8 +71,28 @@ Implémentation de l'intégration KG-L ↔ N243 pour l'orchestration ML :
 - [x] Workflow `kg_mutation` créé
 - [x] 4 agents KG-L implémentés dans `src/agents.rs`
 - [x] Compilation vérifiée (`cargo check` → PASS)
-- [ ] Tests Rust à exécuter
-- [ ] Conformité RSS-v2 à vérifier
+- [x] Tests Rust passent (`cargo test agents::tests` → 6 passed)
+- [x] Tests Python passent (`pytest agents/ tests/` → 12 passed)
+- [x] Conformité RSS-v2 validée (`rss_lint.py --depth 4 --check-governance` → PASS)
+
+### Preuves d'exécution horodatées
+
+```
+[RUST] cargo test agents::tests -- 2026-09-15T02:15+02:00
+  test agents::tests::test_agent_lifecycle ... ok
+  test agents::tests::test_agent_registry ... ok
+  test agents::tests::test_llux_agent ... ok
+  test agents::tests::test_rootx_agent ... ok
+  test agents::tests::test_timx_agent ... ok
+  test agents::tests::test_tlm_agent ... ok
+  test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured
+
+[PYTHON] pytest agents/test_n243_supervisor.py tests/test_runner_protocol.py -v -- 2026-09-15T02:16+02:00
+  ======================= 12 passed in 77.08s =======================
+
+[RSS] rss_lint.py --repo . --depth 4 --check-governance -- 2026-09-15T02:16+02:00
+  [PASS] Repo conforme RSS-v2
+```
 
 ## 5. RÉFÉRENCES
 
