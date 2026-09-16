@@ -150,5 +150,33 @@ N243 (L4-TOOLS)
 
 **IntentHash** : 0xPRD_MOC_N243_MASTER_20260916  
 **Status** : accepted  
-**Date** : 2026-09-16
+**Date** : 2026-09-16  
+
+---
+
+## 10. Corrections Effectuées (TALEX Analysis)
+
+| ID | Type | Description | Status |
+|-----|------|-------------|--------|
+| ERR-REF-01 | Références | `related_moc` complété avec GOVERNANCE-HUB-MASTER, CROSS-REPO-DEPENDENCY-GRAPH, CI-CD-CROSS-REPO | ✅ corrigé |
+| ERR-DRIFT-01 | Drift | Cross-references vérifiées sur GOVERNANCE-HUB, LLUX, WAZAA, PIANO, FLEX, KG-L | ✅ corrigé |
+| ERR-KIVA-01 | Merge | Fallback API GitHub utilisé pour merge PR #66 (WAZAA) | ✅ contourné |
+
+---
+
+## 11. Proof-of-Life
+
+- [x] LLUX MASTER : commit `5331587` — docs(LLUX): update cross-repo references
+- [x] N243 MASTER : commit `9f94425` — docs(N243): complete cross-repo references in MASTER
+- [x] WAZAA MASTER : PR #66 mergée — docs(WAZAA): add PRD-MOC-WAZAA-MASTER.md
+- [x] PIANO MASTER : commit `161402fe` — docs(PIANO): update cross-repo references
+- [x] GOVERNANCE-HUB MASTER : commit `8e9ec109` — fix datetime UTC + empty collection handling
+- [x] FLEX MASTER : références à jour
+- [x] KG-L MASTER : références à jour
+- [x] Cross-repo graph : `PRD-MOC-CROSS-REPO-DEPENDENCY-GRAPH.md` créé
+- [x] CI/CD cross-repo : `PRD-MOC-CI-CD-CROSS-REPO.md` créé
+
+---
+
+*Dernière mise à jour : 2026-09-17T01:00:00+02:00*
 
