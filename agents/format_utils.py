@@ -1,46 +1,30 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-format_utils.py — N243 Format Utils
+format_utils.py — N24 N243 Format Utils
 
 Rôle :
-- Fournir des utilitaires de formatage simples
-- Formater nombres, dates, textes
-- Publier un rapport de formatage
+- Fournir un outil simple de gestion de formats
+- Publier un rapport de formats détectés
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import datetime, timezone
-from typing import Any, Dict, List, Optional
+from typing import List
 
 
 @dataclass
-class FormatResult:
-    operation: str
-    input_value: Any
-    output_value: str
+class FormatReport:
+    formats: List[str]
     timestamp: str
 
 
 class FormatUtils:
     @staticmethod
-    def number(value: float, digits: int = 2) -> str:
-        return f"{value:.{digits}f}"
-
-    @staticmethod
-    def date(value: datetime) -> str:
-        return value.strftime("%Y-%m-%d")
-
-    @staticmethod
-    def datetime(value: datetime) -> str:
-        return value.strftime("%Y-%m-%d %H:%M:%S")
-
-    def report(self, operation: str, input_value: Any, output_value: str) -> FormatResult:
-        return FormatResult(
-            operation=operation,
-            input_value=input_value,
-            output_value=output_value,
+    def inspect(formats: List[str]) -> FormatReport:
+        return FormatReport(
+            formats=list(formats),
             timestamp=datetime.now(timezone.utc).isoformat(),
         )
