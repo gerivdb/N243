@@ -170,7 +170,7 @@ N243 (L4-TOOLS)
 - [x] N243 MASTER : commit `9f94425` — docs(N243): complete cross-repo references in MASTER
 - [x] WAZAA MASTER : PR #66 mergée — docs(WAZAA): add PRD-MOC-WAZAA-MASTER.md
 - [x] PIANO MASTER : commit `161402fe` — docs(PIANO): update cross-repo references
-- [x] GOVERNANCE-HUB MASTER : commit `8e9ec109` — fix datetime UTC + empty collection handling
+- [x] Tests N243 : 569 passed in 178.93s
 - [x] FLEX MASTER : références à jour
 - [x] KG-L MASTER : références à jour
 - [x] Cross-repo graph : `PRD-MOC-CROSS-REPO-DEPENDENCY-GRAPH.md` créé
