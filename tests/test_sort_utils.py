@@ -1,14 +1,11 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Tests du sort_utils.py
-"""
-
+import sys
+import os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 from agents.sort_utils import SortUtils
 
 
-class TestSortUtils:
-    def test_apply(self):
-        utils = SortUtils()
-        report = utils.apply([3, 1, 2])
-        assert report.sorted == [1, 2, 3]
+def test_sort_inspect():
+    items = ["c", "a", "b"]
+    report = SortUtils.inspect(items)
+    assert report.sorted_items == ["a", "b", "c"]
+    assert report.timestamp

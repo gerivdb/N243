@@ -1,30 +1,30 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-sort_utils.py — N243 Sort Utils
+sort_utils.py — N24 N243 Sort Utils
 
 Rôle :
-- Fournir un outil de tri simple
-- Publier un rapport de tri
+- Fournir un outil simple de tri
+- Publier un rapport de collections triées
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import datetime, timezone
-from typing import Any, Dict, List
+from typing import List
 
 
 @dataclass
 class SortReport:
-    sorted: List[Any]
+    sorted_items: List[str]
     timestamp: str
 
 
 class SortUtils:
     @staticmethod
-    def apply(values: List[Any]) -> SortReport:
+    def inspect(items: List[str]) -> SortReport:
         return SortReport(
-            sorted=sorted(values),
+            sorted_items=sorted(items),
             timestamp=datetime.now(timezone.utc).isoformat(),
         )
