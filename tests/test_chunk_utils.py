@@ -1,14 +1,11 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Tests du chunk_utils.py
-"""
-
+import sys
+import os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 from agents.chunk_utils import ChunkUtils
 
 
-class TestChunkUtils:
-    def test_apply(self):
-        utils = ChunkUtils()
-        report = utils.apply([1, 2, 3, 4, 5], size=2)
-        assert report.chunks == [[1, 2], [3, 4], [5]]
+def test_chunk_inspect():
+    chunks = ["chunk-1", "chunk-2", "chunk-3"]
+    report = ChunkUtils.inspect(chunks)
+    assert report.chunks == ["chunk-1", "chunk-2", "chunk-3"]
+    assert report.timestamp

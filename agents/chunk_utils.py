@@ -1,31 +1,30 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-chunk_utils.py — N243 Chunk Utils
+chunk_utils.py — N24 N243 Chunk Utils
 
 Rôle :
-- Fournir un outil de découpage simple
-- Publier un rapport de découpage
+- Fournir un outil simple de gestion de chunks
+- Publier un rapport de chunks traités
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import datetime, timezone
-from typing import Any, Dict, List
+from typing import List
 
 
 @dataclass
 class ChunkReport:
-    chunks: List[List[Any]]
+    chunks: List[str]
     timestamp: str
 
 
 class ChunkUtils:
     @staticmethod
-    def apply(values: List[Any], size: int) -> ChunkReport:
-        chunks = [values[index:index + size] for index in range(0, len(values), size)]
+    def inspect(chunks: List[str]) -> ChunkReport:
         return ChunkReport(
-            chunks=chunks,
+            chunks=list(chunks),
             timestamp=datetime.now(timezone.utc).isoformat(),
         )
