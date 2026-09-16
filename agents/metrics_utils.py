@@ -1,31 +1,30 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-metrics_utils.py — N243 Metrics Utils
+metrics_utils.py — N24 N243 Metrics Utils
 
 Rôle :
-- Fournir un outil de métriques simple
-- Publier un rapport de métriques
+- Fournir un outil simple de gestion de métriques
+- Publier un rapport de métriques collectées
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import datetime, timezone
-from typing import Any, Dict, List
+from typing import List
 
 
 @dataclass
 class MetricsReport:
-    collected: List[str]
+    metrics: List[str]
     timestamp: str
 
 
 class MetricsUtils:
     @staticmethod
-    def collect(metrics: List[str], payload: Dict[str, Any]) -> MetricsReport:
-        collected = [metric for metric in metrics if payload.get(metric) is not None]
+    def inspect(metrics: List[str]) -> MetricsReport:
         return MetricsReport(
-            collected=collected,
+            metrics=list(metrics),
             timestamp=datetime.now(timezone.utc).isoformat(),
         )
