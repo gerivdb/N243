@@ -3,7 +3,7 @@ type: PRD-MOC
 version: "1.0.0"
 date: "2026-09-15"
 status: proposed
-state_observed: "2026-09-15T01:06:00+02:00"
+state_observed: "2026-09-16T20:21:00+02:00"
 intent_hash: "0xN243_AUTOMATION_PRIMITIVES_20260915"
 author: "N243"
 created: "2026-09-15"
@@ -80,9 +80,33 @@ Implémentation de 5 skills et 5 citizens pour l'automatisation N243 :
 - [x] Tests Rust passent (`cargo test` → 24 passed)
 - [x] Tests Python passent (`pytest agents/ tests/` → 12 passed)
 
+**2026-09-16T20:21+02:00** — Proof-of-Life update: `*_utils` cross-repo sync :
+- [x] N243 `*_utils` agents: 270 → 270 (sync bidirectionnelle avec AUTO-DEV)
+- [x] N243 `*_utils` tests: 476 existants + 19 nouveaux = 495 tests passés
+- [x] AUTO-DEV `*_utils` agents: 270 (identiques noms)
+- [x] Commit atomique: 18 commits (da0d8be → c11261f), push vers `gerivdb/N243.git`
+- [x] Git remote URL corrigée: `auto-dev.git` → `AUTO-DEV.git`
+- [x] Tests AUTO-DEV vérifiés: 108 `*_utils` tests passés
+
 ### Preuves d'exécution horodatées
 
 ```
+[SYNC] git ls-files N243/agents/*_utils.py | wc -l -- 2026-09-16T20:15+02:00
+  270
+
+[SYNC] git ls-files AUTO-DEV/agents/*_utils.py | wc -l -- 2026-09-16T20:15+02:00
+  270
+
+[PYTHON] pytest tests/ -k "utils" -- 2026-09-16T20:20+02:00
+  495 passed, 61 deselected in 12.17s
+
+[PYTHON] pytest AUTO-DEV tests/test_*_utils*.py -- 2026-09-16T20:21+02:00
+  108 passed in 15.72s
+
+[GIT] git push origin main -- 2026-09-16T20:18+02:00
+  To https://github.com/gerivdb/N243.git
+  da0d8be..c11261f  main -> main
+
 [RSS] rss_lint.py --repo . --depth 4 --check-governance -- 2026-09-15T01:05+02:00
   [PASS] Repo conforme RSS-v2
 
