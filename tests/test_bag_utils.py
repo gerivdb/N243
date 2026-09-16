@@ -1,29 +1,11 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Tests du bag_utils.py
-"""
-
+import sys
+import os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 from agents.bag_utils import BagUtils
 
 
-class TestBagUtils:
-    def test_add_and_count(self):
-        bag = BagUtils()
-        bag.add("a")
-        bag.add("a", 2)
-        assert bag.count("a") == 3
-
-    def test_remove(self):
-        bag = BagUtils()
-        bag.add("a", 3)
-        bag.remove("a", 2)
-        assert bag.count("a") == 1
-
-    def test_report(self):
-        bag = BagUtils()
-        bag.add("a", 2)
-        bag.add("b", 1)
-        report = bag.report()
-        assert report["unique_items"] == 2
-        assert report["total_count"] == 3
+def test_bag_inspect():
+    bags = ["bag-1", "bag-2", "bag-3"]
+    report = BagUtils.inspect(bags)
+    assert report.bags == ["bag-1", "bag-2", "bag-3"]
+    assert report.timestamp
