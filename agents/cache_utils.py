@@ -1,49 +1,30 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-cache_utils.py — N243 Cache Utils
+cache_utils.py — N24 N243 Cache Utils
 
 Rôle :
-- Fournir un cache mémoire simple
-- Ajouter, récupérer, invalider des entrées
-- Publier un rapport d'état du cache
+- Fournir un outil simple de gestion de cache
+- Publier un rapport de clés mises en cache
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import datetime, timezone
-from typing import Any, Dict, List, Optional
+from typing import List
 
 
 @dataclass
-class CacheResult:
-    operation: str
-    key: str
-    hit: bool
+class CacheReport:
+    keys: List[str]
     timestamp: str
 
 
 class CacheUtils:
-    def __init__(self) -> None:
-        self._items: Dict[str, Any] = {}
-
-    def put(self, key: str, value: Any) -> None:
-        self._items[key] = value
-
-    def get(self, key: str, default: Any = None) -> Any:
-        return self._items.get(key, default)
-
-    def invalidate(self, key: str) -> None:
-        self._items.pop(key, None)
-
-    def keys(self) -> List[str]:
-        return list(self._items.keys())
-
-    def report(self, operation: str, key: str, hit: bool) -> CacheResult:
-        return CacheResult(
-            operation=operation,
-            key=key,
-            hit=hit,
+    @staticmethod
+    def inspect(keys: List[str]) -> CacheReport:
+        return CacheReport(
+            keys=list(keys),
             timestamp=datetime.now(timezone.utc).isoformat(),
         )
