@@ -1,31 +1,30 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-channel_utils.py — N243 Channel Utils
+channel_utils.py — N24 N243 Channel Utils
 
 Rôle :
-- Fournir un outil de canal simple
-- Publier un rapport de canal
+- Fournir un outil simple de gestion de canaux
+- Publier un rapport de canaux traités
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import datetime, timezone
-from typing import Any, Dict, List
+from typing import List
 
 
 @dataclass
 class ChannelReport:
-    routed: List[str]
+    channels: List[str]
     timestamp: str
 
 
 class ChannelUtils:
     @staticmethod
-    def inspect(channels: List[str], payload: Dict[str, Any]) -> ChannelReport:
-        routed = [channel for channel in channels if payload.get(channel) is True]
+    def inspect(channels: List[str]) -> ChannelReport:
         return ChannelReport(
-            routed=routed,
+            channels=list(channels),
             timestamp=datetime.now(timezone.utc).isoformat(),
         )

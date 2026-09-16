@@ -1,14 +1,11 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Tests du channel_utils.py
-"""
-
+import sys
+import os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 from agents.channel_utils import ChannelUtils
 
 
-class TestChannelUtils:
-    def test_inspect(self):
-        utils = ChannelUtils()
-        report = utils.inspect(["a", "b"], {"a": True, "b": False})
-        assert report.routed == ["a"]
+def test_channel_inspect():
+    channels = ["ch-1", "ch-2", "ch-3"]
+    report = ChannelUtils.inspect(channels)
+    assert report.channels == ["ch-1", "ch-2", "ch-3"]
+    assert report.timestamp
