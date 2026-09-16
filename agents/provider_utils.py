@@ -4,41 +4,28 @@
 provider_utils.py — N243 Provider Utils
 
 Rôle :
-- Fournir un fournisseur simple de valeurs
-- Enregistrer des fournisseurs, récupérer avec fallback
-- Publier un rapport de provision
+- Fournir un outil de fournisseur simple
+- Publier un rapport de fournisseur
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import datetime, timezone
-from typing import Any, Callable, Dict, Optional
+from typing import Any, Dict, List
 
 
 @dataclass
-class ProviderResult:
-    key: str
-    provided: bool
-    value: Any
+class ProviderReport:
+    provided: List[str]
     timestamp: str
 
 
 class ProviderUtils:
-    def __init__(self) -> None:
-        self._providers: Dict[str, Callable[[], Any]] = {}
-
-    def register(self, key: str, provider: Callable[[], Any]) -> None:
-        self._providers[key] = provider
-
-    def get(self, key: str, default: Any = None) -> Any:
-        provider = self._providers.get(key)
-        return provider() if provider is not None else default
-
-    def report(self, key: str, provided: bool, value: Any) -> ProviderResult:
-        return ProviderResult(
-            key=key,
+    @staticmethod
+    def inspect(providers: List[str], payload: Dict[str, Any]) -> ProviderReport:
+        provided = [provider for provider in providers if payload.get(provider) is True]
+        return ProviderReport(
             provided=provided,
-            value=value,
             timestamp=datetime.now(timezone.utc).isoformat(),
         )

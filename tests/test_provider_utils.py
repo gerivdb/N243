@@ -8,17 +8,7 @@ from agents.provider_utils import ProviderUtils
 
 
 class TestProviderUtils:
-    def test_register_and_get(self):
-        provider = ProviderUtils()
-        provider.register("k", lambda: 42)
-        assert provider.get("k") == 42
-
-    def test_get_fallback(self):
-        provider = ProviderUtils()
-        assert provider.get("missing", 0) == 0
-
-    def test_report(self):
-        provider = ProviderUtils()
-        result = provider.report("k", True, 42)
-        assert result.key == "k"
-        assert result.value == 42
+    def test_inspect(self):
+        utils = ProviderUtils()
+        report = utils.inspect(["a", "b"], {"a": True, "b": False})
+        assert report.provided == ["a"]
