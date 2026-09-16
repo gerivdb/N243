@@ -8,15 +8,7 @@ from agents.buffer_utils import BufferUtils
 
 
 class TestBufferUtils:
-    def test_add_and_drain(self):
-        buffer = BufferUtils()
-        buffer.add(1)
-        buffer.add(2)
-        assert buffer.drain() == [1, 2]
-
-    def test_report(self):
-        buffer = BufferUtils()
-        buffer.add(1)
-        report = buffer.report()
-        assert report.size == 1
-        assert report.items == [1]
+    def test_inspect(self):
+        utils = BufferUtils()
+        report = utils.inspect(["a", "b"], {"a": True, "b": False})
+        assert report.buffered == ["a"]
