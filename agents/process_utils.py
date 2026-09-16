@@ -1,34 +1,30 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-process_utils.py — N243 Process Utils
+process_utils.py — N24 N243 Process Utils
 
 Rôle :
-- Fournir un moteur de traitement simple
-- Publier un rapport de traitement
+- Fournir un outil simple de gestion de processus
+- Publier un rapport de processus traités
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import datetime, timezone
-from typing import Any, Dict, List
+from typing import List
 
 
 @dataclass
 class ProcessReport:
-    processed: List[str]
-    failed: List[str]
+    processes: List[str]
     timestamp: str
 
 
 class ProcessUtils:
     @staticmethod
-    def run(steps: List[str], payload: Dict[str, Any]) -> ProcessReport:
-        processed = [step for step in steps if payload.get(step) is True]
-        failed = [step for step in steps if payload.get(step) is False]
+    def inspect(processes: List[str]) -> ProcessReport:
         return ProcessReport(
-            processed=processed,
-            failed=failed,
+            processes=list(processes),
             timestamp=datetime.now(timezone.utc).isoformat(),
         )
