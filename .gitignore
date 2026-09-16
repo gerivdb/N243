@@ -16,6 +16,9 @@ Thumbs.db
 # === Compiled ===
 *.so
 
+# === WAL ===
+wal/
+
 # === Reports ===
 reports/
 
