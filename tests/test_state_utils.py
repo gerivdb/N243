@@ -1,14 +1,11 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Tests du state_utils.py
-"""
-
+import sys
+import os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 from agents.state_utils import StateUtils
 
 
-class TestStateUtils:
-    def test_update(self):
-        utils = StateUtils()
-        report = utils.update({"active": False}, "active", True)
-        assert report.state["active"] is True
+def test_state_inspect():
+    states = ["idle", "running", "stopped"]
+    report = StateUtils.inspect(states)
+    assert report.states == ["idle", "running", "stopped"]
+    assert report.timestamp
