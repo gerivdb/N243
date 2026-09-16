@@ -1,14 +1,11 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Tests du audit_utils.py
-"""
-
+import sys
+import os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 from agents.audit_utils import AuditUtils
 
 
-class TestAuditUtils:
-    def test_review(self):
-        utils = AuditUtils()
-        report = utils.review(["a", "b"], {"a": 1, "b": None})
-        assert report.audited == ["a"]
+def test_audit_inspect():
+    audits = ["audit-1", "audit-2", "audit-3"]
+    report = AuditUtils.inspect(audits)
+    assert report.audits == ["audit-1", "audit-2", "audit-3"]
+    assert report.timestamp

@@ -1,31 +1,30 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-audit_utils.py — N243 Audit Utils
+audit_utils.py — N24 N243 Audit Utils
 
 Rôle :
-- Fournir un outil d’audit simple
-- Publier un rapport d’audit
+- Fournir un outil simple d'audit
+- Publier un rapport d'audits effectués
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import datetime, timezone
-from typing import Any, Dict, List
+from typing import List
 
 
 @dataclass
 class AuditReport:
-    audited: List[str]
+    audits: List[str]
     timestamp: str
 
 
 class AuditUtils:
     @staticmethod
-    def review(items: List[str], payload: Dict[str, Any]) -> AuditReport:
-        audited = [item for item in items if payload.get(item) is not None]
+    def inspect(audits: List[str]) -> AuditReport:
         return AuditReport(
-            audited=audited,
+            audits=list(audits),
             timestamp=datetime.now(timezone.utc).isoformat(),
         )
