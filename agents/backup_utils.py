@@ -1,31 +1,30 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-backup_utils.py — N243 Backup Utils
+backup_utils.py — N24 N243 Backup Utils
 
 Rôle :
-- Fournir un outil de sauvegarde simple
-- Publier un rapport de sauvegarde
+- Fournir un outil simple de gestion de sauvegarde
+- Publier un rapport de sauvegardes effectuées
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import datetime, timezone
-from typing import Any, Dict, List
+from typing import List
 
 
 @dataclass
 class BackupReport:
-    backup: List[Any]
+    backups: List[str]
     timestamp: str
 
 
 class BackupUtils:
     @staticmethod
-    def filter(payloads: List[Dict[str, Any]]) -> BackupReport:
-        backup = [payload.get("value") for payload in payloads if payload.get("backup", False)]
+    def inspect(backups: List[str]) -> BackupReport:
         return BackupReport(
-            backup=backup,
+            backups=list(backups),
             timestamp=datetime.now(timezone.utc).isoformat(),
         )

@@ -1,14 +1,11 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Tests du backup_utils.py
-"""
-
+import sys
+import os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 from agents.backup_utils import BackupUtils
 
 
-class TestBackupUtils:
-    def test_filter(self):
-        utils = BackupUtils()
-        report = utils.filter([{"value": 1, "backup": True}, {"value": 2, "backup": False}])
-        assert report.backup == [1]
+def test_backup_inspect():
+    backups = ["backup-1", "backup-2", "backup-3"]
+    report = BackupUtils.inspect(backups)
+    assert report.backups == ["backup-1", "backup-2", "backup-3"]
+    assert report.timestamp
