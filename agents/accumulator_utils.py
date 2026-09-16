@@ -1,46 +1,30 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-accumulator_utils.py — N243 Accumulator Utils
+accumulator_utils.py — N24 N243 Accumulator Utils
 
 Rôle :
-- Fournir un accumulateur simple de valeurs
-- Ajouter des valeurs et obtenir le cumul
-- Publier un rapport d'accumulation
+- Fournir un outil simple d'accumulation
+- Publier un rapport de valeurs accumulées
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import datetime, timezone
-from typing import Any, List
+from typing import List
 
 
 @dataclass
-class AccumulatorReport:
-    count: int
-    total: Any
+class AccumulateReport:
+    values: List[str]
     timestamp: str
 
 
 class AccumulatorUtils:
-    def __init__(self, start: Any = 0) -> None:
-        self._total = start
-        self._count = 0
-
-    def add(self, value: Any) -> None:
-        self._total += value
-        self._count += 1
-
-    def total(self) -> Any:
-        return self._total
-
-    def count(self) -> int:
-        return self._count
-
-    def report(self) -> AccumulatorReport:
-        return AccumulatorReport(
-            count=self._count,
-            total=self._total,
+    @staticmethod
+    def inspect(values: List[str]) -> AccumulateReport:
+        return AccumulateReport(
+            values=list(values),
             timestamp=datetime.now(timezone.utc).isoformat(),
         )
