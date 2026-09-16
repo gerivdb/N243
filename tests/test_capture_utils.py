@@ -1,14 +1,11 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Tests du capture_utils.py
-"""
-
+import sys
+import os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 from agents.capture_utils import CaptureUtils
 
 
-class TestCaptureUtils:
-    def test_above(self):
-        utils = CaptureUtils()
-        report = utils.above([1.0, 5.0, 3.0], threshold=3.0)
-        assert report.captured == [5.0]
+def test_capture_inspect():
+    captures = ["capture-1", "capture-2", "capture-3"]
+    report = CaptureUtils.inspect(captures)
+    assert report.captures == ["capture-1", "capture-2", "capture-3"]
+    assert report.timestamp

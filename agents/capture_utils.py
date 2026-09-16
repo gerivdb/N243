@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-capture_utils.py — N243 Capture Utils
+capture_utils.py — N24 N243 Capture Utils
 
 Rôle :
-- Fournir un outil de capture simple
-- Retenir les valeurs au-dessus d'un seuil
-- Publier un rapport de capture
+- Fournir un outil simple de capture
+- Publier un rapport de captures effectuées
 """
 
 from __future__ import annotations
@@ -18,15 +17,14 @@ from typing import List
 
 @dataclass
 class CaptureReport:
-    captured: List[float]
+    captures: List[str]
     timestamp: str
 
 
 class CaptureUtils:
     @staticmethod
-    def above(values: List[float], threshold: float) -> CaptureReport:
-        captured = [value for value in values if value > threshold]
+    def inspect(captures: List[str]) -> CaptureReport:
         return CaptureReport(
-            captured=captured,
+            captures=list(captures),
             timestamp=datetime.now(timezone.utc).isoformat(),
         )
