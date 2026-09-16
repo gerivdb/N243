@@ -1,15 +1,11 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Tests du work_utils.py
-"""
-
+import sys
+import os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 from agents.work_utils import WorkUtils
 
 
-class TestWorkUtils:
-    def test_process(self):
-        utils = WorkUtils()
-        report = utils.process(["a", "b"], {"a": 1})
-        assert report.processed == 1
-        assert report.items == ["a", "b"]
+def test_work_inspect():
+    items = ["w1", "w2", "w3"]
+    report = WorkUtils.inspect(items)
+    assert report.items == ["w1", "w2", "w3"]
+    assert report.timestamp
