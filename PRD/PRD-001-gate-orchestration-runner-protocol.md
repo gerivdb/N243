@@ -3,7 +3,7 @@ type: PRD-MOC
 version: "1.0.0"
 date: "2026-09-14"
 status: proposed
-state_observed: "2026-09-14T22:07:00+02:00"
+state_observed: "2026-09-16T20:37:00+02:00"
 intent_hash: "0xN243_GATE_ORCHESTRATION_RUNNER_PROTOCOL_20260914"
 author: "N243"
 created: "2026-09-14"
@@ -243,25 +243,39 @@ class PRDMOCSupervisor:
 - [x] Tests unitaires supervisor (S3.3) — `agents/test_n243_supervisor.py`
 - [x] Conformité RSS-v2.3 validée (`rss_lint.py --depth 4` → PASS)
 
+**2026-09-16T20:37+02:00** — Proof-of-Life update: sync `*_utils` + tests :
+- [x] 270 `*_utils` agents N243 ↔ AUTO-DEV synchronisés (bidirectionnel)
+- [x] 33 nouveaux agents N243 créés (dataclass + timestamp + report())
+- [x] 569 tests Python passent (`pytest tests/` → 569 passed)
+- [x] Tests pytest supervisor ajoutés (`tests/test_prd_moc_supervisor.py` → 13 passed)
+- [x] 18 commits atomiques poussés vers `gerivdb/N243.git`
+- [x] PRD-002 + PRD-008 mis à jour avec Proof-of-Life
+
 ### Preuves d'exécution horodatées
 
 ```
 [WAL] cargo test wal::tests -- 2026-09-15T00:28+02:00
-  test wal::tests::test_n243_wal_record ... ok
-  test wal::tests::test_n243_wal_oscillation_detection ... ok
-  test wal::tests::test_n243_wal_compact ... ok
-  test wal::tests::test_n243_wal_replay ... ok
-  test wal::tests::test_n243_wal_compact_ttl ... ok
   test result: ok. 5 passed; 0 failed
 
 [SUPERVISOR] pytest agents/test_n243_supervisor.py -v -- 2026-09-15T00:29+02:00
-  agents/test_n243_supervisor.py::test_ternary_wal PASSED
-  agents/test_n243_supervisor.py::test_n243_supervisor_approve PASSED
-  agents/test_n243_supervisor.py::test_n243_supervisor_suspend PASSED
-  agents/test_n243_supervisor.py::test_n243_supervisor_reject PASSED
-  agents/test_n243_supervisor.py::test_n243_narrative PASSED
   ======================= 5 passed in 32.63s =======================
 
 [RSS] rss_lint.py --repo . --depth 4 -- 2026-09-15T00:30+02:00
   [PASS] Repo conforme RSS-v2
+
+[SYNC] git ls-files agents/*_utils.py | Measure -- 2026-09-16T20:15+02:00
+  N243: 270, AUTO-DEV: 270
+
+[PYTHON] pytest tests/ -k "utils" -- 2026-09-16T20:20+02:00
+  495 passed, 61 deselected in 12.17s
+
+[PYTHON] pytest tests/test_prd_moc_supervisor.py -v -- 2026-09-16T20:35+02:00
+  ======================= 13 passed in 46.32s =======================
+
+[PYTHON] pytest tests/ -- 2026-09-16T20:37+02:00
+  ======================= 569 passed in 91.04s =======================
+
+[GIT] git push origin main -- 2026-09-16T20:18+02:00
+  To https://github.com/gerivdb/N243.git
+  da0d8be..04cb1e9  main -> main
 ```
