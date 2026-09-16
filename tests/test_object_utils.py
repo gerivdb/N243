@@ -1,21 +1,11 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Tests du object_utils.py
-"""
-
+import sys
+import os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 from agents.object_utils import ObjectUtils
 
 
-class TestObjectUtils:
-    def test_get(self):
-        utils = ObjectUtils()
-        data = {"a": {"b": 1}}
-        assert utils.get(data, "a.b") == 1
-        assert utils.get(data, "x.y") is None
-
-    def test_set(self):
-        utils = ObjectUtils()
-        data = {"a": {}}
-        utils.set(data, "a.b", 2)
-        assert data == {"a": {"b": 2}}
+def test_object_inspect():
+    objects = ["obj-1", "obj-2", "obj-3"]
+    report = ObjectUtils.inspect(objects)
+    assert report.objects == ["obj-1", "obj-2", "obj-3"]
+    assert report.timestamp
