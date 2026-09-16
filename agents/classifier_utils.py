@@ -1,45 +1,30 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-classifier_utils.py — N243 Classifier Utils
+classifier_utils.py — N24 N243 Classifier Utils
 
 Rôle :
-- Fournir un classificateur simple par règles
-- Classifier des valeurs selon des critères
-- Publier un rapport de classification
+- Fournir un outil simple de classification
+- Publier un rapport de classifications effectuées
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import datetime, timezone
-from typing import Any, Callable, Dict, List
+from typing import List
 
 
 @dataclass
-class ClassificationResult:
-    value: Any
-    label: str
-    score: float
+class ClassifyReport:
+    classes: List[str]
     timestamp: str
 
 
 class ClassifierUtils:
-    def __init__(self, rules: Dict[str, Callable[[Any], bool]]) -> None:
-        self._rules = rules
-
-    def classify(self, value: Any) -> ClassificationResult:
-        for label, rule in self._rules.items():
-            if rule(value):
-                return ClassificationResult(
-                    value=value,
-                    label=label,
-                    score=1.0,
-                    timestamp=datetime.now(timezone.utc).isoformat(),
-                )
-        return ClassificationResult(
-            value=value,
-            label="unknown",
-            score=0.0,
+    @staticmethod
+    def inspect(classes: List[str]) -> ClassifyReport:
+        return ClassifyReport(
+            classes=list(classes),
             timestamp=datetime.now(timezone.utc).isoformat(),
         )
