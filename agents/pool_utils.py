@@ -5,7 +5,6 @@ pool_utils.py — N243 Pool Utils
 
 Rôle :
 - Fournir un outil de pool simple
-- Regrouper des valeurs
 - Publier un rapport de pool
 """
 
@@ -18,21 +17,15 @@ from typing import Any, Dict, List
 
 @dataclass
 class PoolReport:
-    groups: int
+    pooled: List[str]
     timestamp: str
 
 
 class PoolUtils:
     @staticmethod
-    def group(values: List[Any], key: str) -> Dict[Any, List[Any]]:
-        groups: Dict[Any, List[Any]] = {}
-        for value in values:
-            groups.setdefault(value, []).append(value)
-        return groups
-
-    def report(self, values: List[Any]) -> PoolReport:
-        groups = self.group(values, key="self")
+    def inspect(pools: List[str], payload: Dict[str, Any]) -> PoolReport:
+        pooled = [pool for pool in pools if payload.get(pool) is True]
         return PoolReport(
-            groups=len(groups),
+            pooled=pooled,
             timestamp=datetime.now(timezone.utc).isoformat(),
         )

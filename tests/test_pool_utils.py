@@ -8,12 +8,7 @@ from agents.pool_utils import PoolUtils
 
 
 class TestPoolUtils:
-    def test_group(self):
+    def test_inspect(self):
         utils = PoolUtils()
-        groups = utils.group([1, 2, 1, 3], key="self")
-        assert groups[1] == [1, 1]
-
-    def test_report(self):
-        utils = PoolUtils()
-        report = utils.report([1, 2, 1, 3])
-        assert report.groups == 3
+        report = utils.inspect(["a", "b"], {"a": True, "b": False})
+        assert report.pooled == ["a"]
