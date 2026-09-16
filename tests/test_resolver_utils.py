@@ -1,26 +1,11 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Tests du resolver_utils.py
-"""
-
+import sys
+import os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 from agents.resolver_utils import ResolverUtils
 
 
-class TestResolverUtils:
-    def test_resolve_override(self):
-        assert ResolverUtils.resolve(1, 2, "override") == 2
-
-    def test_resolve_keep(self):
-        assert ResolverUtils.resolve(1, 2, "keep") == 1
-
-    def test_resolve_merge(self):
-        base = {"a": 1}
-        override = {"b": 2}
-        assert ResolverUtils.resolve(base, override, "merge") == {"a": 1, "b": 2}
-
-    def test_report(self):
-        utils = ResolverUtils()
-        result = utils.report("key", "override", 42)
-        assert result.key == "key"
-        assert result.value == 42
+def test_resolver_inspect():
+    resolved = ["res-1", "res-2", "res-3"]
+    report = ResolverUtils.inspect(resolved)
+    assert report.resolved == ["res-1", "res-2", "res-3"]
+    assert report.timestamp

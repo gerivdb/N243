@@ -1,44 +1,30 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-resolver_utils.py — N243 Resolver Utils
+resolver_utils.py — N24 N243 Resolver Utils
 
 Rôle :
-- Fournir un résolveur simple pour des conflits de valeurs
-- Appliquer une stratégie de résolution
-- Publier un rapport de résolution
+- Fournir un outil simple de résolution
+- Publier un rapport de résolutions effectuées
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import datetime, timezone
-from typing import Any, Dict, Optional
+from typing import List
 
 
 @dataclass
-class ResolveResult:
-    key: str
-    strategy: str
-    value: Any
+class ResolveReport:
+    resolved: List[str]
     timestamp: str
 
 
 class ResolverUtils:
     @staticmethod
-    def resolve(base: Any, override: Any, strategy: str = "override") -> Any:
-        if strategy == "override":
-            return override
-        if strategy == "keep":
-            return base
-        if strategy == "merge" and isinstance(base, dict) and isinstance(override, dict):
-            return {**base, **override}
-        return override
-
-    def report(self, key: str, strategy: str, value: Any) -> ResolveResult:
-        return ResolveResult(
-            key=key,
-            strategy=strategy,
-            value=value,
+    def inspect(resolved: List[str]) -> ResolveReport:
+        return ResolveReport(
+            resolved=list(resolved),
             timestamp=datetime.now(timezone.utc).isoformat(),
         )
