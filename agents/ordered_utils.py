@@ -1,49 +1,30 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-ordered_utils.py — N243 Ordered Utils
+ordered_utils.py — N24 N243 Ordered Utils
 
 Rôle :
-- Fournir des utilitaires pour les structures ordonnées
-- Trier, inverser, dédupliquer tout en conservant l'ordre
-- Publier un rapport simple
+- Fournir un outil simple de gestion d'éléments ordonnés
+- Publier un rapport de collections ordonnées
 """
 
 from __future__ import annotations
 
-import json
 from dataclasses import dataclass
 from datetime import datetime, timezone
-from typing import Any, Dict, List, Optional
+from typing import List
 
 
 @dataclass
-class OrderedResult:
-    operation: str
-    input_count: int
-    output_count: int
-    result: List[Any]
+class OrderedReport:
+    ordered: List[str]
     timestamp: str
 
 
 class OrderedUtils:
-    def sort_unique(self, items: List[Any]) -> List[Any]:
-        seen = set()
-        result = []
-        for item in items:
-            if item not in seen:
-                seen.add(item)
-                result.append(item)
-        return sorted(result)
-
-    def reverse(self, items: List[Any]) -> List[Any]:
-        return list(reversed(items))
-
-    def report(self, operation: str, input_count: int, output_count: int, result: List[Any]) -> OrderedResult:
-        return OrderedResult(
-            operation=operation,
-            input_count=input_count,
-            output_count=output_count,
-            result=result,
+    @staticmethod
+    def inspect(ordered: List[str]) -> OrderedReport:
+        return OrderedReport(
+            ordered=list(ordered),
             timestamp=datetime.now(timezone.utc).isoformat(),
         )
