@@ -1,14 +1,11 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Tests du merge_utils.py
-"""
-
+import sys
+import os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 from agents.merge_utils import MergeUtils
 
 
-class TestMergeUtils:
-    def test_apply(self):
-        utils = MergeUtils()
-        report = utils.apply([1, 2], [2, 3])
-        assert report.merged == [1, 2, 3]
+def test_merge_inspect():
+    merges = ["merge-1", "merge-2", "merge-3"]
+    report = MergeUtils.inspect(merges)
+    assert report.merges == ["merge-1", "merge-2", "merge-3"]
+    assert report.timestamp
