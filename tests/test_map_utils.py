@@ -1,14 +1,11 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Tests du map_utils.py
-"""
-
+import sys
+import os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 from agents.map_utils import MapUtils
 
 
-class TestMapUtils:
-    def test_apply(self):
-        utils = MapUtils()
-        report = utils.apply([1, 2, 3], func=lambda value: value * 2)
-        assert report.mapped == [2, 4, 6]
+def test_map_inspect():
+    mappings = {"key1": "value1", "key2": "value2"}
+    report = MapUtils.inspect(mappings)
+    assert report.mappings == {"key1": "value1", "key2": "value2"}
+    assert report.timestamp

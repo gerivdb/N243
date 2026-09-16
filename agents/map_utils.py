@@ -1,30 +1,30 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-map_utils.py — N243 Map Utils
+map_utils.py — N24 N243 Map Utils
 
 Rôle :
-- Fournir un outil de mapping simple
-- Publier un rapport de mapping
+- Fournir un outil simple de gestion de mappings
+- Publier un rapport de mappings traités
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import datetime, timezone
-from typing import Any, Callable, Dict, List
+from typing import Dict
 
 
 @dataclass
 class MapReport:
-    mapped: List[Any]
+    mappings: Dict[str, str]
     timestamp: str
 
 
 class MapUtils:
     @staticmethod
-    def apply(values: List[Any], func: Callable[[Any], Any]) -> MapReport:
+    def inspect(mappings: Dict[str, str]) -> MapReport:
         return MapReport(
-            mapped=[func(value) for value in values],
+            mappings=dict(mappings),
             timestamp=datetime.now(timezone.utc).isoformat(),
         )
