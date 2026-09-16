@@ -1,14 +1,11 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Tests du job_utils.py
-"""
-
+import sys
+import os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 from agents.job_utils import JobUtils
 
 
-class TestJobUtils:
-    def test_queue(self):
-        utils = JobUtils()
-        report = utils.queue(["build", "test"], {"build": 1, "test": None})
-        assert report.queued == ["build"]
+def test_job_inspect():
+    jobs = ["job-1", "job-2", "job-3"]
+    report = JobUtils.inspect(jobs)
+    assert report.jobs == ["job-1", "job-2", "job-3"]
+    assert report.timestamp

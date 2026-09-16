@@ -1,31 +1,30 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-job_utils.py — N243 Job Utils
+job_utils.py — N24 N243 Job Utils
 
 Rôle :
-- Fournir un gestionnaire de jobs simple
-- Publier un rapport de jobs
+- Fournir un outil simple de gestion de jobs
+- Publier un rapport de jobs traités
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import datetime, timezone
-from typing import Any, Dict, List
+from typing import List
 
 
 @dataclass
 class JobReport:
-    queued: List[str]
+    jobs: List[str]
     timestamp: str
 
 
 class JobUtils:
     @staticmethod
-    def queue(jobs: List[str], payload: Dict[str, Any]) -> JobReport:
-        queued = [job for job in jobs if payload.get(job) is not None]
+    def inspect(jobs: List[str]) -> JobReport:
         return JobReport(
-            queued=queued,
+            jobs=list(jobs),
             timestamp=datetime.now(timezone.utc).isoformat(),
         )
