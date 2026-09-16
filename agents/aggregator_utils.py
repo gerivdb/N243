@@ -4,9 +4,8 @@
 aggregator_utils.py — N243 Aggregator Utils
 
 Rôle :
-- Fournir un agrégateur simple pour des valeurs
-- Somme, moyenne, min, max
-- Publier un rapport agrégé
+- Fournir un outil d’agrégation simple
+- Publier un rapport d’agrégation
 """
 
 from __future__ import annotations
@@ -17,34 +16,16 @@ from typing import Any, Dict, List
 
 
 @dataclass
-class AggregateResult:
-    operation: str
-    values: List[Any]
-    result: Any
+class AggregatorReport:
+    aggregated: List[str]
     timestamp: str
 
 
 class AggregatorUtils:
     @staticmethod
-    def sum_values(values: List[float]) -> float:
-        return float(sum(values))
-
-    @staticmethod
-    def avg(values: List[float]) -> float:
-        if not values:
-            return 0.0
-        return sum(values) / len(values)
-
-    @staticmethod
-    def min_max(values: List[float]) -> Dict[str, float]:
-        if not values:
-            return {"min": 0.0, "max": 0.0}
-        return {"min": min(values), "max": max(values)}
-
-    def report(self, operation: str, values: List[Any], result: Any) -> AggregateResult:
-        return AggregateResult(
-            operation=operation,
-            values=values,
-            result=result,
+    def inspect(items: List[str], payload: Dict[str, Any]) -> AggregatorReport:
+        aggregated = [item for item in items if payload.get(item) is True]
+        return AggregatorReport(
+            aggregated=aggregated,
             timestamp=datetime.now(timezone.utc).isoformat(),
         )
