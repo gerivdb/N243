@@ -1,14 +1,11 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Tests du bus_utils.py
-"""
-
+import sys
+import os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 from agents.bus_utils import BusUtils
 
 
-class TestBusUtils:
-    def test_inspect(self):
-        utils = BusUtils()
-        report = utils.inspect(["a", "b"], {"a": True, "b": False})
-        assert report.routed == ["a"]
+def test_bus_inspect():
+    messages = ["msg-1", "msg-2", "msg-3"]
+    report = BusUtils.inspect(messages)
+    assert report.messages == ["msg-1", "msg-2", "msg-3"]
+    assert report.timestamp

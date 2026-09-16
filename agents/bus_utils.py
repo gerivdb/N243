@@ -1,31 +1,30 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-bus_utils.py — N243 Bus Utils
+bus_utils.py — N24 N243 Bus Utils
 
 Rôle :
-- Fournir un outil de bus simple
-- Publier un rapport de bus
+- Fournir un outil simple de gestion de bus
+- Publier un rapport de messages de bus traités
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import datetime, timezone
-from typing import Any, Dict, List
+from typing import List
 
 
 @dataclass
 class BusReport:
-    routed: List[str]
+    messages: List[str]
     timestamp: str
 
 
 class BusUtils:
     @staticmethod
-    def inspect(buses: List[str], payload: Dict[str, Any]) -> BusReport:
-        routed = [bus for bus in buses if payload.get(bus) is True]
+    def inspect(messages: List[str]) -> BusReport:
         return BusReport(
-            routed=routed,
+            messages=list(messages),
             timestamp=datetime.now(timezone.utc).isoformat(),
         )
