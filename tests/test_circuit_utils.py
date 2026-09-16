@@ -1,14 +1,11 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Tests du circuit_utils.py
-"""
-
+import sys
+import os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 from agents.circuit_utils import CircuitUtils
 
 
-class TestCircuitUtils:
-    def test_evaluate(self):
-        utils = CircuitUtils()
-        report = utils.evaluate(["a", "b", "c", "d"], path=[0, 2, 3])
-        assert report.path == ["a", "c", "d"]
+def test_circuit_inspect():
+    circuits = ["circuit-1", "circuit-2", "circuit-3"]
+    report = CircuitUtils.inspect(circuits)
+    assert report.circuits == ["circuit-1", "circuit-2", "circuit-3"]
+    assert report.timestamp
