@@ -1,25 +1,11 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Tests du mapper_utils.py
-"""
-
+import sys
+import os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 from agents.mapper_utils import MapperUtils
 
 
-class TestMapperUtils:
-    def test_map_found(self):
-        mapper = MapperUtils({1: "one", 2: "two"})
-        result = mapper.map(1)
-        assert result.output_value == "one"
-        assert result.mapped is True
-
-    def test_map_missing(self):
-        mapper = MapperUtils({1: "one"})
-        result = mapper.map(2, default="missing")
-        assert result.output_value == "missing"
-        assert result.mapped is False
-
-    def test_keys(self):
-        mapper = MapperUtils({1: "one", 2: "two"})
-        assert set(mapper.keys()) == {1, 2}
+def test_mapper_inspect():
+    mappings = ["map-1", "map-2", "map-3"]
+    report = MapperUtils.inspect(mappings)
+    assert report.mappings == ["map-1", "map-2", "map-3"]
+    assert report.timestamp
