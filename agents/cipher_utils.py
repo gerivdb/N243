@@ -1,43 +1,30 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-cipher_utils.py — N243 Cipher Utils
+cipher_utils.py — N24 N243 Cipher Utils
 
 Rôle :
-- Fournir un chiffreur simple de texte
-- Appliquer un chiffrement par décalage
-- Publier un rapport de chiffrement
+- Fournir un outil simple de gestion de chiffrement
+- Publier un rapport de chiffrements effectués
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import datetime, timezone
-from typing import Any
+from typing import List
 
 
 @dataclass
 class CipherReport:
-    algorithm: str
-    encrypted: str
+    encrypts: List[str]
     timestamp: str
 
 
 class CipherUtils:
     @staticmethod
-    def caesar(value: str, shift: int = 3) -> str:
-        result = []
-        for char in value:
-            if char.isalpha():
-                base = 65 if char.isupper() else 97
-                result.append(chr((ord(char) - base + shift) % 26 + base))
-            else:
-                result.append(char)
-        return "".join(result)
-
-    def report(self, algorithm: str, encrypted: str) -> CipherReport:
+    def inspect(encrypts: List[str]) -> CipherReport:
         return CipherReport(
-            algorithm=algorithm,
-            encrypted=encrypted,
+            encrypts=list(encrypts),
             timestamp=datetime.now(timezone.utc).isoformat(),
         )
