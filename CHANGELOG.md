@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Référence à `PRD-MOC-GEN-083` dans `agents/prd_moc_supervisor.md` et `agents/runner-protocol.md`
 - Concepts d'ontologie `semantic_combos_catalog` et `ontology_term_gate` dans `ONTOLOGY_DECLARATION.yaml`
 - Dépendances `GOVERNANCE-HUB`, `PRD-MOC-GEN-083`, `ontology-term-gate` dans `README.md`
+- Point d'entrée binaire N243 : `src/main.rs` (orchestrateur CLI avec clap)
 
 ### Governance
 - Intégration du catalogue de combos sémantiques invocables (causal dryrun, 14 combination ops, think-do-check, proof-of-life, ontology-term-gate, pre-push-path-audit, branch-lifecycle, domain-links-exporter)
