@@ -46,6 +46,9 @@ N243/
 | TIMX | PATH | Runner Temporel |
 | ROOTX | PATH | Runner Symbolique |
 | TLM-CORE | PATH | Runner Ternaire |
+| GOVERNANCE-HUB | ../GOVERNANCE-HUB/ | PRD-MOC, ADR, ontology validation |
+| PRD-MOC-GEN-083 | ../GOVERNANCE-HUB/PRD-MOC/general/ | Semantic combos catalog |
+| ontology-term-gate | ../GOVERNANCE-HUB/scripts/ | Ontology validation before approval |
 
 ## Quick Start
 
