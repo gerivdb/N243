@@ -4,6 +4,8 @@
 use std::collections::HashMap;
 use std::path::Path;
 
+pub mod enforcer;
+
 /// Repo entry for BDCP checking.
 #[derive(Debug, Clone)]
 pub struct RepoEntry {
