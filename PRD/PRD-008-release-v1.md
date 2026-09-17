@@ -64,6 +64,16 @@ Release v1.0.0 de N243 après opérationnalisation complète :
 - [x] 495 `*_utils` tests N243 passés
 - [x] 18 commits atomiques poussés vers `gerivdb/N243.git`
 
+**2026-09-17T03:38+02:00** — Proof-of-Life update: tests d'intégration workflow :
+- [x] `tests/test_kg_mutation_workflow.rs` → 3 passed
+- [x] `tests/test_ml_train_workflow.rs` → 3 passed
+- [x] `tests/test_personae_ingest_workflow.rs` → 3 passed
+- [x] `tests/test_verses_ingest_workflow.rs` → 3 passed
+- [x] `tests/test_voltx_bridge_integration.rs` → 3 passed
+- [x] `tests/test_cross_bridge_integration.rs` → 2 passed
+- [x] `tests/test_llux_q243_integration.rs` → 3 passed
+- [x] 20 commits atomiques poussés vers `gerivdb/N243.git`
+
 ### Preuves d'exécution horodatées
 
 ```
@@ -79,6 +89,16 @@ Release v1.0.0 de N243 après opérationnalisation complète :
 [GIT] git push origin main -- 2026-09-16T20:18+02:00
   To https://github.com/gerivdb/N243.git
   da0d8be..c11261f  main -> main
+
+[RUST] cargo test -- 2026-09-17T03:38+02:00
+  test result: ok. 53 passed; 0 failed; 0 ignored; 0 measured
+
+[GIT] git log --oneline bb8fa85..1dc3a20 | wc -l -- 2026-09-17T03:38+02:00
+  20
+
+[GIT] git push origin main -- 2026-09-17T03:38+02:00
+  To https://github.com/gerivdb/N243.git
+  bb8fa85..1dc3a20  main -> main
 ```
 
 ## 4. RÉFÉRENCES
