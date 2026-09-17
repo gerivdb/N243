@@ -16,7 +16,7 @@ N243 orchestre les 5 runners cognitifs core de l'écosystème L* :
 - **ROOTX** (Racines Symboliques)
 - **TLM-CORE** (Logique Ternaire)
 
-S'appuie sur **WAZAA** (`gerivdb/WAZAA`, L4) comme infrastructure d'orchestration : bus événementiel Intent, WAL append-only, EventServer WebSocket (pivot 2026-08-23, Buzz@block abandonné dans ENV2).
+S'appuie sur **WAZAA** (`gerivdb/WAZAA`, L4) comme infrastructure d'orchestration : bus événementiel Intent, WAL append-only, EventServer WebSocket.
 
 ---
 

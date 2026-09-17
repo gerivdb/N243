@@ -1,3 +1,4 @@
-integration: WAZAA -> BUZZ-X -> N243 -> Buzz@block
+integration: WAZAA -> N243
 branch: feat/integration
 deployed: 2026-07-31
+pivot: Buzz@block abandonné, WAZAA est le bus d'orchestration
