@@ -2,7 +2,7 @@
 type: PRD-MOC
 version: "1.0.0"
 date: "2026-09-17"
-status: proposed
+status: accepted
 state_observed: "2026-09-17T03:18:00+02:00"
 intent_hash: "0xN243_WAZAA_INTEGRATION_20260917"
 author: "N243"
