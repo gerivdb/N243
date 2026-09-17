@@ -32,3 +32,5 @@ Reçoit les verdicts VERSES, applique la logique ternaire, et enregistre l'exéc
 - WAZAA bus : `D:\DO\WEB\TOOLS\L4-TOOLS\WAZAA`
 - KG-L trace : `D:\DO\WEB\TOOLS\L4-TOOLS\KG-L`
 - PRD-MOC : `PRD-MOC-N243-SUPERVISOR-MASTER.md`
+- Semantic combos : `PRD-MOC-GEN-083-semantic-combos-catalog-20260917.md` (`proposed`)
+- Ontology gate : `ontology-term-gate` combo (strict mode)
