@@ -1,9 +1,9 @@
 # N243 — Meta-Orchestrateur Cognitif L*
 
-**Version** : 0.1.0
-**Statut** : DRAFT
+**Version** : 1.0.0
+**Statut** : RELEASED
 **Strate** : L4-TOOLS
-**IntentHash** : 0xN243_20260801
+**IntentHash** : 0xN243_META_ORCHESTRATOR_20260801
 
 ---
 
@@ -25,16 +25,54 @@ S'appuie sur **WAZAA** (`gerivdb/WAZAA`, L4) comme infrastructure d'orchestratio
 N243/
 ├── Cargo.toml
 ├── README.md
-├── schemas/
-│   └── kinds-lstar.md      # PRD-001
-├── agents/
-│   └── runner-protocol.md  # PRD-002
+├── CHANGELOG.md
+├── src/
+│   ├── main.rs                 ← CLI binaire (clap)
+│   ├── orchestrator.rs         ← Module orchestrator core
+│   ├── agent_runner.rs         ← Protocole runners L*
+│   ├── wal_emitter.rs          ← Émission WAL append-only
+│   ├── bdcp/
+│   │   ├── mod.rs              ← Module BDCP
+│   │   └── enforcer.rs         ← Point d'entrée BDCP
+│   ├── agents.rs               ← Agents core
+│   ├── workflows.rs            ← Workflows
+│   ├── wal.rs                  ← WAL
+│   ├── bdcp.rs                 ← (legacy, redirige vers bdcp/mod.rs)
+│   ├── bridge/
+│   │   ├── mod.rs              ← Module bridge
+│   │   ├── wazaa_bridge.rs     ← Bridge WAZAA
+│   │   └── voltx_bridge.rs     ← Bridge VOLTX (5 canaux)
+│   └── ...
 ├── workflows/
-│   └── ternary-actions.md  # PRD-003
-├── wal/
-│   └── ternary-wal.md      # PRD-004
-└── bdcp/
-    └── enforcer.md         # PRD-005
+│   ├── kg_mutation/
+│   │   └── n243-kg-mutation.yaml
+│   ├── ml_train/
+│   │   └── n243-ml-train.yaml
+│   ├── personae_ingest/
+│   │   └── n243-personae-ingest.yaml
+│   └── verses_ingest/
+│       └── n243-verses-ingest.yaml
+├── tests/
+│   ├── test_llux_q243_integration.rs
+│   ├── test_personae_ingest_workflow.rs
+│   ├── test_verses_ingest_workflow.rs
+│   ├── test_kg_mutation_workflow.rs
+│   ├── test_ml_train_workflow.rs
+│   ├── test_voltx_bridge_integration.rs
+│   └── test_cross_bridge_integration.rs
+└── PRD/
+    ├── PRD-001-gate-orchestration-runner-protocol.md
+    ├── PRD-002-automation-primitives.md
+    ├── PRD-003-kg-l-ml-orchestration.md
+    ├── PRD-004-operationalization.md
+    ├── PRD-005-voltx-integration.md
+    ├── PRD-006-ml-training-pipeline.md
+    ├── PRD-007-integration-tests.md
+    ├── PRD-008-release-v1.md
+    ├── PRD-009-personae-kg-l-integration.md
+    ├── PRD-010-verses-kg-l-integration.md
+    ├── PRD-011-orchestrator.md
+    └── PRD-012-wazaa-integration.md
 
 ## Dépendances
 
@@ -55,3 +93,27 @@ N243/
 cd D:/DO/WEB/TOOLS/L4-TOOLS/N243
 cargo build
 cargo run
+
+## CLI
+
+```bash
+n243 status
+n243 validate-workflows
+n243 list-agents
+n243 trigger-workflow <id>
+n243 wal-tail <limit>
+n243 bdcp-status
+```
+
+## Tests
+
+```bash
+cargo test
+cargo test --test test_llux_q243_integration
+cargo test --test test_personae_ingest_workflow
+cargo test --test test_verses_ingest_workflow
+cargo test --test test_kg_mutation_workflow
+cargo test --test test_ml_train_workflow
+cargo test --test test_voltx_bridge_integration
+cargo test --test test_cross_bridge_integration
+```
