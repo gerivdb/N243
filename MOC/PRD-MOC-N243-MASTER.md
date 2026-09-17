@@ -153,7 +153,7 @@ N243 (L4-TOOLS)
 
 **IntentHash** : 0xPRD_MOC_N243_MASTER_20260916  
 **Status** : accepted  
-**Date** : 2026-09-16  
+**Date** : 2026-09-17  
 
 ---
 
@@ -164,6 +164,8 @@ N243 (L4-TOOLS)
 | ERR-REF-01 | Références | `related_moc` complété avec GOVERNANCE-HUB-MASTER, CROSS-REPO-DEPENDENCY-GRAPH, CI-CD-CROSS-REPO | ✅ corrigé |
 | ERR-DRIFT-01 | Drift | Cross-references vérifiées sur GOVERNANCE-HUB, LLUX, WAZAA, PIANO, FLEX, KG-L | ✅ corrigé |
 | ERR-KIVA-01 | Merge | Fallback API GitHub utilisé pour merge PR #66 (WAZAA) | ✅ contourné |
+| ERR-BUZZ-01 | Dépendance | BUZZ-X supprimé de Cargo.toml, WAZAA remplace Buzz@block | ✅ corrigé |
+| ERR-PRD-01 | Statut | Tous PRDs N243 promus `accepted` + date 2026-09-17 | ✅ corrigé |
 
 ---
 
@@ -182,6 +184,9 @@ N243 (L4-TOOLS)
 - [x] WAZAA Integration MOC : `MOC/PRD-MOC-N243-WAZAA-INTEGRATION.md` créé
 - [x] Intégration LLUX 7B `.q243` : `tests/test_llux_q243_integration.rs` → 3 passed
 - [x] Tests unitaires externes N243 : 10 fichiers, 50+ tests ajoutés
+- [x] BUZZ-X supprimé : commit `887ca91` — chore(N243): remove obsolete BUZZ-X dependencies
+- [x] PRDs N243 promus : commits `78dbd66`, `cad9353`, `5c77cad`, `c803ea9` — promote PRD-001 à PRD-012
+- [x] Index PRD mis à jour : commit `0294816` — docs(N243): update PRD index with accepted statuses
 
 ### Preuves d'exécution horodatées
 
@@ -193,12 +198,12 @@ N243 (L4-TOOLS)
   running 3 tests
   test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured
 
-[GIT] git push origin main -- 2026-09-17T05:29+02:00
+[GIT] git push origin main -- 2026-09-17T22:20+02:00
   To https://github.com/gerivdb/N243.git
-  defeb74..c4b403c  main -> main
+  68e3385..0294816  main -> main
 ```
 
 ---
 
-*Dernière mise à jour : 2026-09-17T05:29+02:00*
+*Dernière mise à jour : 2026-09-17T22:20+02:00*
 
