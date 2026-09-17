@@ -1,8 +1,8 @@
 ---
 type: PRD-MOC
 version: "1.0.0"
-date: "2026-09-14"
-status: proposed
+date: "2026-09-17"
+status: accepted
 state_observed: "2026-09-16T20:37:00+02:00"
 intent_hash: "0xN243_GATE_ORCHESTRATION_RUNNER_PROTOCOL_20260914"
 author: "N243"
