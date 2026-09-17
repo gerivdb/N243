@@ -56,12 +56,12 @@ Orchestration N243 de l'intégration Personae ↔ KG-L :
 ### Tâche 1 — Orchestrateur Personae-KG-L (N243)
 - [x] Bridges WAZAA/VOLTX opérationnels
 - [x] Agents KG-L créés (LluxAgent, TimxAgent, RootxAgent, TlmAgent)
-- [ ] Workflow `personae_ingest` à créer
-- [ ] Publier événements `personae.updated` via WAZAA/VOLTX
+- [x] Workflow `personae_ingest` créé (`workflows/personae_ingest/n243-personae-ingest.yaml`)
+- [x] Publier événements `personae.updated` via WAZAA/VOLTX
 
 ### Tâche 2 — Validation
-- [ ] `cargo test` → 0 échec
-- [ ] `rss_lint.py --depth 4 --check-governance` → PASS
+- [x] `cargo test` → 0 échec
+- [x] `rss_lint.py --depth 4 --check-governance` → PASS
 
 ## 4. CRITÈRES DE VALIDATION
 
@@ -82,6 +82,10 @@ Orchestration N243 de l'intégration Personae ↔ KG-L :
 - [x] Tests Python passent (`pytest agents/ tests/` → 12 passed)
 - [x] Conformité RSS-v2 validée (`rss_lint.py --depth 4 --check-governance` → PASS)
 
+**2026-09-17T03:24+02:00** — Proof-of-Life update: test d'intégration workflow :
+- [x] `tests/test_personae_ingest_workflow.rs` → 3 passed
+- [x] `cargo test` → 47 passed
+
 ### Preuves d'exécution horodatées
 
 ```
@@ -93,6 +97,14 @@ Orchestration N243 de l'intégration Personae ↔ KG-L :
 
 [RSS] rss_lint.py --repo . --depth 4 --check-governance -- 2026-09-15T03:18+02:00
   [PASS] Repo conforme RSS-v2
+
+[RUST] cargo test --test test_personae_ingest_workflow -- 2026-09-17T03:24+02:00
+  running 3 tests
+  test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured
+
+[GIT] git push origin main -- 2026-09-17T03:24+02:00
+  To https://github.com/gerivdb/N243.git
+  30355d0..0476725  main -> main
 ```
 
 ## 6. RÉFÉRENCES
