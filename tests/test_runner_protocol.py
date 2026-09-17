@@ -50,7 +50,7 @@ def test_supervisor_validates_prd_frontmatter_before_runner_gate():
     assert result["valid"] is True
     assert result["verdict"] == "APPROUVER"
     assert result["frontmatter"]["type"] == "PRD-MOC"
-    assert result["frontmatter"]["status"] == "proposed"
+    assert result["frontmatter"]["status"] == "accepted"
 
 
 def test_runner_decision_suspend_creates_pending_action():

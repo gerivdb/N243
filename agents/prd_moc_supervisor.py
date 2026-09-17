@@ -289,7 +289,7 @@ class N243Supervisor:
 
         allowed_statuses = {
             "PRD": {"draft", "active", "deprecated", "superseded"},
-            "PRD-MOC": {"draft", "proposed", "approved", "active", "deprecated", "superseded"},
+            "PRD-MOC": {"draft", "proposed", "approved", "accepted", "active", "deprecated", "superseded"},
             "EPIC": {"draft", "active", "done", "deprecated", "superseded"},
             "ADR": {"proposed", "accepted", "deprecated", "superseded"},
             "SPEC": {"draft", "stable", "deprecated", "superseded"},
@@ -346,3 +346,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+
