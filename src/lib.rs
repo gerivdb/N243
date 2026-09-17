@@ -9,3 +9,4 @@ pub mod bdcp;
 pub mod signature;
 pub mod gates;
 pub mod bridge;
+pub mod orchestrator;
