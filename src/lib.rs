@@ -11,3 +11,4 @@ pub mod gates;
 pub mod bridge;
 pub mod orchestrator;
 pub mod agent_runner;
+pub mod wal_emitter;
