@@ -41,14 +41,14 @@ Intégration du bus événementiel VOLTX (5 canaux) avec N243 :
 ## 2. PLAN D'IMPLÉMENTATION
 
 ### Tâche 1 — Bridge VOLTX
-- [ ] Créer `src/bridge/voltx_bridge.rs`
-- [ ] Implémenter `VoltxBridge::register_channel(name, handler)`
-- [ ] Implémenter `VoltxBridge::send(channel, payload)`
-- [ ] Implémenter 5 canaux : PLIX, PIANO, TALEX, SPIDX, WAZAA
+- [x] Créer `src/bridge/voltx_bridge.rs`
+- [x] Implémenter `VoltxBridge::register_channel(name, handler)`
+- [x] Implémenter `VoltxBridge::send(channel, payload)`
+- [x] Implémenter 5 canaux : PLIX, PIANO, TALEX, SPIDX, WAZAA
 
 ### Tâche 2 — Tests
-- [ ] `cargo test` → 0 échec
-- [ ] `rss_lint.py --depth 4 --check-governance` → PASS
+- [x] `cargo test` → 0 échec
+- [x] `rss_lint.py --depth 4 --check-governance` → PASS
 
 ## 3. CRITÈRES DE VALIDATION
 

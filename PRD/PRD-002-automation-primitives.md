@@ -58,9 +58,9 @@ Implémentation de 5 skills et 5 citizens pour l'automatisation N243 :
 - [x] `citizens.yaml` mis à jour avec les 5 nouveaux citizens
 
 ### Tâche 3 — Valider la conformité
-- [ ] `rss_lint.py --depth 4 --check-governance` → PASS
-- [ ] `cargo test` → 0 échec
-- [ ] `pytest agents/` → 0 échec
+- [x] `rss_lint.py --depth 4 --check-governance` → PASS
+- [x] `cargo test` → 0 échec
+- [x] `pytest agents/` → 0 échec
 
 ## 3. CRITÈRES DE VALIDATION
 

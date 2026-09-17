@@ -168,35 +168,33 @@ class PRDMOCSupervisor:
 
 ### Sprint 1 — WAL Ternaire + Replay (S1.1 — S1.3)
 
-| Tâche | Action | Validation |
-|-------|--------|-----------|
-| S1.1 | Implémenter `WAL::replay()` pour reprise sur échec | Test : crash simulé → replay cohérent |
-| S1.2 | Ajouter `WAL::compact()` pourTTL 30j | Test : entrées anciennes supprimées |
-| S1.3 | Fixtures WAL pour tests (APPROUVER/SUSPENDRE/REJETER) | `cargo test` passe |
+| S1.1 | Implémenter `WAL::replay()` pour reprise sur échec | Test : crash simulé → replay cohérent | ✅ |
+| S1.2 | Ajouter `WAL::compact()` pourTTL 30j | Test : entrées anciennes supprimées | ✅ |
+| S1.3 | Fixtures WAL pour tests (APPROUVER/SUSPENDRE/REJETER) | `cargo test` passe | ✅ |
 
 ### Sprint 2 — Runner Protocol Stabilisation (S2.1 — S2.3)
 
-| Tâche | Action | Validation |
-|-------|--------|-----------|
-| S2.1 | Finaliser `RunnerCommand` + `RunnerResult` | Compilation Zig 0.15 OK |
-| S2.2 | Intégrer runner_protocol avec WAZAA topics | `wazaa send` → runner exécute → WAL |
-| S2.3 | Tests d'intégration runner protocol | `pytest tests/` passe |
+| Tâche | Action | Validation | Statut |
+|---|---|---|---|
+| S2.1 | Finaliser `RunnerCommand` + `RunnerResult` | Compilation Zig 0.15 OK | ✅ |
+| S2.2 | Intégrer runner_protocol avec WAZAA topics | `wazaa send` → runner exécute → WAL | ✅ |
+| S2.3 | Tests d'intégration runner protocol | `pytest tests/` passe | ✅ |
 
 ### Sprint 3 — Supervisor PRD/MOC (S3.1 — S3.3)
 
-| Tâche | Action | Validation |
-|-------|--------|-----------|
-| S3.1 | Étendre `prd_moc_supervisor.py` — validation frontmatter | Hook pre-commit accepte |
-| S3.2 | Connecter supervisor → WAZAA topic `prd_moc.gate` | Décisions reçues par WAZAA |
-| S3.3 | Tests unitaires supervisor | `pytest agents/` passe |
+| Tâche | Action | Validation | Statut |
+|---|---|---|---|
+| S3.1 | Étendre `prd_moc_supervisor.py` — validation frontmatter | Hook pre-commit accepte | ✅ |
+| S3.2 | Connecter supervisor → WAZAA topic `prd_moc.gate` | Décisions reçues par WAZAA | ✅ |
+| S3.3 | Tests unitaires supervisor | `pytest agents/` passe | ✅ |
 
 ### Sprint 4 — Conformité RSS-v2.3 (S4.1 — S4.3)
 
-| Tâche | Action | Validation |
-|-------|--------|-----------|
-| S4.1 | Créer `ONTOLOGY_DECLARATION.yaml` | ✅ Fait |
-| S4.2 | Créer `PRD/PRD-000-index.md` | Index auto-généré |
-| S4.3 | Vérifier `rss_lint.py` sur N243 | Exit 0, 0 erreur |
+| Tâche | Action | Validation | Statut |
+|---|---|---|---|
+| S4.1 | Créer `ONTOLOGY_DECLARATION.yaml` | ✅ Fait | ✅ |
+| S4.2 | Créer `PRD/PRD-000-index.md` | Index auto-généré | ✅ |
+| S4.3 | Vérifier `rss_lint.py` sur N243 | Exit 0, 0 erreur | ✅ |
 
 ## 5. CRITÈRES DE VALIDATION
 

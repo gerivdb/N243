@@ -41,17 +41,17 @@ Ce PRD implémente les actions P1 du master d'opérationnalisation N243 :
 
 ### Tâche 1 — Workflows ML
 - [x] `kg_mutation` workflow → `workflows/kg_mutation/n243-kg-mutation.yaml`
-- [ ] `ml_train` workflow → `workflows/ml_train/n243-ml-train.yaml`
+- [x] `ml_train` workflow → `workflows/ml_train/n243-ml-train.yaml`
 
 ### Tâche 2 — WAZAA Bridge
-- [ ] Créer `src/bridge/wazaa_bridge.rs`
-- [ ] Implémenter `WazaaBridge::publish(topic, payload)`
-- [ ] Implémenter `WazaaBridge::subscribe(topic, handler)`
+- [x] Créer `src/bridge/wazaa_bridge.rs`
+- [x] Implémenter `WazaaBridge::publish(topic, payload)`
+- [x] Implémenter `WazaaBridge::subscribe(topic, handler)`
 
 ### Tâche 3 — Validation
-- [ ] `cargo test` → 0 échec
-- [ ] `rss_lint.py --depth 4 --check-governance` → PASS
-- [ ] `pytest agents/ tests/` → 0 échec
+- [x] `cargo test` → 0 échec
+- [x] `rss_lint.py --depth 4 --check-governance` → PASS
+- [x] `pytest agents/ tests/` → 0 échec
 
 ## 3. CRITÈRES DE VALIDATION
 

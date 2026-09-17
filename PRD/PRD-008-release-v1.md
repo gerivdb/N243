@@ -54,9 +54,9 @@ Release v1.0.0 de N243 après opérationnalisation complète :
 
 **2026-09-15T03:05+02:00** — Proof-of-Life auto-mode SLM :
 - [x] PRD-008 créé
-- [ ] Version Cargo.toml à mettre à jour
-- [ ] Git tag à créer
-- [ ] Changelog à créer/mettre à jour
+- [x] Version Cargo.toml mise à jour (1.0.0)
+- [x] Git tag créé (v1.0.0)
+- [x] Changelog créé/mis à jour (CHANGELOG.md)
 
 **2026-09-16T20:21+02:00** — Proof-of-Life update: `*_utils` sync :
 - [x] 270 `*_utils` agents N243 ↔ AUTO-DEV synchronisés (bidirectionnel)

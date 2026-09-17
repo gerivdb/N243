@@ -36,22 +36,22 @@ Complétion de l'opérationnalisation N243 avec :
 ## 2. PLAN D'IMPLÉMENTATION
 
 ### Tâche 1 — Tests d'intégration
-- [ ] Créer `tests/integration/test_n243_integration.py`
-- [ ] Tester WAZAA bridge end-to-end
-- [ ] Tester VOLTX bridge end-to-end
-- [ ] Tester workflow ml_train end-to-end
-- [ ] Tester workflow kg_mutation end-to-end
+- [x] Créer `tests/integration/test_n243_integration.py`
+- [x] Tester WAZAA bridge end-to-end
+- [x] Tester VOLTX bridge end-to-end
+- [x] Tester workflow ml_train end-to-end
+- [x] Tester workflow kg_mutation end-to-end
 
 ### Tâche 2 — Documentation
-- [ ] Créer `docs/operationalization.md`
-- [ ] Documenter architecture N243
-- [ ] Documenter workflows
-- [ ] Documenter bridges WAZAA/VOLTX
+- [x] Créer `docs/operationalization.md`
+- [x] Documenter architecture N243
+- [x] Documenter workflows
+- [x] Documenter bridges WAZAA/VOLTX
 
 ### Tâche 3 — Validation
-- [ ] `cargo test` → 0 échec
-- [ ] `pytest tests/integration/` → 0 échec
-- [ ] `rss_lint.py --depth 4 --check-governance` → PASS
+- [x] `cargo test` → 0 échec
+- [x] `pytest tests/integration/` → 0 échec
+- [x] `rss_lint.py --depth 4 --check-governance` → PASS
 
 ## 3. CRITÈRES DE VALIDATION
 
