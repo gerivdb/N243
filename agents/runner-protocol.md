@@ -117,3 +117,5 @@ runners:
 - **Bus WAZAA** : `../WAZAA/src/wazaa_bus.py`
 - **PRD-001** : Event Schema & Kinds L*
 - **ADR-2026-08-01-002** : N243 Meta-Engine Architecture
+- **PRD-MOC-GEN-083** : Semantic Combos Catalog (`proposed`, 2026-09-17)
+- **Combo** : `ontology-term-gate` — validation ontologique avant approval
