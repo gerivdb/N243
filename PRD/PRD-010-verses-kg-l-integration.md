@@ -53,12 +53,12 @@ Orchestration N243 de l'intégration VERSES ↔ KG-L :
 ### Tâche 1 — Orchestrateur VERSES-KG-L (N243)
 - [x] Bridges WAZAA/VOLTX opérationnels
 - [x] Agents KG-L créés
-- [ ] Workflow `verses_ingest` à créer
-- [ ] Publier événements `verse.updated` via WAZAA/VOLTX
+- [x] Workflow `verses_ingest` créé (`workflows/verses_ingest/n243-verses-ingest.yaml`)
+- [x] Publier événements `verse.updated` via WAZAA/VOLTX
 
 ### Tâche 2 — Validation
-- [ ] `cargo test` → 0 échec
-- [ ] `rss_lint.py --depth 4 --check-governance` → PASS
+- [x] `cargo test` → 0 échec
+- [x] `rss_lint.py --depth 4 --check-governance` → PASS
 
 ## 4. ÉTAT OBSERVÉ
 
@@ -69,6 +69,10 @@ Orchestration N243 de l'intégration VERSES ↔ KG-L :
 - [x] Tests Rust passent (`cargo test --lib` → 38 passed)
 - [x] Conformité RSS-v2 validée (`rss_lint.py --depth 4 --check-governance` → PASS)
 
+**2026-09-17T03:26+02:00** — Proof-of-Life update: test d'intégration workflow :
+- [x] `tests/test_verses_ingest_workflow.rs` → 3 passed
+- [x] `cargo test` → 47 passed
+
 ### Preuves d'exécution horodatées
 
 ```
@@ -77,6 +81,14 @@ Orchestration N243 de l'intégration VERSES ↔ KG-L :
 
 [RSS] rss_lint.py --repo . --depth 4 --check-governance -- 2026-09-15T03:39+02:00
   [PASS] Repo conforme RSS-v2
+
+[RUST] cargo test --test test_verses_ingest_workflow -- 2026-09-17T03:26+02:00
+  running 3 tests
+  test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured
+
+[GIT] git push origin main -- 2026-09-17T03:26+02:00
+  To https://github.com/gerivdb/N243.git
+  30355d0..34f3618  main -> main
 ```
 
 ## 5. RÉFÉRENCES
