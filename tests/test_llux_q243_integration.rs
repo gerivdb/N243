@@ -13,16 +13,15 @@ fn test_llux_local_path_exists() {
 
 #[test]
 fn test_llux_q243_model_structure() {
-    // Validates expected `.q243` artifact layout without loading heavy weights.
     let llux_root = Path::new("D:/DO/WEB/TOOLS/L3-CITIZENS/LLUX");
-    if !llux_root.exists() {
-        panic!("LLUX repository missing at {}", llux_root.display());
-    }
+    assert!(llux_root.exists(), "LLUX repository missing at {}", llux_root.display());
 
-    // In a real integration, LLUX would expose a manifest or model directory.
-    // Here we assert the orchestrator can reference the repo path safely.
-    let model_ref = llux_root.join("models").join("llux-7b.q243");
-    let _ = model_ref;
+    let model_ref = llux_root.join("models").join("llama-2-7b.q243");
+    assert!(model_ref.exists(), "LLUX 7B .q243 model should exist at {}", model_ref.display());
+    assert!(model_ref.is_file(), "LLUX 7B .q243 model should be a file");
+
+    let metadata = std::fs::metadata(&model_ref).expect("read model metadata");
+    assert!(metadata.len() > 0, "LLUX 7B .q243 model should not be empty");
 }
 
 #[test]
