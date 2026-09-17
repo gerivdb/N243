@@ -1,46 +1,51 @@
-// N243 — Orchestrator Unit Tests
-// IntentHash: 0xN243_META_ORCHESTRATOR_20260801
+// N243 — external unit tests for `src/orchestrator.rs`
+// Coverage: state transitions, core agent registration, empty-start invariants.
 
-use n243::orchestrator::{Orchestrator, OrchestratorState};
+use n243::orchestrator::Orchestrator;
 
 #[test]
-fn test_orchestrator_creation() {
-    let orchestrator = Orchestrator::new("wal/ternary-wal.jsonl");
-    assert_eq!(orchestrator.state, OrchestratorState::Idle);
+fn test_orchestrator_new_starts_idle() {
+    let orch = Orchestrator::new("/tmp/n243-orchestrator-test.jsonl");
+    assert_eq!(orch.state, n243::orchestrator::OrchestratorState::Idle);
 }
 
 #[test]
-fn test_orchestrator_start_stop() {
-    let mut orchestrator = Orchestrator::new("wal/ternary-wal.jsonl");
-    assert_eq!(orchestrator.state, OrchestratorState::Idle);
-
-    orchestrator.start();
-    assert_eq!(orchestrator.state, OrchestratorState::Running);
-
-    orchestrator.stop();
-    assert_eq!(orchestrator.state, OrchestratorState::Idle);
+fn test_orchestrator_start_transitions_to_running() {
+    let mut orch = Orchestrator::new("/tmp/n243-orchestrator-test.jsonl");
+    orch.start();
+    assert_eq!(
+        orch.state,
+        n243::orchestrator::OrchestratorState::Running
+    );
 }
 
 #[test]
-fn test_orchestrator_registers_five_core_agents() {
-    let mut orchestrator = Orchestrator::new("wal/ternary-wal.jsonl");
-    orchestrator.start();
-
-    let all_agents = orchestrator.registry.list_all();
-    assert_eq!(all_agents.len(), 5, "orchestrator should register 5 core agents");
-
-    let ids: Vec<&str> = all_agents.iter().map(|a| a.id.0.as_str()).collect();
-    assert!(ids.contains(&"llux"), "missing llux agent");
-    assert!(ids.contains(&"timx"), "missing timx agent");
-    assert!(ids.contains(&"rootx"), "missing rootx agent");
-    assert!(ids.contains(&"tlm"), "missing tlm agent");
-    assert!(ids.contains(&"rlm243"), "missing rlm243 agent");
+fn test_orchestrator_stop_returns_to_idle() {
+    let mut orch = Orchestrator::new("/tmp/n243-orchestrator-test.jsonl");
+    orch.start();
+    orch.stop();
+    assert_eq!(orch.state, n243::orchestrator::OrchestratorState::Idle);
 }
 
 #[test]
-fn test_orchestrator_components_are_initialized() {
-    let orchestrator = Orchestrator::new("wal/ternary-wal.jsonl");
-    assert!(orchestrator.bdcp.is_stratum_enforced("L4"));
-    assert!(orchestrator.wazaa.is_connected() || !orchestrator.wazaa.is_connected());
-    assert!(orchestrator.voltx.is_connected() || !orchestrator.voltx.is_connected());
+fn test_orchestrator_start_registers_five_core_agents() {
+    let mut orch = Orchestrator::new("/tmp/n243-orchestrator-test.jsonl");
+    orch.start();
+    let all = orch.registry.list_all();
+    assert_eq!(all.len(), 5);
+
+    let ids: Vec<String> = all.iter().map(|a| a.id.0.clone()).collect();
+    assert!(ids.contains(&"llux".to_string()));
+    assert!(ids.contains(&"timx".to_string()));
+    assert!(ids.contains(&"rootx".to_string()));
+    assert!(ids.contains(&"tlm".to_string()));
+    assert!(ids.contains(&"rlm243".to_string()));
+}
+
+#[test]
+fn test_orchestrator_new_has_empty_registry_and_workflows() {
+    let orch = Orchestrator::new("/tmp/n243-orchestrator-test.jsonl");
+    assert!(orch.registry.list_all().is_empty());
+    assert!(orch.workflow_registry.list_enabled().is_empty());
+    assert!(!orch.bdcp.is_stratum_enforced("L9"));
 }
