@@ -39,3 +39,15 @@ concepts:
     nexus_index: "gerivdb/NEXUS/concepts/prd_moc_supervisor"
     last_updated: "2026-09-14"
     description: "Superviseur PRD/MOC — agent autonome de validation et de routage des documents de gouvernance"
+
+  - id: "semantic_combos_catalog"
+    status: "proposition"
+    nexus_index: "gerivdb/NEXUS/concepts/semantic_combos_catalog"
+    last_updated: "2026-09-17"
+    description: "Catalogue des combos sémantiques invocables (PRD-MOC-GEN-083, proposed) — causal dryrun, 14 combination ops, think-do-check, proof-of-life, ontology-term-gate, pre-push-path-audit, branch-lifecycle, domain-links-exporter"
+
+  - id: "ontology_term_gate"
+    status: "proposition"
+    nexus_index: "gerivdb/NEXUS/concepts/ontology_term_gate"
+    last_updated: "2026-09-17"
+    description: "Gate de validation ontologique — vérifie que les termes d'un document existent dans ONTOLOGY avant commit/approval (script ontology_term_gate.py --strict)"
