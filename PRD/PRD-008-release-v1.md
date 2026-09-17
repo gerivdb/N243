@@ -1,8 +1,8 @@
 ---
 type: PRD-MOC
 version: "1.0.0"
-date: "2026-09-15"
-status: proposed
+date: "2026-09-17"
+status: accepted
 state_observed: "2026-09-16T20:21:00+02:00"
 intent_hash: "0xN243_RELEASE_V1_20260915"
 author: "N243"
