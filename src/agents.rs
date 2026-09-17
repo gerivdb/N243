@@ -97,6 +97,10 @@ impl AgentRegistry {
             .filter(|a| a.status == AgentStatus::Running)
             .collect()
     }
+
+    pub fn list_all(&self) -> Vec<&Agent> {
+        self.agents.values().collect()
+    }
 }
 
 // ============================================================

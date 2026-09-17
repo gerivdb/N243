@@ -16,6 +16,7 @@ chrono = { version = "0.4", features = ["serde"] }
 thiserror = "2"
 ed25519-dalek = { version = "2", features = ["rand_core"] }
 blake3 = "1.5"
+clap = { version = "4.0", features = ["derive"] }
 
 # BUZZ crates - via git dependencies (local BUZZ-X workspace)
 buzz-core = { git = "file:///D:/DO/WEB/TOOLS/L4-TOOLS/BUZZ-X/Buzz@block", package = "buzz-core" }
