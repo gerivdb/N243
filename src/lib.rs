@@ -10,3 +10,4 @@ pub mod signature;
 pub mod gates;
 pub mod bridge;
 pub mod orchestrator;
+pub mod agent_runner;
