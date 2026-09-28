@@ -117,3 +117,23 @@ cargo test --test test_ml_train_workflow
 cargo test --test test_voltx_bridge_integration
 cargo test --test test_cross_bridge_integration
 ```
+
+## PID Governance
+
+N243 valide les PIDs via un verdict ternaire avant acceptation :
+
+- `accept` : PID conforme
+- `review` : PID suspect, necessite une verification humaine
+- `reject` : PID invalide, bloquant
+
+### Verification
+
+```bash
+python scripts/pid_gate.py --pid 12345 --citizen LOOPX --daemon-id loopx-daemon
+```
+
+### References
+
+- **PRD-MOC** : `PRD-MOC/PRD-MOC-N243-PID-GATE-20260928.md`
+- **ADR** : `ADR/ADR-N243-PID-GATE-20260928.md`
+- **Master** : `PRD-MOC-VEX-ECOSYSTEM-PID-GOVERNANCE-20260928.md`
