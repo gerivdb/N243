@@ -137,3 +137,25 @@ python scripts/pid_gate.py --pid 12345 --citizen LOOPX --daemon-id loopx-daemon
 - **PRD-MOC** : `PRD-MOC/PRD-MOC-N243-PID-GATE-20260928.md`
 - **ADR** : `ADR/ADR-N243-PID-GATE-20260928.md`
 - **Master** : `PRD-MOC-VEX-ECOSYSTEM-PID-GOVERNANCE-20260928.md`
+
+
+## Cross-Repo N243/KIX Integration
+
+N243 participe a l'implementation cross-repo atomique de VEX vers CTULU et BRAIN :
+
+- scripts/pid_gate.py : validation PID integree au gate N243
+- PRD-MOC/PRD-MOC-N243-PID-GATE-20260928.md : contrat de validation PID
+- Tests d'integration : 	ests/test_*`n
+### Validation
+
+`ash
+python scripts/pid_gate.py --pid 12345 --citizen LOOPX --daemon-id loopx-daemon
+` 
+
+### References
+
+- **PRD-MOC** : PRD-MOC/PRD-MOC-N243-PID-GATE-20260928.md 
+- **VEX Master** : PRD-MOC-VEX-CROSS-REPO-ATOMIC-IMPLEMENTATION-20260929.md 
+- **CTULU** : PRD-MOC-CTULU-CROSS-REPO-N243-KIX-INTEGRATION-20260929.md 
+- **BRAIN** : PRD-MOC-BRAIN-CROSS-REPO-N243-KIX-INTEGRATION-20260929.md 
+

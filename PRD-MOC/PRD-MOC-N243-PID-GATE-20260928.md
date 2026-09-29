@@ -66,6 +66,8 @@ N243 expose une fonction `validate_pid(pid, citizen, daemon_id, metadata)` qui :
 - **VEX Window Policy** : `PRD-MOC-VEX-WINDOW-POLICY-20260928.md`
 - **ADR** : `ADR-N243-PID-GATE-20260928.md`
 - **ADR Ecosystem** : `ADR-ECOSYSTEM-PID-GOVERNANCE-20260928.md`
+- **CTULU Cross-Repo** : `PRD-MOC-CTULU-CROSS-REPO-N243-KIX-INTEGRATION-20260929.md`
+- **BRAIN Cross-Repo** : `PRD-MOC-BRAIN-CROSS-REPO-N243-KIX-INTEGRATION-20260929.md`
 
 ## Proof-of-Life
 
